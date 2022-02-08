@@ -60,7 +60,29 @@
 ## what is a meteorological satellite?
 - a satellite that provides weather and climate information
 - a satellite that provides information about meteors
-- a satellite that provides info 
+- a satellite that is shaped like meteor
+- a satellite that provides information on medical history
+## how do satellites stay in orbit around the earth?
+- because of their velocity
+- because of their size
+- because of their shape
+- because of their cost
+## what is a satellite?
+- a machine sent into space to collect information
+- an expensive toy
+- a home for astronauts
+- a shelter in space for pets
+## how many times does the ISS orbit around the earth in 24 hours?
+- 16
+- 24
+- 36
+- 48
+## Many planets have natural satellites which are known as what?
+- moons
+- suns
+- astronauts
+- stars
+
 ---
 
 # astronauts
