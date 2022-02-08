@@ -1,0 +1,72 @@
+.quiz{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 70vh;
+    padding: 0 1em;
+    & .question{
+        position: relative;
+        background-color: white;
+        padding: 1.5em;
+        border-radius: 15px;
+        color: black;
+        margin-top: 1em;
+        text-align: left;
+    }
+
+    & .questionmark{
+        position: absolute;
+        border-radius: 50px;
+        padding: 0;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        left: 50%;
+        margin-top: -22.5px;
+        margin-left: -22.5px;
+    }
+
+    & .text{
+        margin-bottom: 45px;
+    }
+
+    & .answerOptions{
+        margin-top: auto;
+        margin-left: auto;
+        margin-right: auto;
+        align-self: flex-end;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        & button{
+            margin-bottom: 1em;
+        }
+
+        & .backSkip{
+            margin-top: 3em;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+
+            & :first-child{
+                margin-right: .5em;
+            }
+            & :last-child{
+                margin-left: .5em;
+            }
+        }
+    }
+}
+
+@media all and(min-width: 800px){
+    .quiz{
+        width: 500px;
+        margin: auto;
+
+        & .answerOptions{
+            width: 300px;
+        }
+    }
+}

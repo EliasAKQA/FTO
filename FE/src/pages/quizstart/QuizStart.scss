@@ -1,0 +1,18 @@
+.quizStart {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1em;
+
+  & h2, p {
+    text-align: center;
+    margin-top: 3em;
+  }
+
+  & p {
+    margin: 4em auto;
+  }
+
+  .btn{
+      margin: auto;
+  }
+}

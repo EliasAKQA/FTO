@@ -1,0 +1,9 @@
+.section-container {
+    display: grid;
+    gap: var(--gap);
+    margin: auto;
+    margin-bottom: var(--margin);
+    max-width: 800px;
+    text-align: center;
+    justify-items: center;
+}

@@ -1,0 +1,122 @@
+// google font import
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Montserrat:wght@400;900&family=Orbitron:wght@500&family=Share+Tech+Mono&family=Space+Mono:ital,wght@1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-secondary);
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 48px;
+  text-shadow: 0 0 4px #518abc, 0 0 2px #86beee, 0 0 1px #86beee;
+}
+
+body,
+p {
+  font-family: var(--font-primary);
+  color: white;
+}
+
+body {
+  background-image: url("../../../assets/bg-colorus/bg-coloured.png");
+  background-size: 300% 200%;
+  background-position: 0 0;
+  overflow-y: overlay;
+}
+
+p{
+  max-width: 600px;
+  margin: auto;
+}
+///* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+// ::-webkit-scrollbar-track {
+//   //background-image: url("../../../assets/bg-colorus/bg-coloured.png");
+//   //position: absolute;
+//   //right: -3rem;
+//   //top: -50rem;
+//   //background: transparent;
+// }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #b2b2b2;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+
+  background: rgb(148, 148, 148);
+}
+
+.main__container--fullwidth {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main__container--lesswidth {
+  margin-inline: auto;
+  max-width: min(90%, 100em);
+}
+
+a {
+  color: inherit; /* white for links too */
+  text-decoration: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.bg--animated {
+  background-image: url("../../../assets/bg-colorus/bg-coloured.png");
+  background-size: 300% 200%;
+  background-position: 0 0;
+  animation: animatedBackground 50s linear infinite;
+  //background-color: #024C8B;
+}
+
+.scroll--disabled {
+  overflow: hidden;
+}
+
+@keyframes animatedBackground {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+hr {
+  margin: 1.5rem 0;
+}

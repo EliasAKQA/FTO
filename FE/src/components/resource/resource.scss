@@ -1,0 +1,40 @@
+.resource__background {
+  background-color: var(--color-white);
+  height: 14em;
+  width: 5em;
+  border-radius: 32px;
+  transform: rotate(180deg);
+  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+
+  & + h3 {
+    text-align: center;
+  }
+}
+
+.resource__foreground {
+  animation: 1s ease-out 0s 1 slideTopToBottom;
+
+  &--food {
+    background-color: #D93250;
+  }
+
+  &--water {
+    background-color: #008AFF;
+  }
+}
+
+.resource__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-block: 3em;
+}
+
+@keyframes slideTopToBottom {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

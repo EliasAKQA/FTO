@@ -1,0 +1,32 @@
+import React from 'react';
+import { Route, Routes } from "react-router-dom";
+import Crew from '../../pages/crew/Crew';
+import CrewMember from "../../pages/crewMember/CrewMember";
+import Quizes from "../../pages/quizes/Quizes";
+import Webshop from 'pages/webshop/Webshop';
+import Inventory from "../../pages/inventory/Inventory";
+import Landing from "../../pages/landing/Landing";
+import Tracker from "../../pages/tracker/Tracker";
+import Cart from '../../pages/cart/Cart';
+import ShopDetail from '../../pages/shopItem/ShopItem';
+
+const Body = () => {
+    return (
+        <main>
+            <Routes>
+                <Route exact path={"/"} element={<Landing />} />
+                <Route path={"/shop"} element={<Webshop />} />
+                <Route path={"/crew/*"} element={<Crew />} />
+                {/* <Route path={"/crew/*"} element={<CrewMember />} /> */}
+                <Route path={"/inventory"} element={<Inventory />} />
+                <Route path={"/maps"} element={<Tracker />} />
+                <Route path={"/quiz/*"} element={<Quizes />} />
+                <Route path={"/cart"} element={<Cart />} />
+                <Route path={"/shop/*"} element={<ShopDetail />} />
+            </Routes>
+        </main>
+    );
+};
+
+export default Body;
+

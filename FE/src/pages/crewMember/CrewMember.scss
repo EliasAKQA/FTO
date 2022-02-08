@@ -1,0 +1,25 @@
+
+// h1 {
+//     text-align: left;
+// }
+
+.crew-member {
+    max-width: 1200px;
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 0 auto;
+    &__image {
+        overflow: hidden;
+        & img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

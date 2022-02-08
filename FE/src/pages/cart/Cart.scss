@@ -1,0 +1,36 @@
+.cartH1{
+    text-align: center;
+}
+.cartTotal{
+    border: 3px solid var(--color-white);
+    // margin: 40px;
+    margin: 40px auto;
+    padding: 20px;
+    // max-width: 400px;
+    width: 90%;
+   
+    div{
+        text-align: right;
+    h3{
+        margin-top: 10px;
+        display: inline-block;
+        text-align: left;
+        width: 50%;
+    }
+    p{
+        width: 50%;
+        text-align: right;
+        display: inline-block;
+    }
+    
+}button{
+        margin: auto;
+    }
+}
+
+@media all and (min-width: 450px){
+    .cartTotal{
+        margin: 40px auto;
+        max-width: 400px;
+    }
+  }

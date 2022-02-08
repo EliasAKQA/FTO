@@ -1,0 +1,29 @@
+.info > * {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.info{
+  & p{
+    margin: auto;
+    display: block;
+    max-width: 600px;
+  }
+}
+
+.quizes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  width: 100%;
+  grid-gap: 1rem;
+  text-align: left;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media all and (min-width: 1000px){
+  .quizes{
+    width: 800px;
+  }
+}

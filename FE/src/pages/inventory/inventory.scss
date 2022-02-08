@@ -1,0 +1,36 @@
+.inventory__header {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  margin-bottom: 3em;
+
+  & * {
+    text-align: center;
+  }
+ 
+  & p {
+    max-width: 600px;
+    margin: auto;
+    //grid-area: txt;
+  }
+
+  & h1 {
+    //grid-area: h1;
+  }
+}
+
+.inventory__timer {
+  text-align: center;
+  margin-inline: auto;
+  max-width: 35em;
+  //grid-area: timer;
+}
+
+.resource__container {
+  display: flex;
+  justify-content: center;
+  gap: 3em;
+  //grid-area: inv;
+}
+
+

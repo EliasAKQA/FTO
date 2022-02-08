@@ -1,0 +1,16 @@
+// variables
+@import "sass/partials/abstracts/mixins";
+@import "sass/partials/abstracts/variables";
+
+// base styles
+@import "sass/partials/base/base";
+@import "sass/partials/base/typography";
+
+// components
+@import "sass/partials/components/buttons";
+// @import "sass/partials/components/crew";
+@import "sass/partials/components/footer";
+@import "sass/partials/components/header";
+
+// layout
+@import "sass/partials/layout/main";

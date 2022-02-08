@@ -1,0 +1,16 @@
+
+#clock__secondhand {
+  transform-origin: 50% 50%;
+  transform: rotate(360deg) translate(0, -100%) /* go from bottom right to top right */
+  rotate(360deg) translate(0, 100%);
+  animation: spin 10s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

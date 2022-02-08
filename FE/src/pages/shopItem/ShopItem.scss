@@ -1,0 +1,67 @@
+.shopDetailBox{
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+
+.shopDetailPrize{
+    color: #00FF19;
+    margin-top: 5px;
+}
+.shopDetailIMG{
+    width: 100%;
+    // overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+    // height: 100px;
+    // background-color: #D8D8D8;
+    margin-bottom: 5px;
+    .shopDetailRock{
+        margin-left: 10%;
+        width: 250px;
+        height: 220px;
+    }
+}
+
+
+@media all and (min-width: 700px){
+    .shopDetailBox{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 600px;
+
+      & a{
+        grid-column: 1 / -1;
+        margin-bottom: 10%;
+      }
+      .shopDetailIMG{ 
+        width: 350px;
+        margin: 0 auto;
+    }
+
+    & button{
+      margin: 0;
+    }
+    }
+  }
+
+  @media all and (min-width: 1200px){
+    .shopDetailBox{
+      max-width: 70%;
+
+      .shopDetailIMG{
+          width: 350px;
+      }
+    }
+  }
+
+  @media all and (min-width: 1500px){
+    .shopDetailBox{
+      max-width: 70%;
+      .shopDetailRock{
+          margin-left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }

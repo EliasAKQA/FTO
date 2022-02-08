@@ -1,0 +1,25 @@
+header {
+  padding-block: 1em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+}
+
+.expand {
+  height: 100vh;
+  align-items: start;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+
+  & > img {
+    width: 2em;
+  }
+
+  & h3 {
+    font-size: 2em;
+  }
+}

@@ -1,0 +1,39 @@
+@import "../../sass/partials/abstracts/mixins";
+
+h1 {
+  text-align: center;
+}
+
+.crew-page{
+  & *{
+  margin-bottom: 1em;
+  text-align: center;
+  }
+}
+
+.card-container {
+  display: grid;
+  max-width: 100%;
+  gap: var(--gap);
+  // grid-template-columns: 2rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 80vw;
+  overflow-x: scroll;
+  padding: 1.5em 2em 1.5em 2em;
+  padding-bottom: 1.5rem;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  & > * {
+    scroll-snap-align: center;
+  }
+
+  @include respond(desktop) {
+    all: unset;
+    max-width: 800px;
+    padding: 0 2em;
+    margin:auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
+  }
+}

@@ -1,0 +1,40 @@
+.tacker_container{
+    padding: 0 1em;
+}
+
+.tracker__header {
+    text-align: center;
+}
+
+.tracker__info {
+    border: 2px solid var(--color-white);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border-radius: 8px;
+    max-width: 1000px;
+    margin: auto;
+
+    & div{
+        display: flex;
+        flex-direction: column;
+         & p{
+             margin: 0;
+         }
+    }
+}
+
+@media all and (min-width:800px){
+    .tracker__info{
+        & div{
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            & p{
+                margin: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+:root {
+  --border: 0.2rem solid;
+  --border-radius: 0.5rem;
+  --box-shadow: 0.5rem 0.5rem var(--color-secondary);
+  --color-black: #000;
+  --color-primary: #024c8b;
+  --color-primary-light: hsl(208, 97%, 78%);
+  --color-secondary: hsl(349, 69%, 52%);
+  --color-tertiary: #f2e84b;
+  --color-white: #fff;
+  --filter: blur(0.1rem);
+  --font-primary: "Arial", sans-serif;
+  --font-secondary: "Montserrat", sans-serif;
+  --font-clock: "Orbitron", sans-serif;
+  --font-weight-bold: 900;
+  --font-weight-regular: 400;
+  --gap: 2rem;
+  --letter-spacing: 0.1rem;
+  --margin: 1rem;
+  --padding: 1rem;
+  --padding-btn: 0.5rem;
+  --text-shadow: 0 0 4px #518abc, 0 0 2px #86beee, 0 0 1px #86beee;
+}

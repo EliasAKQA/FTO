@@ -1,0 +1,14 @@
+.clock__timer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  grid-gap: 2em;
+  row-gap: 0;
+  height: 100%;
+
+  p {
+    font-family: var(--font-clock);
+    color: var(--color-tertiary);
+    font-size: 3em;
+  }
+}
