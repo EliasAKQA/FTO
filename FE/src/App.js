@@ -27,7 +27,6 @@ function App() {
     return (
         <div className={"bg--animated main__container--fullwidth"}>
             <Header/>
-            <h1>hello</h1>
             <Body/>
             <Footer/>
             
