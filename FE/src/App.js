@@ -10,7 +10,7 @@ function App() {
 
     useEffect(() => {
         let myStorage = window.sessionStorage;
-        if (myStorage.getItem("loading") != "false") {
+        if (myStorage.getItem("loading") !== "false") {
             setTimeout(() => {
                 setLoading(false);
                 myStorage.setItem("loading", "false");
@@ -29,7 +29,6 @@ function App() {
             <Header/>
             <Body/>
             <Footer/>
-            <p>Test</p>
         </div>
     );
 }
