@@ -8,6 +8,8 @@ namespace Flight2Orbit.Helpers
     {
         public static T ConvertPublishedContent<T>(IPublishedContent content)
         {
+            // if it's null, return http response with status code 404
+            if (content == null) throw new NotFoundException("Node not found.");
             var convertAttempt = content.TryConvertTo<T>();
             if (!convertAttempt.Success) throw new InternalServerErrorException("Conversion error");
             return convertAttempt.Result;
