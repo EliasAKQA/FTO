@@ -10,17 +10,17 @@ const Webshop = () => {
                 lectus sed. Tincidunt iaculis mi, id sed viverra neque, euismod nec. Enim urna cras suspendisse sed enim
                 eu volutpat.</p>
             <div className='shopItemsHolder'>
-                <ShopItem name="Meteorite" prize="30"/>
-                <ShopItem name="Meteorite" prize="30"/>
+                <ShopItem pic="rock-1" name="Meteorite" prize="30"/>
+                <ShopItem pic="rock-2" name="Meteorite" prize="30"/>
 
-                <ShopItem name="Meteorite" prize="30"/>
-                <ShopItem name="Meteorite" prize="30"/>
+                <ShopItem pic="rock-3" name="Meteorite" prize="30"/>
+                <ShopItem pic="rock-4" name="Meteorite" prize="30"/>
 
-                <ShopItem name="Meteorite" prize="30"/>
-                <ShopItem name="Meteorite" prize="30"/>
+                <ShopItem pic="rock-5" name="Meteorite" prize="30"/>
+                <ShopItem pic="rock-6" name="Meteorite" prize="30"/>
 
-                <ShopItem name="Meteorite" prize="30"/>
-                <ShopItem name="Meteorite" prize="30"/>
+                <ShopItem pic="rock-7" name="Meteorite" prize="30"/>
+                <ShopItem pic="rock-8" name="Meteorite" prize="30"/>
 
                 
             </div>

@@ -323,7 +323,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Data\Models\all.generated.cs" />
+    <Compile Include="App_Data\Models\Button.generated.cs" />
+    <Compile Include="App_Data\Models\Home.generated.cs" />
+    <Compile Include="App_Data\Models\Quiz.generated.cs" />
+    <Compile Include="App_Data\Models\QuizTheme.generated.cs" />
+    <Compile Include="App_Data\Models\Section.generated.cs" />
+    <Compile Include="App_Data\Models\Shop.generated.cs" />
+    <Compile Include="App_Data\Models\ShopItem.generated.cs" />
     <Compile Include="Controller\HomeController.cs" />
     <Compile Include="Exceptions\InternalServerErrorException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
