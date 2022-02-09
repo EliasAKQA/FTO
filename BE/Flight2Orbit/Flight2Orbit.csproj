@@ -298,7 +298,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".gitignore" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -324,18 +323,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Data\Models\Button.generated.cs" />
+    <Compile Include="App_Data\Models\Crew.generated.cs" />
+    <Compile Include="App_Data\Models\CrewMember.generated.cs" />
     <Compile Include="App_Data\Models\Home.generated.cs" />
     <Compile Include="App_Data\Models\Quiz.generated.cs" />
+    <Compile Include="App_Data\Models\QuizQuestion.generated.cs" />
+    <Compile Include="App_Data\Models\QuizTheme.generated.cs" />
     <Compile Include="App_Data\Models\Section.generated.cs" />
     <Compile Include="App_Data\Models\Shop.generated.cs" />
     <Compile Include="App_Data\Models\ShopItem.generated.cs" />
+    <Compile Include="Controller\CrewController.cs" />
     <Compile Include="Controller\HomeController.cs" />
     <Compile Include="Controller\ShopController.cs" />
     <Compile Include="Exceptions\InternalServerErrorException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Helpers\Converters.cs" />
     <Compile Include="Models\ButtonDTO.cs" />
+    <Compile Include="Models\CallToActionDTO.cs" />
+    <Compile Include="Models\CrewDTO.cs" />
+    <Compile Include="Models\CrewMemberDTO.cs" />
     <Compile Include="Models\HomeDTO.cs" />
+    <Compile Include="Models\Paragraph.cs" />
     <Compile Include="Models\SectionDTO.cs" />
     <Compile Include="Models\ShopDTO.cs" />
     <Compile Include="Models\ShopItemDTO.cs" />
@@ -372,6 +380,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\Crew\" />
     <Folder Include="Views\Shop\" />
   </ItemGroup>
   <PropertyGroup>
