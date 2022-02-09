@@ -22,6 +22,9 @@ const Webshop = () => {
                 <ShopItem pic="rock-7" name="Meteorite" prize="30"/>
                 <ShopItem pic="rock-8" name="Meteorite" prize="30"/>
 
+                <ShopItem pic="rock-9" name="Meteorite" prize="30"/>
+                <ShopItem pic="rock-10" name="Meteorite" prize="30"/>
+
                 
             </div>
         </div>
