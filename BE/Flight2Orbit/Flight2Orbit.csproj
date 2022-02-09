@@ -322,7 +322,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="App_Data\Models\Button.generated.cs" />
     <Compile Include="App_Data\Models\Crew.generated.cs" />
     <Compile Include="App_Data\Models\CrewMember.generated.cs" />
@@ -334,8 +333,6 @@
     <Compile Include="App_Data\Models\Shop.generated.cs" />
     <Compile Include="App_Data\Models\ShopItem.generated.cs" />
     <Compile Include="Controller\CrewController.cs" />
-=======
->>>>>>> d2a8b4c07f8b9e5e0a35ae77a33e67056605236a
     <Compile Include="Controller\HomeController.cs" />
     <Compile Include="Controller\ShopController.cs" />
     <Compile Include="Exceptions\InternalServerErrorException.cs" />
@@ -383,11 +380,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Folder Include="Views\Crew\" />
-=======
-    <Folder Include="App_Data\" />
->>>>>>> d2a8b4c07f8b9e5e0a35ae77a33e67056605236a
     <Folder Include="Views\Shop\" />
   </ItemGroup>
   <PropertyGroup>

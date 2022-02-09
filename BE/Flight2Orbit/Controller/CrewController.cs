@@ -14,7 +14,7 @@ namespace Flight2Orbit.Controller
 {
     public class CrewController : UmbracoApiController
     {
-        //public IHttpActionResult GetCrewContent()
+        //public IHttpActionResult GetCrewContent()  
         //{
 
         //    // Query Home node from DB
@@ -35,7 +35,8 @@ namespace Flight2Orbit.Controller
 
 
         //    //List<Paragraph> paragraphs = new List<Paragraph>() { crew.Paragraph1, crew.Paragraph2Optional };
-        //    return Json(new CrewDTO(crew.Headline, crew.SubHeadline, crew.Description, crewMembers, new CallToActionDTO(crew.CtoHeadline)))
+        //    return Json(new CrewDTO(crew.Headline, crew.SubHeadline, crew.Description, crewMembers,
+        //        new CallToActionDTO(crew.CtoHeadline)));
         //    //return Json("CHANGE ME");
         //}
     }
