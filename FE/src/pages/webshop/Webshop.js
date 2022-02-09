@@ -5,7 +5,8 @@ import "./Webshop.scss"
 const Webshop = () => {
     return (
         <div className='main__container--lesswidth'>
-            <h1 className='Webshoph1'>MASTER OF ROCKS</h1>
+            <h1 className='Webshoph1'>Shop</h1>
+            <h2 className='Webshoph1'>MASTER OF ROCKS</h2>
             <p className='WebshopText'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit eu orci orci nisl,
                 lectus sed. Tincidunt iaculis mi, id sed viverra neque, euismod nec. Enim urna cras suspendisse sed enim
                 eu volutpat.</p>

@@ -9,7 +9,7 @@ const navigationJson = [
     {title: "Crew", link: "/crew"},
     {title: "Inventory", link: "/inventory"},
     {title: "Quiz", link: "/quiz"},
-    {title: "Maps", link: "/maps"},
+    {title: "Tracker", link: "/tracker"},
 ];
 
 // const navigationJson = [
@@ -109,9 +109,31 @@ const Navbar = () => {
             </ul>
         </li>;
     }
+    function createDeskNavItems(item) {
+        if (!item.submenu) {
+            return <li><Link to={item.link}>{item.title}</Link></li>
+        }
+        return <li>
+            <button aria-controls={item.title + "-submenu"} aria-expanded="false">{item.title}</button>
+            <ul id={item.title + "-submenu"} aria-hidden={"true"}>
+                {item.submenu.map((nextItem) => {
+                    {
+                        return createDeskNavItems(nextItem);
+                    }
+                })}
+            </ul>
+        </li>;
+    }
 
     return (
         <div className={"navbar"}>
+            <nav className={'desktopNav'}>
+                <ul>
+                    {navigationJson.map((item) => {
+                        return createDeskNavItems(item);
+                    })}
+                </ul>
+            </nav>
             <button tabIndex="0" onClick={handleNavigationIcon} style={{backgroundColor: 'transparent', border: 'none'}}>
             <img 
                  src={open === false ? "/assets/images/navigation/burgerbar.svg" : "/assets/images/navigation/close-burgerbar.svg"}
