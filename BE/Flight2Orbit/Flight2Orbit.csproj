@@ -323,6 +323,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Data\Models\Button.generated.cs" />
+    <Compile Include="App_Data\Models\Home.generated.cs" />
+    <Compile Include="App_Data\Models\Quiz.generated.cs" />
+    <Compile Include="App_Data\Models\Section.generated.cs" />
+    <Compile Include="App_Data\Models\Shop.generated.cs" />
+    <Compile Include="App_Data\Models\ShopItem.generated.cs" />
     <Compile Include="Controller\HomeController.cs" />
     <Compile Include="Exceptions\InternalServerErrorException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
@@ -362,9 +368,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
