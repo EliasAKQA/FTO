@@ -45,6 +45,13 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Image: Pick an image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("image")]
+		public virtual global::Umbraco.Core.Models.MediaWithCrops Image => this.Value<global::Umbraco.Core.Models.MediaWithCrops>("image");
+
+		///<summary>
 		/// Title: Theme title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
@@ -52,7 +59,6 @@ namespace Umbraco.Web.PublishedModels
 		public virtual string Title => this.Value<string>("title");
 
 		///<summary>
-<<<<<<< HEAD
 		/// Button link: Enter the path of the button. (eg. /home)
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
@@ -65,19 +71,5 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
 		[ImplementPropertyType("buttonText")]
 		public virtual string ButtonText => global::Umbraco.Web.PublishedModels.Button.GetButtonText(this);
-=======
-		/// Link: Enter the path of the button. (eg. /home)
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		[ImplementPropertyType("link")]
-		public virtual string Link => global::Umbraco.Web.PublishedModels.Button.GetLink(this);
-
-		///<summary>
-		/// Text: Enter the display text of the button.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		[ImplementPropertyType("text")]
-		public virtual string Text => global::Umbraco.Web.PublishedModels.Button.GetText(this);
->>>>>>> respnav
 	}
 }

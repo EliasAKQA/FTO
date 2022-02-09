@@ -23,7 +23,6 @@ namespace Umbraco.Web.PublishedModels
 	/// <summary>Button</summary>
 	public partial interface IButton : IPublishedContent
 	{
-<<<<<<< HEAD
 		/// <summary>Button link</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
 		string ButtonLink { get; }
@@ -31,15 +30,6 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Button text</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
 		string ButtonText { get; }
-=======
-		/// <summary>Link</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		string Link { get; }
-
-		/// <summary>Text</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		string Text { get; }
->>>>>>> respnav
 	}
 
 	/// <summary>Button</summary>
@@ -68,7 +58,6 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-<<<<<<< HEAD
 		/// Button link: Enter the path of the button. (eg. /home)
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
@@ -89,27 +78,5 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Static getter for Button text</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
 		public static string GetButtonText(IButton that) => that.Value<string>("buttonText");
-=======
-		/// Link: Enter the path of the button. (eg. /home)
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		[ImplementPropertyType("link")]
-		public virtual string Link => GetLink(this);
-
-		/// <summary>Static getter for Link</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		public static string GetLink(IButton that) => that.Value<string>("link");
-
-		///<summary>
-		/// Text: Enter the display text of the button.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		[ImplementPropertyType("text")]
-		public virtual string Text => GetText(this);
-
-		/// <summary>Static getter for Text</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		public static string GetText(IButton that) => that.Value<string>("text");
->>>>>>> respnav
 	}
 }
