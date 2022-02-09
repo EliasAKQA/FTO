@@ -11,7 +11,7 @@ const shopItems = (props) => {
                     <div className='shopItemlight'></div>
                     <div className='shopItemIMG'>
                         <div className='shopItemCircle'></div>
-                        <img className='shopItemRock' src={"../src/assets/rocks/" + props.pic + ".png"} alt="rock"/>
+                        <img className='shopItemRock' src={"/assets/images/rocks/" + props.pic + ".png"} alt="rock"/>
                     </div>
                     <p className='shopItemName'>{props.name}</p>
                     <p className='shopItemPrize'>{props.prize}$</p>
