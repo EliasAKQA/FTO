@@ -1,6 +1,6 @@
 .inventory__header {
-  display: flex;
-  flex-direction: column;
+  display: block;
+  // flex-direction: column;
   gap: 3em;
   margin-bottom: 3em;
 
@@ -9,14 +9,8 @@
   }
  
   & p {
-    max-width: 600px;
-    margin: auto;
-    //grid-area: txt;
+    margin-top: 1em;
   }
-
-  // & h1 {
-  //   //grid-area: h1;
-  // }
 }
 
 .inventory__timer {
