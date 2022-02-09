@@ -1,5 +1,6 @@
 // google font import
 @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Montserrat:wght@400;900&family=Orbitron:wght@500&family=Share+Tech+Mono&family=Space+Mono:ital,wght@1,700&display=swap");
+@import "../abstracts/mixins";
 
 * {
   box-sizing: border-box;
@@ -31,6 +32,12 @@ body {
   background-size: 300% 200%;
   background-position: 0 0;
   overflow-y: overlay;
+}
+
+main{
+  @include respond(desktop){
+  margin-top: 75px;
+  }
 }
 
 p{

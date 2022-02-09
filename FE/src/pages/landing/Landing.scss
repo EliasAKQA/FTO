@@ -1,11 +1,19 @@
-.landingpage {
+@import "../../sass/partials/abstracts/mixins";
 
+.landingpage {
   & .landingWrapper {
     //max-width: min(90%, 100em);
     //margin: auto;
     //maring-inline: auto;
     display: flex;
     flex-direction: column;
+  }
+
+  & p{
+    @include respond(desktop){
+      font-size: 20px;
+      max-width: 600px;
+    }
   }
 }
 
@@ -20,6 +28,23 @@
     width: 80%;
     margin: 1em auto;
   }
+
+  @include respond(desktop--large){
+    padding: 4em 0;
+    min-height: 70vh;
+
+    & .landingWrapper {
+      width: 90%;
+      max-width: 1200px;
+      min-height: 50vh;
+      margin: auto;
+    }
+
+    & img.rockImg {
+      max-width: 400px;
+      margin: 4em auto;
+    }
+  }
 }
 
 .mid {
@@ -28,12 +53,20 @@
   background-size: cover;
   width: 100%;
   // left: calc(-50vw + 50%);
+
+  @include respond(desktop--large){
+    height: 250px;
+  }
 }
 
 .part2 {
   position: relative;
   background-color: white;
   padding-bottom: 2em;
+
+  // .landingWrapper{
+
+  // }
 
   & p {
     margin-top: 1em;
@@ -62,19 +95,75 @@
     animation: floating 3s ease-in-out alternate infinite;
   }
 
-  @keyframes floating {
-    to{
-      transform: translateY(10px);
-    }
-  }
-
+  
   & .landingWrapper .btn--secondary {
     border: var(--border) var(--color-primary);
     color: var(--color-primary);
     margin: 2em 0;
   }
+  
+  @include respond(desktop){
+    & .landingWrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "ast h1"
+      "ast txt"
+      "ast btn";
+    }
+    
+    & .ast_con {
+      position: relative;
+      // min-height: 100px;
+      width: 100%;
+      grid-area: ast;
+    }
+    
+    & h1 {
+      width: 100%;
+      grid-area: h1;
+      text-align: left;
+    }
+    
+    & p {
+      grid-area: txt;
+      width: 100%;
+      max-width: 600px;
+      margin-left: auto;
+    }
+    
+    & .btn--secondary {
+      grid-area: btn;
+      max-width: 300px;
+    }
+    
+    & .astronaut {
+      left: 0;
+      top: -50px;
+    }
+  }
+
+  @include respond(desktop--large){
+    padding: 3em 0;
+    height: 500px;
+
+    & .landingWrapper {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    & .astronaut {
+      top: -40px;
+      left: 40px;
+    }
+  }
 }
 
+@keyframes floating {
+  to{
+    transform: translateY(10px);
+  }
+}
 .part3 {
   background-color: var(--color-secondary);
   position: relative;
@@ -117,93 +206,8 @@
     color: var(--color-white);
     margin: 2em 0;
   }
-}
 
-@media all and (min-width: 550px) {
-  .part1 {
-    & img.rockImg {
-      width: 50%;
-    }
-
-    & .btn {
-      display: block;
-      max-width: 300px;
-      margin: auto;
-    }
-  }
-  .part2 {
-    & .ast_con {
-      min-height: 100px;
-    }
-
-    & .astronaut {
-      top: -100px;
-    }
-  }
-
-  .part3 {
-    & .clock_con {
-      min-height: 50px;
-    }
-
-    & .clock {
-      right: -50px;
-    }
-  }
-}
-
-@media all and (min-width: 800px) {
-  .landingWrapper p {
-    font-size: 20px;
-    max-width: 600px;
-  }
-
-  .part1 {
-    & p {
-      margin: auto;
-    }
-  }
-  .part2 {
-    & .landingWrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas: "ast h1"
-                            "ast txt"
-                            "ast btn";
-    }
-
-    & .ast_con {
-      position: relative;
-      // min-height: 100px;
-      width: 100%;
-      grid-area: ast;
-    }
-
-    & h1 {
-      width: 100%;
-      grid-area: h1;
-      text-align: left;
-    }
-
-    & p {
-      grid-area: txt;
-      width: 100%;
-      max-width: 600px;
-      margin-left: auto;
-    }
-
-    & .btn--secondary {
-      grid-area: btn;
-      max-width: 300px;
-    }
-
-    & .astronaut {
-      left: 0;
-      top: -50px;
-    }
-  }
-
-  .part3 {
+  @include respond(desktop){
     & .landingWrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -243,44 +247,8 @@
       margin: auto;
     }
   }
-}
 
-@media all and (min-width: 1000px) {
-  .part1 {
-    padding: 4em 0;
-    min-height: 70vh;
-
-    & .landingWrapper {
-      width: 90%;
-      max-width: 1200px;
-      min-height: 50vh;
-      margin: auto;
-    }
-
-    & img.rockImg {
-      max-width: 400px;
-      margin: 4em auto;
-    }
-  }
-  .mid {
-    height: 250px;
-  }
-  .part2 {
-    padding: 3em 0;
-    height: 500px;
-
-    & .landingWrapper {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    & .astronaut {
-      top: -40px;
-      left: 40px;
-    }
-  }
-  .part3 {
+  @include respond(desktop--large){
     padding: 6em 0;
     height: 500px;
 
@@ -294,6 +262,39 @@
       position: static;
       display: block;
       margin: auto;
+    }
+  }
+}
+
+@media all and (min-width: 550px) {
+  .part1 {
+    & img.rockImg {
+      width: 50%;
+    }
+
+    & .btn {
+      display: block;
+      max-width: 300px;
+      margin: auto;
+    }
+  }
+  .part2 {
+    & .ast_con {
+      min-height: 100px;
+    }
+
+    & .astronaut {
+      top: -100px;
+    }
+  }
+
+  .part3 {
+    & .clock_con {
+      min-height: 50px;
+    }
+
+    & .clock {
+      right: -50px;
     }
   }
 }
