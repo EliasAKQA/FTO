@@ -1,6 +1,6 @@
 import React from 'react';
 import "./shopItems.scss";
-import Rock from "./rock.png";
+// import Rock from "./rock.png";
 import {Link} from "react-router-dom";
 
 const shopItems = (props) => {
@@ -11,7 +11,7 @@ const shopItems = (props) => {
                     <div className='shopItemlight'></div>
                     <div className='shopItemIMG'>
                         <div className='shopItemCircle'></div>
-                        <img className='shopItemRock' src={Rock} alt="rock"/>
+                        <img className='shopItemRock' src={"/assets/images/rocks/" + props.pic + ".png"} alt="rock"/>
                     </div>
                     <p className='shopItemName'>{props.name}</p>
                     <p className='shopItemPrize'>{props.prize}$</p>

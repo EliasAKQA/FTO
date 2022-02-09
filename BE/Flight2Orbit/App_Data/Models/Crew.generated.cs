@@ -52,6 +52,7 @@ namespace Umbraco.Web.PublishedModels
 		public virtual string ButtonText => this.Value<string>("buttonText");
 
 		///<summary>
+<<<<<<< HEAD
 		/// Crew members: Add crew members.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
@@ -59,6 +60,8 @@ namespace Umbraco.Web.PublishedModels
 		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> CrewMembers => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("crewMembers");
 
 		///<summary>
+=======
+>>>>>>> d2a8b4c07f8b9e5e0a35ae77a33e67056605236a
 		/// Headline: Enter a headline.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
