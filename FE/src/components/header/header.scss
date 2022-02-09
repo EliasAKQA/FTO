@@ -1,8 +1,21 @@
+@import "../../sass/partials/abstracts/mixins";
+
 header {
+  top: 0;
+  left: 0;
+  height: 75px;
+  width: 100%;
   padding-block: 1em;
+  padding-inline: 1.5em;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  width: 100%;
+  
+  @include respond(desktop){
+    position: fixed;
+    z-index: 2000;
+    background-image: linear-gradient(#0d0057, #0d00578a, #0d005700);
+    // backdrop-filter: blur(8px);
+  }
 }
 
 .expand {

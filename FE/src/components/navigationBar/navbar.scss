@@ -84,10 +84,6 @@ width: 100%;
 transition: all .3s ease-out;
 }
 
-nav.desktopNav li a:hover{
-color: var(--color-secondary);
-}
-
 nav.desktopNav li a::after{
   content: "";
   display: block;
