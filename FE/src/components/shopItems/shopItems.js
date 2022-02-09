@@ -8,7 +8,6 @@ const shopItems = (props) => {
         <div>
             <Link to={'/shop/' + props.name}>
                 <div className='shopItemHolder'>
-                    <div className='shopItemlight'></div>
                     <div className='shopItemIMG'>
                         <div className='shopItemCircle'></div>
                         <img className='shopItemRock' src={"/assets/images/rocks/" + props.pic + ".png"} alt="rock"/>

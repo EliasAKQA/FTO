@@ -346,6 +346,7 @@
     <Compile Include="Exceptions\InternalServerErrorException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Helpers\Converters.cs" />
+    <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Models\ButtonDTO.cs" />
     <Compile Include="Models\CallToActionDTO.cs" />
     <Compile Include="Models\CrewDTO.cs" />
