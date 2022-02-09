@@ -43,5 +43,19 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Description: Add a description of the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("description")]
+		public virtual string Description => this.Value<string>("description");
+
+		///<summary>
+		/// Headline: Enter the page headline
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("quizHeader")]
+		public virtual string QuizHeader => this.Value<string>("quizHeader");
 	}
 }

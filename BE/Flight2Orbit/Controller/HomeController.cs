@@ -27,7 +27,7 @@ namespace Flight2Orbit.Controller
             foreach (var sectionPC in home.Sections)
             {
                 var section = Converters.ConvertPublishedContent<Section>(sectionPC);
-                sections.Add(new SectionDTO(section.Header, section.Description, section.Image.Url(), new ButtonDTO(section.Text, section.Link)));
+                sections.Add(new SectionDTO(section.Header, section.Description, section.Image.Url(), new ButtonDTO(section.ButtonText, section.ButtonLink)));
             }
             return Json(new HomeDTO(sections));
         }

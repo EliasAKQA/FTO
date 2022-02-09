@@ -330,12 +330,15 @@
     <Compile Include="App_Data\Models\Shop.generated.cs" />
     <Compile Include="App_Data\Models\ShopItem.generated.cs" />
     <Compile Include="Controller\HomeController.cs" />
+    <Compile Include="Controller\ShopController.cs" />
     <Compile Include="Exceptions\InternalServerErrorException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Helpers\Converters.cs" />
     <Compile Include="Models\ButtonDTO.cs" />
     <Compile Include="Models\HomeDTO.cs" />
     <Compile Include="Models\SectionDTO.cs" />
+    <Compile Include="Models\ShopDTO.cs" />
+    <Compile Include="Models\ShopItemDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -368,7 +371,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Shop\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

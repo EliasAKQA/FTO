@@ -66,17 +66,17 @@ namespace Umbraco.Web.PublishedModels
 		public virtual string Title => this.Value<string>("title");
 
 		///<summary>
-		/// Link: Enter the path of the button. (eg. /home)
+		/// Button link: Enter the path of the button. (eg. /home)
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		[ImplementPropertyType("link")]
-		public virtual string Link => global::Umbraco.Web.PublishedModels.Button.GetLink(this);
+		[ImplementPropertyType("buttonLink")]
+		public virtual string ButtonLink => global::Umbraco.Web.PublishedModels.Button.GetButtonLink(this);
 
 		///<summary>
-		/// Text: Enter the display text of the button.
+		/// Button text: Enter the display text of the button.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		[ImplementPropertyType("text")]
-		public virtual string Text => global::Umbraco.Web.PublishedModels.Button.GetText(this);
+		[ImplementPropertyType("buttonText")]
+		public virtual string ButtonText => global::Umbraco.Web.PublishedModels.Button.GetButtonText(this);
 	}
 }

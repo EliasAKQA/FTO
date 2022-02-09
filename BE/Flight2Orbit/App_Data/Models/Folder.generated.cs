@@ -19,29 +19,29 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Umbraco.Web.PublishedModels
 {
-    /// <summary>Folder</summary>
-    [PublishedModel("Folder")]
-    public partial class Folder : PublishedContentModel
-    {
-        // helpers
+	/// <summary>Folder</summary>
+	[PublishedModel("Folder")]
+	public partial class Folder : PublishedContentModel
+	{
+		// helpers
 #pragma warning disable 0109 // new is redundant
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-        public new const string ModelTypeAlias = "Folder";
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-        public new const PublishedItemType ModelItemType = PublishedItemType.Media;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-        public new static IPublishedContentType GetModelContentType()
-            => PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-        public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Folder, TValue>> selector)
-            => PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		public new const string ModelTypeAlias = "Folder";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Media;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Folder, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
-        // ctor
-        public Folder(IPublishedContent content)
-            : base(content)
-        { }
+		// ctor
+		public Folder(IPublishedContent content)
+			: base(content)
+		{ }
 
-        // properties
-    }
+		// properties
+	}
 }
