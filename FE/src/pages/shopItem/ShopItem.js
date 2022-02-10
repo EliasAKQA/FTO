@@ -3,7 +3,7 @@ import "./ShopItem.scss"
 import Rock from "../../components/shopItems/rock.png"
 import {Link} from "react-router-dom"
 
-const ShopItem = (props) => {
+const ShopItem = () => {
     return (
         <div className='shopDetailBox'>
             <Link className='backButton' to={'/shop'}><h3>&#60; Back</h3></Link>
@@ -13,7 +13,7 @@ const ShopItem = (props) => {
                 <img className='shopDetailRock' src={Rock} alt="rock"/>
             </div>
             <div>
-            <h2>{props.name}</h2>
+            <h2>meteorite</h2>
             <h2 className='shopDetailPrize'>30$</h2>
             <br/>
             <p>

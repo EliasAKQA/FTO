@@ -11,6 +11,7 @@
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+  gap: 1em;
 
   @include respond(desktop){
     justify-content: flex-start;
