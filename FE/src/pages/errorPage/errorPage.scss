@@ -1,13 +1,41 @@
+@import "../../sass/partials/abstracts/mixins";
+
 .errorPageHolder{
     text-align: center;
     padding-top: 10vh;
         .errorPageLogo{
-            width: 15%;
+            width: 50%;
+        }
+        h3{
+            font-size: 30px;
+        }
+        p{
+            font-size: 25px;
+            margin-top: 10px;
+        }
+        .btnText{
+            margin-top: 0px;
+        }
+}
+
+@include respond(desktop){
+    .errorPageHolder{
+        .errorPageLogo{
+            width: 25%;
         }
         h3{
             font-size: 40px;
         }
         p{
-            font-size: 25px;
+            font-size: 30px;
         }
+    }
+}
+
+@include respond(desktop--large){
+    .errorPageHolder{
+        .errorPageLogo{
+            width: 15%;
+        }
+    }
 }
