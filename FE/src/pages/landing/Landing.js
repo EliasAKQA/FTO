@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import landingRock from '../../assets/landingRock.svg';
 import astronaut from '../../assets/astronaut.png';
 import clock from '../../assets/clocks/clock.png';
-import {ReactComponent as ClockSvg} from '../../assets/clocks/Clockanm.svg';
-import {Link} from "react-router-dom";
+import { ReactComponent as ClockSvg } from '../../assets/clocks/Clockanm.svg';
+import { Link } from "react-router-dom";
 import './Landing.scss';
 import TimeForAction from "./TimeForAction";
+import axios from 'axios';
+import { Config } from "config";
 
-// const TimeForAction = React.lazy(() => import('./TimeForAction'));
-
-// window.addEventListener('DOMContentLoaded', init);
-
-// function init(){
-//     console.log(Clockanm.text());
-//     // fetch(clockanm).then(r=>r.text()).then(text=>document.querySelector('.clock_con').insertAdjacentHTML("afterbegin", text));
-// }
 const Landing = () => {
+    const [sections, setSections] = useState(null);
+
+    useEffect(() => {
+        axios.get(Config.UMBRACO_URL + "/home/gethomecontent").then((res) => {
+            console.log(res);
+            setSections(res.data.sections);
+        })
+    }, []);
+
+    if (!sections) return <h1>Loading...</h1>
     return (
         <div className={'landingpage main__container--fullwidth'}>
             <section className={'part1 main__container--lesswidth'}>
@@ -24,7 +28,7 @@ const Landing = () => {
                     <div className={'clockanm'}></div>
                     <p>From the outer reaches of the galaxy right back into your home - our limted edition meteorites
                         are literally one of a kind.</p>
-                    <img src={landingRock} alt='Rock' className={'rockImg'}/>
+                    <img src={landingRock} alt='Rock' className={'rockImg'} />
                     <Link to={'/shop'} className={'btn btn--primary'}>Shop now</Link>
                 </div>
             </section>
@@ -35,7 +39,7 @@ const Landing = () => {
                 <div className='landingWrapper main__container--lesswidth'>
                     <h1>Meet the team</h1>
                     <div className={'ast_con'}>
-                        <img src={astronaut} className={'astronaut'} alt={"astronaut"}/>
+                        <img src={astronaut} className={'astronaut'} alt={"astronaut"} />
                     </div>
                     <p>Who is currently up there?
                         Missions to the space station occure every six months where new crew members get on board. Check out who is in the station right now and find out more about them!
@@ -46,7 +50,7 @@ const Landing = () => {
             <section className={'part3 '}>
                 <div className='landingWrapper main__container--lesswidth'>
                     <div className={'clock_con'}>
-                        <ClockSvg/>
+                        <ClockSvg />
                         {/* <img src={clock} className={'clock'} alt={"clock"}/> */}
                     </div>
                     <h1>Time for action</h1>

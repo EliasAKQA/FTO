@@ -22,15 +22,15 @@
 
   & * {
     margin: .5em 0;
-  }
-
-  & img.rockImg {
+  } 
+  
+  & img.rockImg { 
     width: 80%;
     margin: 1em auto;
   }
 
   @include respond(desktop--large){
-    padding: 4em 0;
+    // padding: 4em 0;
     min-height: 70vh;
 
     & .landingWrapper {

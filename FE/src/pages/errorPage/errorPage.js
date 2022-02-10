@@ -7,11 +7,13 @@ const errorPage = () => {
   return (
       
     <div className='errorPageHolder'>
+        <div>
         <img className='errorPageLogo' src={Logo}/>
         <h3>Error, 404 Page not found</h3>
         <p>Woops! looks like this page doesn't exist</p>
         <br/>
-        <Link className='btn btn--primary' to={'/'}><p> Go to home</p></Link>
+        <Link className='btn btn--primary' to={'/'}><p className='btnText'> Go to home</p></Link>
+        </div>
         
     </div>
   )
