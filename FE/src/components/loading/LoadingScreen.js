@@ -5,10 +5,10 @@ import './loadingScreen.scss';
 const LoadingScreen = () => {
     return (
         <div className={"loading__container"}>
-            <img src={logo} alt={"loading icon"}/>
+            <img src={logo} alt={"loading icon"} />
             <h1>Loading</h1>
         </div>
     );
 };
- 
+
 export default LoadingScreen;
