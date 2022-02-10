@@ -37,9 +37,9 @@ const Landing = () => {
                     <div className={'ast_con'}>
                         <img src={astronaut} className={'astronaut'} alt={"astronaut"}/>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Justo at montes, faucibus bibendum odio
-                        orci cursus. At nulla elementum nisi bibendum. Eget nisl orci pellentesque aliquet urna, porta
-                        vitae aliquam. Morbi scelerisque varius malesuada donec. Ullamcorper id.</p>
+                    <p>Who is currently up there?
+                        Missions to the space station occure every six months where new crew members get on board. Check out who is in the station right now and find out more about them!
+                    </p>
                     <Link to={'/crew'} className={'btn btn--secondary'}>Meet the team</Link>
                 </div>
             </section>
@@ -52,9 +52,7 @@ const Landing = () => {
                     <h1>Time for action</h1>
 
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Convallis sit tortor egestas ultrices
-                        nunc vitae, quis aenean fermentum. Sit egestas tellus nunc nunc aenean nisi. Mattis morbi nibh
-                        et, non. </p>
+                    <p>Food and water are constantly used on the station, but there is only enough for a limited amount of time. Check out the food and water inventory on the station and help out in restocking! </p>
                     <Link to={'/inventory'} className={'btn btn--secondary'}>See inventory</Link>
                 </div>
             </section>

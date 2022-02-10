@@ -11,7 +11,7 @@ const CrewMember = (props) => {
                 <figure className='crew-member__image'>
                     <img src={CrewMemberImage} alt="Crew member name" />
                 </figure>
-                <div className='crew-member__text'>
+                <div className='crew-member__text main__container--lesswidth'>
                     <h1>{member}</h1>
                     <h2>Job title</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias voluptate repellendus iste in voluptatem accusantium illo, non at harum quasi, a sunt corporis debitis error, aut incidunt tempora molestias ratione.</p>
