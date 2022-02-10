@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using Flight2Orbit.Helpers;
 using Flight2Orbit.Models;
+using Flight2Orbit.Services;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Umbraco.Web;
@@ -16,24 +17,33 @@ namespace Flight2Orbit.Controller
 {
     public class ShopController : UmbracoApiController
     {
+        public UmbracoService service { get; set; }
+        public ShopController()
+        {
+            service = new UmbracoService(UmbracoContext);
+        }
+
+        // ENDPOINT EXAMPLE: http://localhost:54252/umbraco/api/shop/getshopcontent
         public IHttpActionResult GetShopContent()
         {
-            // Query Shop node from DB 
-            var shopNode = UmbracoContext.Content.GetByContentType(Shop.GetModelContentType())?.FirstOrDefault();
+            var shop = service.FetchNode<Shop>();
 
-            // Convert to Home.    
-            var shop = Converters.ConvertPublishedContent<Shop>(shopNode);
+            return Json(shop, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+        }
 
-            if (shop.ShopItems == null) return NotFound();
-            List<ShopItemDTO> shopItems = new List<ShopItemDTO>();
-            foreach (var itemPC in shop.ShopItems)
-            {
-                var shopItem = Converters.ConvertPublishedContent<ShopItem>(itemPC);
-                shopItems.Add(new ShopItemDTO(shopItem.Image.Url(), shopItem.Title, shopItem.Price, new ButtonDTO(shopItem.ButtonText, shopItem.ButtonLink)));
-            }
-
-            return Json(new ShopDTO(shop.Headline, shop.Description, shopItems), new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
-            //return Json(new HomeDTO(sections));
+        // ENDPOINT EXAMPLE: http://localhost:54252/umbraco/api/shop/getshopitemdetails?id=1073
+        public IHttpActionResult GetShopItemDetails(int id)
+        {
+            var shopitemPC = service.FetchNodeById(id);
+            var shopItem = Converters.ConvertPublishedContent<ShopItem>(shopitemPC);
+            var button = new ButtonDTO(shopItem.ButtonText, shopItem.ButtonLink);
+            var shopItemDTO = new ShopItemDTO(shopItem.Id, shopItem.Image.Url(), shopItem.Title, shopItem.Price, button);
+            var crewPC = shopItem.CrewMember.FirstOrDefault();
+            var crew = Converters.ConvertPublishedContent<CrewMember>(crewPC);
+            var crewMemberDTO = new CrewMemberDTO(crew.Id, crew.Name, crew.Role, crew.Description, crew.Image.Url(), crew.Autograph.Url());
+            var dimensionsDTO = new Dimensions(shopItem.Height, shopItem.Width, shopItem.Depth, shopItem.Weight);
+            var shopitemDetailsDTO = new ShopitemDetailsDTO(shopItemDTO, crewMemberDTO, dimensionsDTO);
+            return Json(shopitemDetailsDTO, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
         }
     }
 }

@@ -45,6 +45,27 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Crew member: Submit the crew member who found the rock.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("crewMember")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> CrewMember => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("crewMember");
+
+		///<summary>
+		/// Depth (cm): Submit the depth of the product.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("depth")]
+		public virtual decimal Depth => this.Value<decimal>("depth");
+
+		///<summary>
+		/// Height (cm): Submit the height of the product.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("height")]
+		public virtual decimal Height => this.Value<decimal>("height");
+
+		///<summary>
 		/// Image: Submit image of the shop item.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
@@ -64,6 +85,20 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
 		[ImplementPropertyType("title")]
 		public virtual string Title => this.Value<string>("title");
+
+		///<summary>
+		/// Weight (kg): Submit the weight of the product.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("weight")]
+		public virtual decimal Weight => this.Value<decimal>("weight");
+
+		///<summary>
+		/// Width (cm): Submit the width of the product.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("width")]
+		public virtual decimal Width => this.Value<decimal>("width");
 
 		///<summary>
 		/// Button link: Enter the path of the button. (eg. /home)
