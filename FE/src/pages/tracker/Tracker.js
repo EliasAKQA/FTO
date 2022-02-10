@@ -1,22 +1,32 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './Tracker.scss';
 import Map from "../../components/map/Map";
 import {Link} from 'react-router-dom';
 
+
+
 const Tracker = () => {
+    const [position, setPosition] = useState({lon:'loading', lan:'loading', timestamp:'loading'});
+    
+    const data_pull = (data) => {
+        setPosition({lon: data.lon,
+                    lan: data.lan,
+                    timestamp: Date(data.timestamp)})
+    }
+
     return (
         <div className={"main__container--lesswidth"}>
             <section className={"tracker__header"}>
                 <h1>Tracker</h1>
             </section>
             <section>
-                <Map/>
+                <Map func={data_pull}/>
             </section>
             <section>
                 <div className={"tracker__info"}>
                     <div>
                         <h3>Location</h3>
-                        <p>1352352.435345, 234112.34457</p>
+                        <p>{position.lon}, {position.lan}</p>
                     </div>
                     <div>
                         <h3>Speed</h3>
@@ -24,7 +34,7 @@ const Tracker = () => {
                     </div>
                     <div>
                         <h3>Timestamp</h3>
-                        <p>2022/02/02 11:44</p>
+                        <p>{position.timestamp}</p>
                     </div>
                 </div>
             </section>

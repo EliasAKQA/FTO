@@ -2,7 +2,7 @@ import * as React from "react";
 import {Wrapper} from "@googlemaps/react-wrapper";
 import MapDisplay from "./MapDisplay";
 
-const Map = () => {
+const Map = (props) => {
 
     const render = (status) => {
         return <h1>{status}</h1>;
@@ -10,7 +10,7 @@ const Map = () => {
 
     return <div>
         <Wrapper apiKey={"AIzaSyAJUPREgqqrQ7rD1F2knXBF74o2duPA2y4"} render={render}>
-            <MapDisplay/>
+            <MapDisplay func={props.func}/>
         </Wrapper>
     </div>
 };
