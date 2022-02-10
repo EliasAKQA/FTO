@@ -322,29 +322,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Data\Models\Button.generated.cs" />
-    <Compile Include="App_Data\Models\Crew.generated.cs" />
-    <Compile Include="App_Data\Models\CrewMember.generated.cs" />
-    <Compile Include="App_Data\Models\CrewMemberInfoSection.generated.cs" />
-    <Compile Include="App_Data\Models\File.generated.cs" />
-    <Compile Include="App_Data\Models\Folder.generated.cs" />
-    <Compile Include="App_Data\Models\Home.generated.cs" />
-    <Compile Include="App_Data\Models\Image.generated.cs" />
-    <Compile Include="App_Data\Models\Member.generated.cs" />
-    <Compile Include="App_Data\Models\Quiz.generated.cs" />
-    <Compile Include="App_Data\Models\QuizQuestion.generated.cs" />
-    <Compile Include="App_Data\Models\QuizTheme.generated.cs" />
-    <Compile Include="App_Data\Models\Section.generated.cs" />
-    <Compile Include="App_Data\Models\Shop.generated.cs" />
-    <Compile Include="App_Data\Models\ShopItem.generated.cs" />
-    <Compile Include="App_Data\Models\UmbracoMediaArticle.generated.cs" />
-    <Compile Include="App_Data\Models\UmbracoMediaAudio.generated.cs" />
-    <Compile Include="App_Data\Models\UmbracoMediaVectorGraphics.generated.cs" />
-    <Compile Include="App_Data\Models\UmbracoMediaVideo.generated.cs" />
     <Compile Include="Controller\CrewController.cs" />
     <Compile Include="Controller\HomeController.cs" />
     <Compile Include="Controller\ShopController.cs" />
     <Compile Include="Exceptions\InternalServerErrorException.cs" />
+    <Compile Include="Exceptions\NoSuchTypeException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Helpers\Converters.cs" />
     <Compile Include="Helpers\Helpers.cs" />
@@ -352,12 +334,15 @@
     <Compile Include="Models\CallToActionDTO.cs" />
     <Compile Include="Models\CrewDTO.cs" />
     <Compile Include="Models\CrewMemberDTO.cs" />
+    <Compile Include="Models\Dimensions.cs" />
     <Compile Include="Models\HomeDTO.cs" />
     <Compile Include="Models\Paragraph.cs" />
     <Compile Include="Models\SectionDTO.cs" />
     <Compile Include="Models\ShopDTO.cs" />
+    <Compile Include="Models\ShopitemDetailsDTO.cs" />
     <Compile Include="Models\ShopItemDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\UmbracoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="config\imageprocessor\security.config" />
@@ -390,6 +375,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Views\Shop\" />
   </ItemGroup>
   <PropertyGroup>

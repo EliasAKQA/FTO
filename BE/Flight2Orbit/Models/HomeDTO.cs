@@ -4,11 +4,13 @@ namespace Flight2Orbit.Models
 {
     public class HomeDTO
     {
+        public int Id { get; set; }
         public IEnumerable<SectionDTO> Sections { get; set; }
 
-        public HomeDTO(IEnumerable<SectionDTO> section)
+        public HomeDTO(int id, IEnumerable<SectionDTO> sections)
         {
-            Sections = section;
+            Id = id;
+            Sections = sections;
         }
     }
 }
