@@ -7,9 +7,8 @@ const Webshop = () => {
         <div className='main__container--lesswidth'>
             <h1 className='Webshoph1'>Shop</h1>
             <h2 className='Webshoph1'>MASTER OF ROCKS</h2>
-            <p className='WebshopText'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit eu orci orci nisl,
-                lectus sed. Tincidunt iaculis mi, id sed viverra neque, euismod nec. Enim urna cras suspendisse sed enim
-                eu volutpat.</p>
+            <p className='WebshopText'>The meteorites in our shop where discoverd by none other than out astronauts! Each meteorite is signed by the astronaut who fond it.
+            Buy a meteorite signed by your favorite astronaut and get it delivered to you all the eay from space!</p>
             <div className='shopItemsHolder'>
                 <ShopItem pic="rock-1" name="Meteorite" prize="30"/>
                 <ShopItem pic="rock-2" name="Meteorite" prize="30"/>
