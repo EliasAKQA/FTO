@@ -29,7 +29,7 @@ namespace Flight2Orbit.Controller
             if (crew.CrewMembers == null) return NotFound();
 
             // initialise list of crew members. 
-            List<CrewMemberDTO> crewMembers = new List<CrewMemberDTO>();
+            List<CrewMemberDTO> crewMembers = new List<CrewMemberDTO>(); 
 
             // for each crew member, add it to the list. 
             foreach (var crewPC in crew.CrewMembers)
