@@ -15,7 +15,7 @@ namespace Flight2Orbit.Controller
 {
     public class HomeController : UmbracoApiController
     {
-        public UmbracoService service { get; set; }
+        public UmbracoService service { get; set; } 
         public HomeController()
         {
             service = new UmbracoService(UmbracoContext);
