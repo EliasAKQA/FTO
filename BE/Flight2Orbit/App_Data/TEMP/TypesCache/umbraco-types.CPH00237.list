@@ -622,6 +622,7 @@ Umbraco.Core.Models.PublishedContent.PublishedContentModel
 Umbraco.Web.PublishedModels.Button, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Crew, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.CrewMember, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.PublishedModels.CrewMemberInfoSection, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.File, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Folder, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Home, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
