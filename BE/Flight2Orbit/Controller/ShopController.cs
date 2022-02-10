@@ -11,13 +11,13 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Umbraco.Web;
 using Umbraco.Web.PublishedModels;
-using Umbraco.Web.WebApi;
+using Umbraco.Web.WebApi; 
 
-namespace Flight2Orbit.Controller
-{
-    public class ShopController : UmbracoApiController
-    {
-        public UmbracoService service { get; set; }
+namespace Flight2Orbit.Controller 
+{  
+    public class ShopController : UmbracoApiController 
+    { 
+        public UmbracoService service { get; set; } 
         public ShopController()
         {
             service = new UmbracoService(UmbracoContext);
