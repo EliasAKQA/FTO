@@ -27,9 +27,9 @@
   & img.rockImg { 
     width: 80%;
     margin: 1em auto;
-  }
+  } 
 
-  @include respond(desktop--large){
+  @include respond(desktop--large){ 
     // padding: 4em 0;
     min-height: 70vh;
 

@@ -7,14 +7,14 @@ import { Link } from "react-router-dom";
 import './Landing.scss';
 import TimeForAction from "./TimeForAction";
 import axios from 'axios';
-import { Config } from "config";
 import Section from "./Section";
+import Url from 'config';
 
 const Landing = () => {
     const [sections, setSections] = useState(null);
 
     useEffect(() => {
-        axios.get(Config.UMBRACO_URL + "/home/gethomecontent").then((res) => {
+        axios.get(Url.UMBRACO_API + "/home/gethomecontent").then((res) => {
             console.log(res);
             setSections(res.data.sections);
         })

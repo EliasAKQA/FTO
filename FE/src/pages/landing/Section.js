@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Config } from 'config';
+import Url from 'config';
 import './Landing.scss';
 
 function Section(props) {
@@ -10,7 +10,7 @@ function Section(props) {
                 <div className="landingWrapper">
                     <h1>{props.header}</h1>
                     <p>{props.description}</p>
-                    <img src={Config.SERVER_URL + props.imageUrl} />
+                    <img src={Url.SERVER_URL + props.imageUrl} />
                     <Link className={"btn btn--primary"} to={props.button.url}>{props.button.content}</Link>
                 </div>
             </div>
