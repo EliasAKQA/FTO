@@ -20,9 +20,8 @@ namespace Flight2Orbit.Controller
         {
             // Query Shop node from DB 
             var shopNode = UmbracoContext.Content.GetByContentType(Shop.GetModelContentType())?.FirstOrDefault();
-            // if it's null, return http response with status code 404 
-            if (shopNode == null) return NotFound();
-            // Convert to Home.   
+
+            // Convert to Home.    
             var shop = Converters.ConvertPublishedContent<Shop>(shopNode);
 
             if (shop.ShopItems == null) return NotFound();
