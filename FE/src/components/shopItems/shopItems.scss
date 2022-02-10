@@ -9,6 +9,7 @@
     border: solid 2px var(--color-secondary);
     border-radius: 10px;
 
+
     @include respond(desktop){
         width: 200px;
     }

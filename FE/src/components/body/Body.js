@@ -9,6 +9,7 @@ import Landing from "../../pages/landing/Landing";
 import Tracker from "../../pages/tracker/Tracker";
 import Cart from '../../pages/cart/Cart';
 import ShopDetail from '../../pages/shopItem/ShopItem';
+import ErrorPage from "../../pages/errorPage/errorPage"
 
 const Body = () => {
     return (
@@ -23,6 +24,7 @@ const Body = () => {
                 <Route path={"/quiz/*"} element={<Quizes />} />
                 <Route path={"/cart"} element={<Cart />} />
                 <Route path={"/shop/*"} element={<ShopDetail />} />
+                <Route path={"*"} element={<ErrorPage />} />
             </Routes>
         </main>
     );
