@@ -15,9 +15,5 @@ namespace Flight2Orbit.Models
             Paragraphs = paragraphs;
             ButtonText = buttonText;
         }
-
-        public CallToActionDTO()
-        {
-        }
     }
 }

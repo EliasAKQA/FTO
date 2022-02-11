@@ -24,11 +24,10 @@ namespace Flight2Orbit.Controller
             service = new UmbracoService(UmbracoContext);
             Mapper = new Mapper();
         }
+
         public IHttpActionResult GetCrewContent()
         {
             var crew = service.FetchNode<Crew>(Crew.GetModelContentType());
-
-            // return as json with camelCase settings.  
             return Json(Mapper.Map(crew), new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
         }
     }
