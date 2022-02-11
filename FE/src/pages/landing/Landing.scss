@@ -62,6 +62,17 @@
       margin: 4em auto;
     }
   }
+  @include respond(tablet){
+    &--img{
+      width: 50%;
+    }
+
+    & .btn {
+      display: block;
+      max-width: 300px;
+      margin: auto;
+    }
+  }
 }
 
 // .mid {

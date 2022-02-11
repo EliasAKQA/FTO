@@ -6,7 +6,7 @@ import {Link} from "react-router-dom"
 const errorPage = () => {
   return (
       
-    <div className='errorPageHolder'>
+    <div className='errorPageHolder main__container--lesswidth'>
         <div>
         <img className='errorPageLogo' src={Logo}/>
         <h3>Error, 404 Page not found</h3>

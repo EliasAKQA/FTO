@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import Crew from '../../pages/crew/Crew';
 import CrewMember from "../../pages/crewMember/CrewMember";
 import Quizes from "../../pages/quizes/Quizes";
@@ -15,16 +15,16 @@ const Body = () => {
     return (
         <main>
             <Routes>
-                <Route exact path={"/"} element={<Landing />} />
-                <Route path={"/shop"} element={<Webshop />} />
-                <Route path={"/crew/*"} element={<Crew />} />
+                <Route exact path={"/"} element={<Landing/>}/>
+                <Route path={"/shop"} element={<Webshop/>}/>
+                <Route path={"/crew/*"} element={<Crew/>}/>
                 {/* <Route path={"/crew/*"} element={<CrewMember />} /> */}
-                <Route path={"/inventory"} element={<Inventory />} />
-                <Route path={"/tracker"} element={<Tracker />} />
-                <Route path={"/quiz/*"} element={<Quizes />} />
-                <Route path={"/cart"} element={<Cart />} />
-                <Route path={"/shop/*"} element={<ShopDetail />} />
-                <Route path={"*"} element={<ErrorPage />} />
+                <Route path={"/inventory"} element={<Inventory/>}/>
+                <Route path={"/tracker"} element={<Tracker/>}/>
+                <Route path={"/quiz/*"} element={<Quizes/>}/>
+                <Route path={"/cart"} element={<Cart/>}/>
+                <Route path={"/shop/*"} element={<ShopDetail/>}/>
+                <Route path={"*"} element={<ErrorPage/>}/>
             </Routes>
         </main>
     );

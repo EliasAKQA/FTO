@@ -24,11 +24,9 @@ const Crew = () => {
             <h1>{sections.headline}</h1>
             <h2>{sections.subHeadline}</h2>
             <p>{sections.description}</p>
-            <div className="card-container">
-                {sections.crewMembers.map((content) => {
-                    return <CrewCard name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} />
-                })}
-            </div>
+            {sections.crewMembers.map((content) => {
+                return <CrewCard name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} />
+            })}
         </div>
     );
 };
