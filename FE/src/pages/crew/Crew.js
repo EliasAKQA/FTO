@@ -14,14 +14,18 @@ const Crew = () => {
     useEffect(() => {
         axios.get(Url.UMBRACO_API + "/crew/getcrewcontent").then((res) => {
             console.log(res);
-            setSections(res.data.crewMembers);
+            setSections(res.data);
         })
     }, []);
 
     if (!sections) return <h1>Loading...</h1>
+
     return (
         <div>
-            {sections.map((content) => {
+            <h1>{sections.headline}</h1>
+            <h2>{sections.subHeadline}</h2>
+            <p>{sections.description}</p>
+            {sections.crewMembers.map((content) => {
                 return <Section name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} />
             })}
         </div>
