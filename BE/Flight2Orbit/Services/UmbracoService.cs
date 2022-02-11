@@ -19,32 +19,10 @@ namespace Flight2Orbit.Services
             this.ctx = ctx;
         }
 
-        public object FetchNode<T>()
+        public T FetchNode<T>(IPublishedContentType type)
         {
-            if (typeof(T) == typeof(Home)) return FetchHome();
-            if (typeof(T) == typeof(Shop)) return FetchShop();
-            //if (typeof(T) == typeof(Crew)) return FetchCrew();
-
-            //if (typeof(T) == typeof(Crew)) return FetchCrew<Home>();
-            throw new NoSuchTypeException("The specified type does not exist in the context.");
-        }
-
-        private object FetchHome()
-        {
-            var homeNode = ctx.Content.GetByContentType(Home.GetModelContentType())?.FirstOrDefault();
-
-            // Convert to Home.   
-            var home = Converters.ConvertPublishedContent<Home>(homeNode);
-
-            if (home.Sections == null) throw new NotFoundException("Home node was not found.");
-            var sections = new List<SectionDTO>();
-            foreach (var sectionPC in home.Sections)
-            {
-                var section = Converters.ConvertPublishedContent<Section>(sectionPC);
-                sections.Add(new SectionDTO(section.Header, section.Description, section.Image.Url(), new ButtonDTO(section.ButtonText, section.ButtonLink)));
-            }
-
-            return new HomeDTO(home.Id, sections);
+            var node = ctx.Content.GetByContentType(type)?.FirstOrDefault();
+            return Converters.ConvertPublishedContent<T>(node);
         }
 
         private object FetchShop()
@@ -71,32 +49,33 @@ namespace Flight2Orbit.Services
         //    // Query Crew node from DB    
         //    var crewNode = ctx.Content.GetByContentType(Crew.GetModelContentType())?.FirstOrDefault();
 
-            //    // Convert to Cew.    
-            //    var crew = Converters.ConvertPublishedContent<Crew>(crewNode);
+        //    // Convert to Cew.    
+        //    var crew = Converters.ConvertPublishedContent<Crew>(crewNode);
 
-            //    // Return 404 if there's no crew members.
-            //    if (crew.CrewMembers == null) throw new NotFoundException("Crew node was not found.");
+        //    // Return 404 if there's no crew members.
+        //    if (crew.CrewMembers == null) throw new NotFoundException("Crew node was not found.");
 
-            //    // initialise list of crew members.  
-            //    List<CrewMemberDTO> crewMembers = new List<CrewMemberDTO>();
+        //    // initialise list of crew members.  
+        //    List<CrewMemberDTO> crewMembers = new List<CrewMemberDTO>();
 
-            //    // for each crew member, add it to the list.   
-            //    foreach (var crewPC in crew.CrewMembers)
-            //    {
-            //        var crewMember = Converters.ConvertPublishedContent<CrewMember>(crewPC);
-            //        crewMembers.Add(new CrewMemberDTO(crewMember.Id, crewMember.CrewName, crewMember.Role, crewMember.Description, crewMember.Image.Url(), crewMember.Autograph.Url()));
-            //    }
+        //    // for each crew member, add it to the list.   
+        //    foreach (var crewPC in crew.CrewMembers)
+        //    {
+        //        var crewMember = Converters.ConvertPublishedContent<CrewMember>(crewPC);
+        //        crewMembers.Add(new CrewMemberDTO(crewMember.Id, crewMember.CrewName, crewMember.Role, crewMember.Description, crewMember.Image.Url(), crewMember.Autograph.Url()));
+        //    }
 
-            //    // initialise list of paragraphs regarding the call to action
-            //    List<Paragraph> paragraphs = new List<Paragraph>() { new Paragraph(crew.Paragraph1), new Paragraph(crew.Paragraph2Optional) };
+        //    // initialise list of paragraphs regarding the call to action
+        //    List<Paragraph> paragraphs = new List<Paragraph>() { new Paragraph(crew.Paragraph1), new Paragraph(crew.Paragraph2Optional) };
 
-            //    // return as json with camelCase settings.  
-            //    return new CrewDTO(crew.Id, crew.Headline, crew.SubHeadline, crew.Description, crewMembers,
-            //        new CallToActionDTO(crew.CtoHeadline, paragraphs, crew.ButtonText));
-            //}
+        //    // return as json with camelCase settings.  
+        //    return new CrewDTO(crew.Id, crew.Headline, crew.SubHeadline, crew.Description, crewMembers,
+        //        new CallToActionDTO(crew.CtoHeadline, paragraphs, crew.ButtonText));
+        //}
 
-            public IPublishedContent FetchNodeById(int id)
-            {
-                return ctx.Content.GetById(id);
-            }
-        } }
+        public IPublishedContent FetchNodeById(int id)
+        {
+            return ctx.Content.GetById(id);
+        }
+    }
+}

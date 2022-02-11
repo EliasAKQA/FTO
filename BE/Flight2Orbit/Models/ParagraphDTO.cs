@@ -1,10 +1,10 @@
 ﻿namespace Flight2Orbit.Models
 {
-    public class Paragraph
+    public class ParagraphDTO
     {
         public string Text { get; set; }
 
-        public Paragraph(string text)
+        public ParagraphDTO(string text)
         {
             Text = text;
         }

@@ -15,16 +15,18 @@ namespace Flight2Orbit.Controller
 {
     public class HomeController : UmbracoApiController
     {
-        public UmbracoService service { get; set; } 
+        public UmbracoService Service { get; set; }
+        public new Mapper Mapper { get; set; }
         public HomeController()
         {
-            service = new UmbracoService(UmbracoContext);
+            Service = new UmbracoService(UmbracoContext);
+            Mapper = new Mapper();
         }
-        //localhost:{port}/umbraco/api/home/gethomecontent
+        //localhost:{port}/umbraco/api/home/gethomecontent 
         public IHttpActionResult GetHomeContent()
         {
-            var home = service.FetchNode<Home>();
-            return Json(home, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+            var home = Service.FetchNode<Home>(Home.GetModelContentType());
+            return Json(Mapper.Map(home), new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
         }
     }
 }
