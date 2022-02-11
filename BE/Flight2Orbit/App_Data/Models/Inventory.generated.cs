@@ -43,5 +43,75 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Call to action: Add a call to action.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("callToAction")]
+		public virtual global::Umbraco.Core.Models.PublishedContent.IPublishedContent CallToAction => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("callToAction");
+
+		///<summary>
+		/// Clock Headline: Enter the headline of the clock.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("clockHeadline")]
+		public virtual string ClockHeadline => this.Value<string>("clockHeadline");
+
+		///<summary>
+		/// Colour: Enter the colour of the clock.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("colour")]
+		public virtual object Colour => this.Value("colour");
+
+		///<summary>
+		/// Description: Enter the description of the page.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("description")]
+		public virtual string Description => this.Value<string>("description");
+
+		///<summary>
+		/// Headline: Enter the headline of the page.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("headline")]
+		public virtual string Headline => this.Value<string>("headline");
+
+		///<summary>
+		/// Hour: Enter the text representing hours,
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("hour")]
+		public virtual string Hour => this.Value<string>("hour");
+
+		///<summary>
+		/// Minutes: Enter the text representing minutes.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("minutes")]
+		public virtual string Minutes => this.Value<string>("minutes");
+
+		///<summary>
+		/// Resources: Add resource.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("resources")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> Resources => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("resources");
+
+		///<summary>
+		/// Seconds: Enter the text representing seconds.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("seconds")]
+		public virtual string Seconds => this.Value<string>("seconds");
+
+		///<summary>
+		/// Sub headline (Optional): Enter the sub headline of the page.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("subHeadlineOptional")]
+		public virtual string SubHeadlineOptional => this.Value<string>("subHeadlineOptional");
 	}
 }

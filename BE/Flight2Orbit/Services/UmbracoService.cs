@@ -14,7 +14,7 @@ namespace Flight2Orbit.Services
     {
         public UmbracoContext ctx { get; set; }
 
-        public UmbracoService(UmbracoContext ctx) 
+        public UmbracoService(UmbracoContext ctx)
         {
             this.ctx = ctx;
         }
@@ -80,7 +80,7 @@ namespace Flight2Orbit.Services
             // initialise list of crew members.  
             List<CrewMemberDTO> crewMembers = new List<CrewMemberDTO>();
 
-            // for each crew member, add it to the list.  
+            // for each crew member, add it to the list.   
             foreach (var crewPC in crew.CrewMembers)
             {
                 var crewMember = Converters.ConvertPublishedContent<CrewMember>(crewPC);

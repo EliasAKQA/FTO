@@ -73,6 +73,13 @@ namespace Umbraco.Web.PublishedModels
 		public virtual string Answer3 => this.Value<string>("answer3");
 
 		///<summary>
+		/// Answers: Add answers to this quiz question. (Maximum of 4)
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("answers")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> Answers => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("answers");
+
+		///<summary>
 		/// Question: Enter the quiz question
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]

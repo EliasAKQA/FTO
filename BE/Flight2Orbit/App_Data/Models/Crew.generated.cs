@@ -45,11 +45,11 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Button text: Enter a text for the button.
+		/// Call to action: Add a call to action.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		[ImplementPropertyType("buttonText")]
-		public virtual string ButtonText => this.Value<string>("buttonText");
+		[ImplementPropertyType("callToAction")]
+		public virtual global::Umbraco.Core.Models.PublishedContent.IPublishedContent CallToAction => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("callToAction");
 
 		///<summary>
 		/// Crew members: Add crew members.
@@ -57,13 +57,6 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
 		[ImplementPropertyType("crewMembers")]
 		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> CrewMembers => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("crewMembers");
-
-		///<summary>
-		/// Headline: Enter a headline.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		[ImplementPropertyType("CtoHeadline")]
-		public virtual string CtoHeadline => this.Value<string>("CtoHeadline");
 
 		///<summary>
 		/// Description: Enter a description of the crew page.
@@ -78,20 +71,6 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
 		[ImplementPropertyType("headline")]
 		public virtual string Headline => this.Value<string>("headline");
-
-		///<summary>
-		/// Paragraph 1: Enter the first paragraph
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		[ImplementPropertyType("paragraph1")]
-		public virtual string Paragraph1 => this.Value<string>("paragraph1");
-
-		///<summary>
-		/// Paragraph 2 (Optional): Enter the second paragraph
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		[ImplementPropertyType("paragraph2Optional")]
-		public virtual string Paragraph2Optional => this.Value<string>("paragraph2Optional");
 
 		///<summary>
 		/// Sub headline: Enter the sub headline of the crew page. (optional)
