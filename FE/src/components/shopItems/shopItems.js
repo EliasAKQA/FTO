@@ -15,7 +15,7 @@ const shopItems = (props) => {
                     </div>
                     <p className='shopItemName'>{props.name}</p>
                     <p className='shopItemPrize'>{props.price}$</p>
-                    <button className='btn btn--primary ShopItemsbutton'>BUY</button>
+                    <button className='btn btn--primary ShopItemsbutton'>{props.button}</button>
                     <div className='shopItemdark'></div>
                 </div>
             </Link>
