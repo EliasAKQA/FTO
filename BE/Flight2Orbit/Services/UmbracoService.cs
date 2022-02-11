@@ -14,7 +14,7 @@ namespace Flight2Orbit.Services
     {
         public UmbracoContext ctx { get; set; }
 
-        public UmbracoService(UmbracoContext ctx)
+        public UmbracoService(UmbracoContext ctx) 
         {
             this.ctx = ctx;
         }

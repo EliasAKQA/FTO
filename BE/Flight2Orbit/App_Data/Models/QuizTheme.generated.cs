@@ -59,6 +59,13 @@ namespace Umbraco.Web.PublishedModels
 		public virtual string ImgAltTag => this.Value<string>("imgAltTag");
 
 		///<summary>
+		/// Questions: Add questions to the theme.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("questions")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> Questions => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("questions");
+
+		///<summary>
 		/// Title: Theme title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]

@@ -56,7 +56,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
 		[ImplementPropertyType("colour")]
-		public virtual string Colour => this.Value<string>("colour");
+		public virtual object Colour => this.Value("colour");
 
 		///<summary>
 		/// Description: Enter the description of the page.
@@ -85,6 +85,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
 		[ImplementPropertyType("minutes")]
 		public virtual string Minutes => this.Value<string>("minutes");
+
+		///<summary>
+		/// Resources: Add resource.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("resources")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> Resources => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("resources");
 
 		///<summary>
 		/// Seconds: Enter the text representing seconds.
