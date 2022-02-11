@@ -45,6 +45,13 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Call to action: Add a call to action.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("callToAction")]
+		public virtual global::Umbraco.Core.Models.PublishedContent.IPublishedContent CallToAction => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("callToAction");
+
+		///<summary>
 		/// Clock Headline: Enter the headline of the clock.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]

@@ -22,7 +22,7 @@ const Crew = () => {
     return (
         <div>
             {sections.map((content) => {
-                return <Section name={content.name} />
+                return <Section name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} />
             })}
         </div>
     );

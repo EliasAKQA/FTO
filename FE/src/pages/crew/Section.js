@@ -6,6 +6,8 @@ function Section(props) {
     return (
         <section>
             <h1>{props.name}</h1>
+            <p>{props.role}</p>
+            <div><img src={Url.SERVER_URL + props.profileImageUrl} alt="" /></div>
         </section>
     );
 }
