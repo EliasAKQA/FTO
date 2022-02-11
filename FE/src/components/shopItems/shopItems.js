@@ -11,10 +11,10 @@ const shopItems = (props) => {
                 <div className='shopItemHolder' >
                     <div className='shopItemIMG'>
                         <div className='shopItemCircle'></div>
-                        <img src={Url.SERVER_URL + props.pic} alt="Crew member name" />
+                        <img src={Url.SERVER_URL + props.image} alt={props.image} />
                     </div>
                     <p className='shopItemName'>{props.name}</p>
-                    <p className='shopItemPrize'>{props.prize}$</p>
+                    <p className='shopItemPrize'>{props.price}$</p>
                     <button className='btn btn--primary ShopItemsbutton'>BUY</button>
                     <div className='shopItemdark'></div>
                 </div>

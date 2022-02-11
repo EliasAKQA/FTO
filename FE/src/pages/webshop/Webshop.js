@@ -23,7 +23,7 @@ const Webshop = () => {
             <p>{sections.description}</p>
             <div className='shopItemsHolder'>
                 {sections.shopItems.map((content) => {
-                    return < ShopItemComponent name={content.title} prize={content.price} pic={content.imageUrl} />
+                    return < ShopItemComponent name={content.title} price={content.price} image={content.imageUrl} />
                 })}
             </div>
         </div>
