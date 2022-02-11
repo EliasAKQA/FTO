@@ -20,13 +20,15 @@ const Crew = () => {
     if (!sections) return <h1>Loading...</h1>
 
     return (
-        <div>
+        <div className='main__container--fullwidth'>
             <h1>{sections.headline}</h1>
             <h2>{sections.subHeadline}</h2>
             <p>{sections.description}</p>
-            {sections.crewMembers.map((content) => {
-                return <CrewCard name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} />
-            })}
+            <div className="card-container">
+                {sections.crewMembers.map((content) => {
+                    return <CrewCard name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} />
+                })}
+            </div>
         </div>
     );
 };
