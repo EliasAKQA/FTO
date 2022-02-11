@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from "react-router-dom";
-import Crew from '../../pages/crew/Crew';
+import Crew from '../../pages/crew/Crew-og';
 import CrewMember from "../../pages/crewMember/CrewMember";
 import Quizes from "../../pages/quizes/Quizes";
 import Webshop from 'pages/webshop/Webshop';
