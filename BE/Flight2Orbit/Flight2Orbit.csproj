@@ -324,6 +324,7 @@
   <ItemGroup>
     <Compile Include="App_Data\Models\Answer.generated.cs" />
     <Compile Include="App_Data\Models\Button.generated.cs" />
+    <Compile Include="App_Data\Models\CallToAction.generated.cs" />
     <Compile Include="App_Data\Models\Crew.generated.cs" />
     <Compile Include="App_Data\Models\CrewMember.generated.cs" />
     <Compile Include="App_Data\Models\CrewMemberInfoSection.generated.cs" />
@@ -333,6 +334,7 @@
     <Compile Include="App_Data\Models\Image.generated.cs" />
     <Compile Include="App_Data\Models\Inventory.generated.cs" />
     <Compile Include="App_Data\Models\Member.generated.cs" />
+    <Compile Include="App_Data\Models\Paragraph.generated.cs" />
     <Compile Include="App_Data\Models\Quiz.generated.cs" />
     <Compile Include="App_Data\Models\QuizQuestion.generated.cs" />
     <Compile Include="App_Data\Models\QuizTheme.generated.cs" />
