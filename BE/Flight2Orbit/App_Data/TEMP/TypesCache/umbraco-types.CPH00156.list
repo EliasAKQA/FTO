@@ -621,15 +621,21 @@ Umbraco.Core.Models.PublishedContent.PublishedContentModel
 
 Umbraco.Web.PublishedModels.Answer, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Button, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.PublishedModels.CallToAction, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Crew, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.CrewMember, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.CrewMemberInfoSection, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.File, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Folder, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.PublishedModels.Header, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Home, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Image, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Inventory, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Member, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.PublishedModels.Menu, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.PublishedModels.MenuItem, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.PublishedModels.MetaData, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.PublishedModels.Paragraph, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Quiz, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.QuizQuestion, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.QuizTheme, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -637,8 +643,12 @@ Umbraco.Web.PublishedModels.Resource, Flight2Orbit, Version=0.0.0.0, Culture=neu
 Umbraco.Web.PublishedModels.Section, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Shop, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.ShopItem, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.PublishedModels.Tracker, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.UmbracoMediaArticle, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.UmbracoMediaAudio, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.UmbracoMediaVectorGraphics, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.UmbracoMediaVideo, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+
+Umbraco.Core.Deploy.IServiceConnector
+
 
