@@ -59,6 +59,13 @@ namespace Umbraco.Web.PublishedModels
 		public virtual string LogoText => this.Value<string>("logoText");
 
 		///<summary>
+		/// Menu: Add menu.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
+		[ImplementPropertyType("menu")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> Menu => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("menu");
+
+		///<summary>
 		/// Menu icon (close): Submit the icon indicating it closes the menu.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]

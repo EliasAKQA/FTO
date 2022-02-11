@@ -5,7 +5,6 @@ import CrewMember from "../crewMember/CrewMember";
 import { Link } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import axios from 'axios';
-import Section from "./Section";
 import Url from 'config';
 
 const Crew = () => {
@@ -26,7 +25,7 @@ const Crew = () => {
             <h2>{sections.subHeadline}</h2>
             <p>{sections.description}</p>
             {sections.crewMembers.map((content) => {
-                return <Section name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} />
+                return <CrewCard name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} />
             })}
         </div>
     );
