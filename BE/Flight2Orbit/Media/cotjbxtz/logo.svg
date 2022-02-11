@@ -1,0 +1,22 @@
+<svg width="613" height="613" viewBox="0 0 613 613" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="306.5" cy="306.5" r="306.5" fill="url(#paint0_radial_108_508)"/>
+    <path d="M586 306.5C586 460.863 460.864 586 306.5 586C152.136 586 27 460.863 27 306.5C27 152.136 152.136 320 306.5 320C460.864 320 586 152.136 586 306.5Z"
+          fill="#024C8B"/>
+    <path d="M275 414C275 454.869 241.869 488 201 488C160.131 488 127 454.869 127 414C127 373.131 160.131 340 201 340C241.869 340 275 373.131 275 414Z"
+          fill="#0076DB"/>
+    <circle cx="201" cy="389" r="28" fill="#A6D6FF"/>
+    <circle cx="171.5" cy="379.5" r="18.5" fill="#DEF0FF"/>
+    <path d="M487 414C487 454.869 453.869 488 413 488C372.131 488 339 454.869 339 414C339 373.131 372.131 340 413 340C453.869 340 487 373.131 487 414Z"
+          fill="#0076DB"/>
+    <ellipse cx="413" cy="389" rx="28" ry="28" fill="#A6D6FF"/>
+    <ellipse cx="383.5" cy="379.5" rx="18.5" ry="18.5" fill="#DEF0FF"/>
+    <defs>
+        <radialGradient id="paint0_radial_108_508" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                        gradientTransform="translate(1024.5 11) rotate(-173.986) scale(882.859 1239.49)">
+            <stop offset="0.307039" stop-color="#BBBBBB"/>
+            <stop offset="0.9999" stop-color="white"/>
+            <stop offset="1" stop-color="white"/>
+        </radialGradient>
+    </defs>
+</svg>
+
