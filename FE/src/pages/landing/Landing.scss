@@ -19,17 +19,34 @@
 
 .part1 {
   text-align: center;
+  margin: auto;
+  width: 100%;
 
   & * {
-    margin: .5em 0;
+    margin: .5em auto;
   } 
   
-  & img.rockImg { 
+  &--img { 
     width: 80%;
     margin: 1em auto;
-  }
+    & img{
+      width: 100%;
+    }
+  } 
 
-  @include respond(desktop--large){
+  &::after{
+    display: block;
+    content: "";
+    background: url('../../assets/MaskGroup1.svg'), linear-gradient(0deg, #011b31, #012d5400 );
+    height: 10em;
+    background-size: cover;
+    width: 100%;
+    @include respond(desktop--large){
+      height: 250px;
+    }
+  }  
+
+  @include respond(desktop--large){ 
     // padding: 4em 0;
     min-height: 70vh;
 
@@ -40,24 +57,24 @@
       margin: auto;
     }
 
-    & img.rockImg {
+    &--img {
       max-width: 400px;
       margin: 4em auto;
     }
   }
 }
 
-.mid {
-  background: url('../../assets/MaskGroup1.svg'), linear-gradient(0deg, #011b31, #012d5400 );
-  height: 10em;
-  background-size: cover;
-  width: 100%;
-  // left: calc(-50vw + 50%);
+// .mid {
+//   background: url('../../assets/MaskGroup1.svg'), linear-gradient(0deg, #011b31, #012d5400 );
+//   height: 10em;
+//   background-size: cover;
+//   width: 100%;
+//   // left: calc(-50vw + 50%);
 
-  @include respond(desktop--large){
-    height: 250px;
-  }
-}
+//   @include respond(desktop--large){
+//     height: 250px;
+//   }
+// }
 
 .part2 {
   position: relative;
@@ -82,23 +99,27 @@
     margin-left: auto;
   }
 
-  & .ast_con {
+  &--img {
     min-height: 50px;
+    & img{
+      position: absolute;
+      max-width: 100%;
+      left: -140px;
+      top: -130px;
+      z-index: 2;
+      animation: floating 3s ease-in-out alternate infinite;
+    }
   }
-
-  & .astronaut {
-    position: absolute;
-    max-width: 100%;
-    left: -140px;
-    top: -130px;
-    z-index: 2;
-    animation: floating 3s ease-in-out alternate infinite;
-  }
-
   
   & .landingWrapper .btn--secondary {
     border: var(--border) var(--color-primary);
     color: var(--color-primary);
+    margin: 2em 0;
+  }
+  & .landingWrapper .btn--primary {
+    border: var(--border) var(--color-primary);
+    color: var(--color-primary);
+    background-color: var(--color-white);
     margin: 2em 0;
   }
   
@@ -111,11 +132,15 @@
       "ast btn";
     }
     
-    & .ast_con {
+    &--img {
       position: relative;
       // min-height: 100px;
       width: 100%;
       grid-area: ast;
+      & img {
+        left: 0;
+        top: -50px;
+      }
     }
     
     & h1 {
@@ -135,11 +160,11 @@
       grid-area: btn;
       max-width: 300px;
     }
-    
-    & .astronaut {
-      left: 0;
-      top: -50px;
+    & .btn--primary {
+      grid-area: btn;
+      max-width: 300px;
     }
+    
   }
 
   @include respond(desktop--large){
@@ -152,7 +177,7 @@
       margin: auto;
     }
 
-    & .astronaut {
+    &--img img {
       top: -40px;
       left: 40px;
     }
@@ -171,20 +196,20 @@
   overflow-y: visible;
   overflow-x: clip;
 
-  & .clock_con {
+  &--img {
     min-height: 10px;
     width: 50%;
+    & img {
+      position: absolute;
+      top: -7.5em;
+      right: -7em;
+      // left: 10em;
+      z-index: 100;
+      width: 70%;
+      max-width: 300px;
+    }
   }
 
-  & .clock {
-    position: absolute;
-    top: -7.5em;
-    right: -7em;
-    // left: 10em;
-    z-index: 100;
-    width: 70%;
-    max-width: 300px;
-  }
 
   //& .clock {
   //  position: absolute;
@@ -204,6 +229,12 @@
   & .landingWrapper .btn--secondary {
     border: var(--border) var(--color-white);
     color: var(--color-white);
+    margin: 2em 0;
+  }
+  & .landingWrapper .btn--primary {
+    border: var(--border) var(--color-white);
+    color: var(--color-white);
+    background-color: var(--color-secondary);
     margin: 2em 0;
   }
 
@@ -233,19 +264,23 @@
       grid-area: btn;
       max-width: 300px;
     }
+    & .btn--primary {
+      grid-area: btn;
+      max-width: 300px;
+    }
 
-    & .clock_con {
+    &--img {
       grid-area: clock;
       width: 100%;
       margin-bottom: 0;
+      & img {
+        position: static;
+        display: block;
+        width: 70%;
+        margin: auto;
+      }
     }
 
-    & .clock {
-      position: static;
-      display: block;
-      width: 70%;
-      margin: auto;
-    }
   }
 
   @include respond(desktop--large){
@@ -258,7 +293,7 @@
       margin: auto;
     }
 
-    & .clock {
+    &--img img {
       position: static;
       display: block;
       margin: auto;

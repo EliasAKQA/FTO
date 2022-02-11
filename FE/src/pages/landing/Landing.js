@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import landingRock from '../../assets/landingRock.svg';
-import astronaut from '../../assets/astronaut.png';
-import clock from '../../assets/clocks/clock.png';
-import { ReactComponent as ClockSvg } from '../../assets/clocks/Clockanm.svg';
-import { Link } from "react-router-dom";
+// import landingRock from '../../assets/landingRock.svg';
+// import astronaut from '../../assets/astronaut.png';
+// import clock from '../../assets/clocks/clock.png';
+// import { ReactComponent as ClockSvg } from '../../assets/clocks/Clockanm.svg';
+// import { Link } from "react-router-dom";
 import './Landing.scss';
-import TimeForAction from "./TimeForAction";
+// import TimeForAction from "./TimeForAction";
 import axios from 'axios';
-import { Config } from "config";
 import Section from "./Section";
+import Url from 'config';
 
 const Landing = () => {
     const [sections, setSections] = useState(null);
 
     useEffect(() => {
-        axios.get(Config.UMBRACO_URL + "/home/gethomecontent").then((res) => {
+        axios.get(Url.UMBRACO_API + "/home/gethomecontent").then((res) => {
             console.log(res);
             setSections(res.data.sections);
         })
