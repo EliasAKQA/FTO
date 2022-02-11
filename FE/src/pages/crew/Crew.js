@@ -20,7 +20,7 @@ const Crew = () => {
     if (!sections) return <h1>Loading...</h1>
 
     return (
-        <div className='main__container--lesswidth'>
+        <div className='main__container--fullwidth'>
             <h1>{sections.headline}</h1>
             <h2>{sections.subHeadline}</h2>
             <p>{sections.description}</p>
