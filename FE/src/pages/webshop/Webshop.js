@@ -1,8 +1,6 @@
 import React from 'react';
 import ShopItemComponent from "../../components/shopItems/shopItems";
 import "./Webshop.scss"
-import ShopItem from "../shopItem/ShopItem";
-import {Route, Routes} from "react-router-dom";
 
 
 
