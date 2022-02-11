@@ -14,8 +14,6 @@ const Webshop = () => {
             <div className='shopItemsHolder'>
                 {/* <ShopItem pic="rock-1" name="Meteorite" prize="30"/>
                 <ShopItem pic="rock-2" name="Meteorite" prize="30"/> */}
-                        <ShopItemComponent pic="rock-1" name="Meteorite" prize="30"/>
-                        <ShopItemComponent pic="rock-2" name="Meteorite" prize="30"/>
 
                         <ShopItemComponent pic="rock-3" name="Meteorite" prize="30"/>
                         <ShopItemComponent pic="rock-4" name="Meteorite" prize="30"/>
@@ -29,7 +27,9 @@ const Webshop = () => {
                         <ShopItemComponent pic="rock-9" name="Meteorite" prize="30"/>
                         <ShopItemComponent pic="rock-10" name="Meteorite" prize="30"/>
                         </div>
-                {/* <Route path={"/:shopItem"} element={<ShopItem/>}/> */}
+                        {/* <Routes>
+                <Route path={"/:shopItem"} element={<ShopItem />} />
+                        </Routes> */}
 
         </div>
     );

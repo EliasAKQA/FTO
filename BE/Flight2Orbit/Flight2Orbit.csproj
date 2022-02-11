@@ -322,6 +322,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Data\Models\Answer.generated.cs" />
     <Compile Include="App_Data\Models\Button.generated.cs" />
     <Compile Include="App_Data\Models\Crew.generated.cs" />
     <Compile Include="App_Data\Models\CrewMember.generated.cs" />
@@ -330,10 +331,12 @@
     <Compile Include="App_Data\Models\Folder.generated.cs" />
     <Compile Include="App_Data\Models\Home.generated.cs" />
     <Compile Include="App_Data\Models\Image.generated.cs" />
+    <Compile Include="App_Data\Models\Inventory.generated.cs" />
     <Compile Include="App_Data\Models\Member.generated.cs" />
     <Compile Include="App_Data\Models\Quiz.generated.cs" />
     <Compile Include="App_Data\Models\QuizQuestion.generated.cs" />
     <Compile Include="App_Data\Models\QuizTheme.generated.cs" />
+    <Compile Include="App_Data\Models\Resource.generated.cs" />
     <Compile Include="App_Data\Models\Section.generated.cs" />
     <Compile Include="App_Data\Models\Shop.generated.cs" />
     <Compile Include="App_Data\Models\ShopItem.generated.cs" />
