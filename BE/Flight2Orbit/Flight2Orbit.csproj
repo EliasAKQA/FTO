@@ -358,14 +358,14 @@
     <Compile Include="Exceptions\NoSuchTypeException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Helpers\Converters.cs" />
-    <Compile Include="Helpers\Helpers.cs" />
+    <Compile Include="Helpers\Mapper.cs" />
     <Compile Include="Models\ButtonDTO.cs" />
     <Compile Include="Models\CallToActionDTO.cs" />
     <Compile Include="Models\CrewDTO.cs" />
     <Compile Include="Models\CrewMemberDTO.cs" />
     <Compile Include="Models\Dimensions.cs" />
     <Compile Include="Models\HomeDTO.cs" />
-    <Compile Include="Models\Paragraph.cs" />
+    <Compile Include="Models\ParagraphDTO.cs" />
     <Compile Include="Models\SectionDTO.cs" />
     <Compile Include="Models\ShopDTO.cs" />
     <Compile Include="Models\ShopitemDetailsDTO.cs" />

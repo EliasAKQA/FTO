@@ -21,5 +21,13 @@ namespace Flight2Orbit.Models
             CrewMembers = crewMembers;
             CallToAction = callToAction;
         }
+        public CrewDTO(int id, string headline, string subHeadline, string description, IEnumerable<CrewMemberDTO> crewMembers)
+        {
+            ID = id;
+            Headline = headline;
+            SubHeadline = subHeadline;
+            Description = description;
+            CrewMembers = crewMembers;
+        }
     }
 }

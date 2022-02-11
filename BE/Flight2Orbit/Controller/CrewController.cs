@@ -18,16 +18,17 @@ namespace Flight2Orbit.Controller
     public class CrewController : UmbracoApiController
     {
         public UmbracoService service { get; set; }
+        public new Mapper Mapper { get; set; }
         public CrewController()
         {
             service = new UmbracoService(UmbracoContext);
+            Mapper = new Mapper();
         }
+
         public IHttpActionResult GetCrewContent()
         {
-            var crew = service.FetchNode<Crew>();
-
-            // return as json with camelCase settings.  
-            return Json(crew, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+            var crew = service.FetchNode<Crew>(Crew.GetModelContentType());
+            return Json(Mapper.Map(crew), new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
         }
     }
 }
