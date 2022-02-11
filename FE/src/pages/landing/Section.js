@@ -9,7 +9,6 @@ function Section(props) {
                 <div className="landingWrapper main__container--lesswidth">
                     <h1>{props.header}</h1>
                     <p>{props.description}</p>
-                    <img src={Url.SERVER_URL + props.imageUrl} />
                     <div className={`part${props.index}--img`}>
                         <img src={Url.SERVER_URL + props.imageUrl} />
                     </div>
