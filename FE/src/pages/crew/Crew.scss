@@ -26,7 +26,10 @@ h1 {
   & > * {
     scroll-snap-align: center;
   }
-
+  
+  @include respond(tablet) {    
+    grid-auto-columns: max-content;
+  }
   @include respond(desktop) {
     all: unset;
     max-width: 800px;
@@ -35,5 +38,14 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--gap);
+  }
+  @include respond(desktop--large) {
+    all: unset;
+    max-width: 1000px;
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0;
+    margin:auto;
   }
 }
