@@ -18,7 +18,7 @@ const Webshop = () => {
 
     if (!sections) return <h1>Loading...</h1>
     return (
-        <div>
+        <div className='main__container--lesswidth'>
             <h1>{sections.headline}</h1>
             <p>{sections.description}</p>
             <div className='shopItemsHolder'>
