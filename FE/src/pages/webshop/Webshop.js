@@ -1,8 +1,6 @@
 import React from 'react';
 import ShopItemComponent from "../../components/shopItems/shopItems";
 import "./Webshop.scss"
-import ShopItem from "../shopItem/ShopItem";
-import {Route, Routes} from "react-router-dom";
 
 
 
@@ -14,8 +12,10 @@ const Webshop = () => {
             <p className='WebshopText'>The meteorites in our shop where discoverd by none other than out astronauts! Each meteorite is signed by the astronaut who fond it.
             Buy a meteorite signed by your favorite astronaut and get it delivered to you all the eay from space!</p>
             <div className='shopItemsHolder'>
-                <ShopItem pic="rock-1" name="Meteorite" prize="30"/>
-                <ShopItem pic="rock-2" name="Meteorite" prize="30"/>
+                {/* <ShopItem pic="rock-1" name="Meteorite" prize="30"/>
+                <ShopItem pic="rock-2" name="Meteorite" prize="30"/> */}
+                        <ShopItemComponent pic="rock-1" name="Meteorite" prize="30"/>
+                        <ShopItemComponent pic="rock-2" name="Meteorite" prize="30"/>
 
                         <ShopItemComponent pic="rock-3" name="Meteorite" prize="30"/>
                         <ShopItemComponent pic="rock-4" name="Meteorite" prize="30"/>
@@ -29,7 +29,7 @@ const Webshop = () => {
                         <ShopItemComponent pic="rock-9" name="Meteorite" prize="30"/>
                         <ShopItemComponent pic="rock-10" name="Meteorite" prize="30"/>
                         </div>
-                <Route path={"/:shopItem"} element={<ShopItem/>}/>
+                {/* <Route path={"/:shopItem"} element={<ShopItem/>}/> */}
 
         </div>
     );

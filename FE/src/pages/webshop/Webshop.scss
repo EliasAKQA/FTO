@@ -14,8 +14,7 @@
   gap: 1em;
 
   @include respond(desktop){
-    justify-content: flex-start;
-    padding: 0 10px;
+    justify-content:flex-start ; 
   }
 }
 
