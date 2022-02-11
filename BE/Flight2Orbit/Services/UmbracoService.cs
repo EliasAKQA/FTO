@@ -66,10 +66,10 @@ namespace Flight2Orbit.Services
             return new ShopDTO(shop.Id, shop.Headline, shop.Description, shopItems);
         }
 
-        //private object FetchCrew() 
-        //{
-        //    // Query Crew node from DB    
-        //    var crewNode = ctx.Content.GetByContentType(Crew.GetModelContentType())?.FirstOrDefault();
+        private object FetchCrew()
+        {
+            // Query Crew node from DB    
+            var crewNode = ctx.Content.GetByContentType(Crew.GetModelContentType())?.FirstOrDefault();
 
         //    // Convert to Cew.    
         //    var crew = Converters.ConvertPublishedContent<Crew>(crewNode);
