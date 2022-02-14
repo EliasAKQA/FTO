@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Flight2Orbit.Exceptions;
 using Flight2Orbit.Models;
+using Flight2Orbit.Models.Quiz;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.Web.PublishedModels;
@@ -66,8 +67,41 @@ namespace Flight2Orbit.Helpers
                 var shopItem = Converters.ConvertPublishedContent<ShopItem>(itemPC);
                 shopItems.Add(new ShopItemDTO(shopItem.Id, shopItem.Image.Url(), shopItem.Title, shopItem.Price, new ButtonDTO(shopItem.ButtonText, shopItem.ButtonLink)));
             }
-
             return new ShopDTO(shop.Id, shop.Headline, shop.Description, shopItems);
+        }
+
+
+        public QuizDTO Map(Quiz quiz)
+        {
+            if (quiz.QuizTheme == null) throw new NotFoundException("Quiz must contain themes. ");
+            List<QuizThemesDTO> quizThemes = new List<QuizThemesDTO>();
+            foreach (var themePC in quiz.QuizTheme)
+            {
+                var theme = Converters.ConvertPublishedContent<QuizTheme>(themePC);
+                quizThemes.Add(new QuizThemesDTO(theme.Id, theme.Title, theme.Image.Url()));
+            }
+            return new QuizDTO(quiz.QuizHeader, quiz.Description, quizThemes);
+        }
+
+        public IEnumerable<QuestionDTO> Map(QuizTheme theme)
+        {
+            var list = new List<QuestionDTO>();
+            if (theme.Questions == null) return list;
+
+            foreach (var questionPC in theme.Questions)
+            {
+                var question = Converters.ConvertPublishedContent<QuizQuestion>(questionPC);
+                if (question.Answers == null) throw new NotFoundException("Question must contain answer options.");
+                var answers = new List<AnswerDTO>();
+                foreach (var answerPC in question.Answers)
+                {
+                    var ans = Converters.ConvertPublishedContent<Answer>(answerPC);
+                    answers.Add(new AnswerDTO(ans.QuizAnswer, ans.Correct));
+                }
+                list.Add(new QuestionDTO(question.Question, answers));
+            }
+
+            return list;
         }
 
     }

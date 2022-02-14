@@ -301,6 +301,7 @@ Umbraco.Web.Cache.TemplateCacheRefresher, Umbraco.Web, Version=8.0.0.0, Culture=
 Umbraco.Web.Cache.UserCacheRefresher, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Flight2Orbit.Controller.CrewController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Flight2Orbit.Controller.HomeController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Flight2Orbit.Controller.QuizController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Flight2Orbit.Controller.ShopController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.ModelsBuilder.Embedded.ModelsBuilderDashboard, Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.ModelsBuilder.Embedded.Compose.ModelsBuilderComposer, Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -463,6 +464,7 @@ Umbraco.Web.Editors.SectionController, Umbraco.Web, Version=8.0.0.0, Culture=neu
 Umbraco.Web.Editors.MediaController, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Flight2Orbit.Controller.CrewController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Flight2Orbit.Controller.HomeController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Flight2Orbit.Controller.QuizController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Flight2Orbit.Controller.ShopController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.ModelsBuilder.Embedded.BackOffice.ModelsBuilderDashboardController, Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 
@@ -648,4 +650,7 @@ Umbraco.Web.PublishedModels.UmbracoMediaArticle, Flight2Orbit, Version=0.0.0.0, 
 Umbraco.Web.PublishedModels.UmbracoMediaAudio, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.UmbracoMediaVectorGraphics, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.UmbracoMediaVideo, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+
+Umbraco.Core.Deploy.IServiceConnector
+
 
