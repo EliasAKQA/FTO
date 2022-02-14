@@ -24,6 +24,7 @@ const ShopItem = () => {
                 euismod purus quis.
             </p>
             <br/>
+            {/* Maybe put in form?? ↓ ↓ ↓*/}
             <button className='btn btn--primary'>Add to cart</button>
             </div>
         </div>
