@@ -78,12 +78,6 @@ namespace Flight2Orbit.Services
             return ctx.Content.GetById(id);
         }
 
-        }
-
-        public IPublishedContent FetchNodeById(int id)
-        {
-            return ctx.Content.GetById(id);
-        }
-
+    }
     
 }
