@@ -9,23 +9,24 @@ const ShopItem = () => {
     const [item, setItem] = useState(null);
 
     useEffect(() => {
-        axios.get(Url.UMBRACO_API + "/shop/getshopitemdetails/?id=1073").then((res) => {
+        axios.get(Url.UMBRACO_API + "/shop/getshopitemdetails/?id=" + id).then((res) => {
             console.log(res);
             setItem(res.data);
         });
     }, []);
 
+    if (!item) return <h1>Loadingggggg....</h1>
     return (
         <div className='shopDetailBox'>
             <Link className='backButton' to={'/shop'}><h3>&#60; Back</h3></Link>
             <div className='shopDetailIMG'>
                 <div className='shopDetailBackground'></div>
                 <div className='shopDetailCircle'></div>
-                <img className='shopDetailRock' src={Url.SERVER_URL + id} alt="rock" />
+                <img className='shopDetailRock' src={Url.SERVER_URL + item.overview.imageUrl} alt="rock" />
             </div>
             <div>
                 <h2>{item.overview.title}</h2>
-                <h2 className='shopDetailPrize'>30$</h2>
+                <h2 className='shopDetailPrize'>${item.overview.price}</h2>
                 <br />
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae vitae mauris enim, commodo magna ultrices

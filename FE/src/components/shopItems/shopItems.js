@@ -6,7 +6,7 @@ import Url from 'config';
 const shopItems = (props) => {
     return (
         <div>
-            <Link to={'/shop/' + props.name}>
+            <Link to={'/shop/' + props.id}>
                 <div className='shopItemHolder' >
                     <div className='shopItemIMG'>
                         <div className='shopItemCircle'></div>
