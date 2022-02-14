@@ -47,6 +47,11 @@ const ShopItem = () => {
                     </div>
                 </div>
                 <div className='shopDetail__container'>
+                    <h2>Description</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dignissimos dolore eius qui vel fugiat ipsa tenetur! Voluptatem delectus suscipit ad harum, fugit praesentium. Rerum optio cum nisi distinctio qui?</p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quibusdam fugiat amet quam sint iste distinctio cum animi totam aspernatur, repudiandae, a incidunt consectetur ut rerum corporis placeat voluptatibus doloremque!
+                </div>
+                <div className='shopDetail__container'>
                     <div className='shopDetail__img'>
                         <img src={Url.SERVER_URL + item.discoverer.profileImageUrl} alt="" />
                     </div>
