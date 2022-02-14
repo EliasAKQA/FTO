@@ -1,8 +1,19 @@
 @import "../../sass/partials/abstracts/mixins";
 
 .shopDetailBox{
-    max-width: 300px;
+    max-width: 500px;
     margin: 0 auto;
+    &__info {
+      background-color: red;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      text-align: left;
+    }
+    &__discoverer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 2px solid green;
+    }
 
     .shopDetailPrize{
         color: #00FF19;

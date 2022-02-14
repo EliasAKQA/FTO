@@ -20,23 +20,46 @@ const ShopItem = () => {
         <div className='shopDetailBox'>
             <Link className='backButton' to={'/shop'}><h3>&#60; Back</h3></Link>
             <div className='shopDetailIMG'>
-                <div className='shopDetailBackground'></div>
-                <div className='shopDetailCircle'></div>
                 <img className='shopDetailRock' src={Url.SERVER_URL + item.overview.imageUrl} alt="rock" />
             </div>
             <div>
-                <h2>{item.overview.title}</h2>
-                <h2 className='shopDetailPrize'>${item.overview.price}</h2>
-                <br />
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae vitae mauris enim, commodo magna ultrices
-                    lobortis. Porta viverra arcu turpis vel dignissim adipiscing. Ante cras sed vitae id at etiam in. In
-                    laoreet eros risus risus sit id molestie nunc imperdiet. Faucibus aliquam in faucibus orci, nullam orci
-                    tortor massa ultricies. Consectetur neque molestie facilisis suspendisse. Praesent orci quis adipiscing
-                    euismod purus quis.
-                </p>
-                <br />
-                <button className='btn btn--primary'>Add to cart</button>
+                <h1>{item.overview.title}</h1>
+                <div className='shopDetailBox__info'>
+                    <h2>Price</h2>
+                    <p>${item.overview.price}</p>
+                </div>
+                <div className="shopDetailBox__info">
+                    <h2>height</h2>
+                    <p>{item.dimensions.height}</p>
+                </div>
+                <div className="shopDetailBox__info">
+                    <h2>width</h2>
+                    <p>{item.dimensions.width}</p>
+                </div>
+                <div className="shopDetailBox__info">
+                    <h2>depth</h2>
+                    <p>{item.dimensions.depth}</p>
+                </div>
+                <div className="shopDetailBox__info">
+                    <h2>weight</h2>
+                    <p>{item.dimensions.weight}</p>
+                </div>
+                <div className='shopDetailBox__discoverer'>
+                    <div className='shopDetailIMG'>
+                        <img className='shopDetailRock' src={Url.SERVER_URL + item.discoverer.profileImageUrl} alt="" />
+                    </div>
+                    <div>
+                        <div className='shopDetailBox__info'>
+                            <h2>Discovered by</h2>
+                            <p>{item.discoverer.name}</p>
+                        </div>
+                        <div className="shopDetailBox__info">
+                            <h2>Role</h2>
+                            <p>{item.discoverer.role}</p>
+                        </div>
+                    </div>
+                </div>
+                <button className='btn btn--primary'>{item.overview.button.content}</button>
             </div>
         </div>
     );
