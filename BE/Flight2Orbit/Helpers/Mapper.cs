@@ -55,5 +55,21 @@ namespace Flight2Orbit.Helpers
             var ctoDTO = new CallToActionDTO(callToActionNode.Headline, paragraphs, callToActionNode.ButtonText);
             return new CrewDTO(node.Id, node.Headline, node.SubHeadline, node.Description, crewMembers, ctoDTO);
         }
+<<<<<<< HEAD
+=======
+
+        public ShopDTO Map(Shop shop)
+        {
+            if (shop.ShopItems == null) throw new NotFoundException("Shop node was not found.");
+            List<ShopItemDTO> shopItems = new List<ShopItemDTO>();
+            foreach (var itemPC in shop.ShopItems)
+            {
+                var shopItem = Converters.ConvertPublishedContent<ShopItem>(itemPC);
+                shopItems.Add(new ShopItemDTO(shopItem.Id, shopItem.Image.Url(), shopItem.Title, shopItem.Price, new ButtonDTO(shopItem.ButtonText, shopItem.ButtonLink)));
+            }
+
+            return new ShopDTO(shop.Id, shop.Headline, shop.Description, shopItems);
+        }
+>>>>>>> 53f7b6097f32d1db26068b734918ac280cc503d7
     }
 }

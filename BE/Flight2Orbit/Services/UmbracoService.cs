@@ -23,6 +23,7 @@ namespace Flight2Orbit.Services
         {
             var node = ctx.Content.GetByContentType(type)?.FirstOrDefault();
             return Converters.ConvertPublishedContent<T>(node);
+<<<<<<< HEAD
         }
 
         private object FetchShop()
@@ -77,5 +78,13 @@ namespace Flight2Orbit.Services
         {
             return ctx.Content.GetById(id);
         }
+=======
+        }
+
+        public IPublishedContent FetchNodeById(int id)
+        {
+            return ctx.Content.GetById(id);
+        }
+>>>>>>> 53f7b6097f32d1db26068b734918ac280cc503d7
     }
 }

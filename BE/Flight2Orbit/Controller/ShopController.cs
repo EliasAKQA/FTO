@@ -18,17 +18,26 @@ namespace Flight2Orbit.Controller
     public class ShopController : UmbracoApiController
     {
         public UmbracoService service { get; set; }
+<<<<<<< HEAD
+=======
+        public new Mapper Mapper { get; set; }
+>>>>>>> 53f7b6097f32d1db26068b734918ac280cc503d7
         public ShopController()
         {
             service = new UmbracoService(UmbracoContext);
+            Mapper = new Mapper();
         }
 
         // ENDPOINT EXAMPLE: http://localhost:54252/umbraco/api/shop/getshopcontent
         public IHttpActionResult GetShopContent()
         {
             var shop = service.FetchNode<Shop>(Shop.GetModelContentType());
+<<<<<<< HEAD
 
             return Json(shop, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+=======
+            return Json(Mapper.Map(shop), new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+>>>>>>> 53f7b6097f32d1db26068b734918ac280cc503d7
         }
 
         // ENDPOINT EXAMPLE: http://localhost:54252/umbraco/api/shop/getshopitemdetails?id=1073
