@@ -55,6 +55,8 @@ namespace Flight2Orbit.Helpers
             var ctoDTO = new CallToActionDTO(callToActionNode.Headline, paragraphs, callToActionNode.ButtonText);
             return new CrewDTO(node.Id, node.Headline, node.SubHeadline, node.Description, crewMembers, ctoDTO);
         }
+<<<<<<< HEAD
+=======
 
         public ShopDTO Map(Shop shop)
         {
@@ -68,5 +70,6 @@ namespace Flight2Orbit.Helpers
 
             return new ShopDTO(shop.Id, shop.Headline, shop.Description, shopItems);
         }
+>>>>>>> 53f7b6097f32d1db26068b734918ac280cc503d7
     }
 }
