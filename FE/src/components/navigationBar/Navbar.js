@@ -13,40 +13,10 @@ const navigationJson = [
     // {title:  <BsCart4/> , link: "/cart"}
 ];
 
-// const navigationJson = [
-//     {
-//         title: 'Game', link: '/games'
-//     },
-//     {
-//         title: 'Community', link: '/community', keyName: 'community', submenu: [
-//             {
-//                 title: 'Media', link: '/media', keyName: 'media2'
-//             },
-//             {
-//                 title: 'Gameplay', link: '/games', submenu: [{
-//                     title: 'Media', link: '/media', keyName: 'media2'
-//                 }, {
-//                     title: 'Classes', link: '/community', keyName: 'classes2'
-//                 },]
-//             },
-//             {
-//                 title: 'Classes', link: '/community', keyName: 'classes2'
-//             },
-//             {
-//                 title: 'Beta', link: '/beta'
-//             },
-//             {
-//                 title: 'Support', link: '/support'
-//             }
-//         ]
-//     },
-//     {
-//         title: 'About', link: '/about'
-//     },
-// ];
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
+    const [mobile, setMobile] = useState(true);
 
     useEffect(() => {
         if (open) {
@@ -54,7 +24,8 @@ const Navbar = () => {
             let nav = document.querySelector(".navbar");
             trapFocus(nav);
         }
-    });
+        setMobile(window.innerWidth > 800);
+    }, [mobile]);
 
 
     // Research better options:
@@ -97,7 +68,7 @@ const Navbar = () => {
 
     function createNavItems(item) {
         if (!item.submenu) {
-            return <li onClick={handleNavigationIcon}><Link to={item.link}>{item.title}</Link></li>
+            return <li onClick={mobile && handleNavigationIcon}><Link to={item.link}>{item.title}</Link></li>
         }
         return <li>
             <button aria-controls={item.title + "-submenu"} aria-expanded="false">{item.title}</button>
@@ -110,6 +81,7 @@ const Navbar = () => {
             </ul>
         </li>;
     }
+
     function createDeskNavItems(item) {
         if (!item.submenu) {
             return <li><Link to={item.link}>{item.title}</Link></li>
@@ -126,6 +98,16 @@ const Navbar = () => {
         </li>;
     }
 
+    /* if (mobile) return (
+         <div className={"desktopNav"}>
+             <ul>
+                 {navigationJson.map((item) => {
+                     return createNavItems(item);
+                 })}
+             </ul>
+         </div>
+     )*/
+
     return (
         <div className={"navbar"}>
             <nav className={'desktopNav'}>
@@ -135,18 +117,16 @@ const Navbar = () => {
                     })}
                 </ul>
             </nav>
-            <button tabIndex="0" onClick={handleNavigationIcon} style={{backgroundColor: 'transparent', border: 'none'}}>
-            <img 
-                 src={open === false ? "/assets/images/navigation/burgerbar.svg" : "/assets/images/navigation/close-burgerbar.svg"}
-                 alt={"burgerbar"}/></button>
+            <button tabIndex="0" onClick={handleNavigationIcon}
+                    style={{backgroundColor: 'transparent', border: 'none'}}>
+                <img
+                    src={open === false ? "/assets/images/navigation/burgerbar.svg" : "/assets/images/navigation/close-burgerbar.svg"}
+                    alt={"burgerbar"}/></button>
             {open &&
                 <nav className={"navbar--open"}>
                     <ul>
                         {navigationJson.map((item) => {
                             return createNavItems(item);
-                            // return <li key={item.title} onClick={handleNavigationIcon}><Link
-                            //     to={item.link}>{item.title}</Link>
-                            // </li>
                         })}
                     </ul>
                 </nav>

@@ -26,7 +26,6 @@ namespace Flight2Orbit.Services
         }
 
 
-
         public IPublishedContent FetchNodeById(int id)
         {
             return ctx.Content.GetById(id);

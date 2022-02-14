@@ -4,13 +4,14 @@
   display: flex;
   justify-content: flex-end;
   width: 100%;
+
   & img {
     //cursor: pointer;
     height: 2.5em;
   }
 
-  & button{
-    @include respond(desktop){
+  & button {
+    @include respond(desktop) {
       display: none;
     }
   }
@@ -57,14 +58,15 @@
   }
 }
 
-nav.desktopNav{
+nav.desktopNav {
   width: 100%;
   display: none;
-  @include respond(desktop){
-  display: block;
+  @include respond(desktop) {
+    display: block;
   }
 }
-nav.desktopNav ul{
+
+nav.desktopNav ul {
   font-weight: bold;
   display: flex;
   flex-direction: row;
@@ -72,19 +74,20 @@ nav.desktopNav ul{
 
 }
 
-nav.desktopNav li{
+nav.desktopNav li {
   width: 100%;
   margin: 1em .5em;
 }
-nav.desktopNav li a{
+
+nav.desktopNav li a {
   display: block;
   text-align: center;
   min-width: 80px;
-width: 100%;
-transition: all .3s ease-out;
+  width: 100%;
+  transition: all .3s ease-out;
 }
 
-nav.desktopNav li a::after{
+nav.desktopNav li a::after {
   content: "";
   display: block;
   background-color: #5A85AA;
@@ -95,18 +98,20 @@ nav.desktopNav li a::after{
   transition: all .2s ease-out;
 
 }
-nav.desktopNav li a:hover::after{
+
+nav.desktopNav li a:hover::after {
   background-color: var(--color-secondary);
   width: 100%;
 }
-nav.desktopNav li a:hover{
+
+nav.desktopNav li a:hover {
   transform: translateY(-5px);
 }
 
-@keyframes floatNav{
-to{
-  width: 100%;
-}
+@keyframes floatNav {
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes openNav {

@@ -1,7 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 using Flight2Orbit.Exceptions;
 using Flight2Orbit.Models;
+using Flight2Orbit.Models.Inventory;
 using Flight2Orbit.Models.Quiz;
+using Flight2Orbit.Models.Shared;
+using Microsoft.AspNet.SignalR.Hubs;
+using Umbraco.Core;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.Web.PublishedModels;
@@ -40,21 +46,30 @@ namespace Flight2Orbit.Helpers
                 crewMembers.Add(new CrewMemberDTO(crewMember.Id, crewMember.CrewName, crewMember.Role, crewMember.Description, crewMember.Image.Url(), crewMember.Autograph.Url()));
             }
 
+            // If call to action is null, return crew dto without a call to action.
             if (node.CallToAction == null)
                 return new CrewDTO(node.Id, node.Headline, node.SubHeadline, node.Description, crewMembers);
 
+            // Convert CTO
             var callToActionNode = Converters.ConvertPublishedContent<CallToAction>(node.CallToAction);
+            // Map cto to its representational class.
+            var ctoDTO = Map(callToActionNode);
 
-            if (callToActionNode.FeaturedParagraphs == null) throw new NotFoundException("Call to action node must contain paragraphs.");
+            return new CrewDTO(node.Id, node.Headline, node.SubHeadline, node.Description, crewMembers, ctoDTO);
+        }
+
+        public CallToActionDTO Map(CallToAction cto)
+        {
+
+            if (cto.FeaturedParagraphs == null) throw new NotFoundException("Call to action node must contain paragraphs.");
             var paragraphs = new List<ParagraphDTO>();
-            foreach (var paraPC in callToActionNode.FeaturedParagraphs)
+            foreach (var paraPC in cto.FeaturedParagraphs)
             {
                 var paragraph = Converters.ConvertPublishedContent<Paragraph>(paraPC);
                 paragraphs.Add(new ParagraphDTO(paragraph.Text));
             }
 
-            var ctoDTO = new CallToActionDTO(callToActionNode.Headline, paragraphs, callToActionNode.ButtonText);
-            return new CrewDTO(node.Id, node.Headline, node.SubHeadline, node.Description, crewMembers, ctoDTO);
+            return new CallToActionDTO(cto.Headline, paragraphs, cto.ButtonText);
         }
 
 
@@ -103,5 +118,78 @@ namespace Flight2Orbit.Helpers
             return list;
         }
 
+        public InventoryDTO Map(Inventory inventory)
+        {
+            // Map clock content to its representational class.
+            var clockDTO = new ClockDTO(inventory.ClockHeadline, inventory.Colour.ToString(), inventory.Hour, inventory.Minutes,
+                inventory.Seconds);
+
+            // If there's not resources, throw an error. Inventory without resources is not valid.
+            if (inventory.Resources == null) throw new NotFoundException("Inventory must contain resources.");
+
+            // Initialise and map a list of resources.
+            var resources = new List<ResourceDTO>();
+            foreach (var inventoryResourcePC in inventory.Resources)
+            {
+                var resource = Converters.ConvertPublishedContent<Resource>(inventoryResourcePC);
+                resources.Add(new ResourceDTO(resource.Title, resource.Colour.ToString()));
+            }
+
+            // If cto is null, return the DTO without a call to action.
+            if (inventory.CallToAction == null)
+                return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
+                    clockDTO, resources);
+
+            // Map call to action to its representational class.
+            var cto = Converters.ConvertPublishedContent<CallToAction>(inventory.CallToAction);
+            var ctoDTO = Map(cto);
+
+            return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
+                clockDTO, resources, ctoDTO);
+        }
+
+        public SharedDTO Map(Shared shared)
+        {
+            return new SharedDTO(shared.Favicon.Url(), shared.Title);
+        }
+
+        public HeaderDTO Map(Header header)
+        {
+            //return new HeaderDTO(header.LogoImage.Url());
+            if (header.Menu == null) throw new NotFoundException("Header must contain a navigation menu.");
+
+            //choose the first menu in the list of available menus.
+            var rootMenu = header.Menu.FirstOrDefault();
+
+            var menu = new List<MenuContainer>();
+            foreach (var item in rootMenu.Children)
+            {
+                menu.Add(MapMenu(item));
+                //var conv = item.TryConvertTo<MenuItem>();
+                //if (!conv.Success) throw new InternalServerErrorException("Conversion failed. Converting to menuItem.");
+                //var res = conv.Result;
+                //menu.Add(new MenuItemDTO(res.Text, res.Link));
+            }
+
+            return new HeaderDTO(header.LogoImage.Url(), header.LogoText, header.MenuIconOpen.Url(),
+                header.MenuIconClose.Url(), new MenuDTO(menu));
+        }
+
+        public MenuContainer MapMenu(IPublishedContent menu)
+        {
+            if (menu.TryConvertTo<MenuItem>().Success)
+            {
+                var convertedItem = Converters.ConvertPublishedContent<MenuItem>(menu);
+                return new MenuItemDTO(convertedItem.Text, convertedItem.Link);
+            }
+
+            var convertedMenu = Converters.ConvertPublishedContent<Menu>(menu);
+            var list = new List<MenuContainer>();
+            foreach (var convertedMenuItem in convertedMenu.MenuItems)
+            {
+                list.Add(MapMenu(convertedMenu));
+            }
+            return new MenuDTO(list);
+        }
     }
 }
