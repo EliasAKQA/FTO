@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
 import Cart from '../../assets/cart.svg';
 import "./navbar.scss";
-
+// import { BsCart4 } from "react-icons/bs"
 
 const navigationJson = [
     {title: "Home", link: "/"},
@@ -12,6 +12,7 @@ const navigationJson = [
     {title: "Quiz", link: "/quiz"},
     {title: "Tracker", link: "/tracker"},
     {title: "Cart", link: "/cart"},
+    // {title:  <BsCart4/> , link: "/cart"}
 ];
 
 
