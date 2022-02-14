@@ -1,6 +1,5 @@
 import React from 'react';
 import "./shopItems.scss";
-// import Rock from "./rock.png";
 import { Link } from "react-router-dom";
 import Url from 'config';
 
