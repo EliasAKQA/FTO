@@ -23,8 +23,8 @@ const Crew = () => {
         <div className='main__container--fullwidth'>
             <h1>{sections.headline}</h1>
             <section className='main__container--lesswidth crew-page'>
-                <h2 className='crew-page__title'>{sections.subHeadline}</h2>
-                <p>{sections.description}</p>
+            <h2 className='crew-page__title'>{sections.subHeadline}</h2>
+            <p>{sections.description}</p>
             </section>
             <div className="card-container">
                 {sections.crewMembers.map((content) => {
