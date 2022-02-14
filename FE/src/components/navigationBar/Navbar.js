@@ -3,20 +3,30 @@ import {Link} from "react-router-dom";
 import Cart from '../../assets/cart.svg';
 import "./navbar.scss";
 // import { BsCart4 } from "react-icons/bs"
+import axios from 'axios';
+import Url from 'config';
 
-const navigationJson = [
-    {title: "Home", link: "/"},
-    {title: "Shop", link: "/shop"},
-    {title: "Crew", link: "/crew"},
-    {title: "Inventory", link: "/inventory"},
-    {title: "Quiz", link: "/quiz"},
-    {title: "Tracker", link: "/tracker"},
-    {title: "Cart", link: "/cart"},
-    // {title:  <BsCart4/> , link: "/cart"}
-];
+// const navigationJson = [
+//     {title: "Home", link: "/"},
+//     {title: "Shop", link: "/shop"},
+//     {title: "Crew", link: "/crew"},
+//     {title: "Inventory", link: "/inventory"},
+//     {title: "Quiz", link: "/quiz"},
+//     {title: "Tracker", link: "/tracker"},
+//     {title: "Cart", link: "/cart"},
+//     // {title:  <BsCart4/> , link: "/cart"}
+// ];
 
 
 const Navbar = () => {
+    const [navs, setNavs] = useState(null);
+
+    useEffect(() => {
+        axios.get(Url.UMBRACO_API + "/shared/getheadercontent").then((res) => {
+            console.log(res.data.menu);
+            setNavs(res.data.menu.content);
+        })
+    }, []);
     const [open, setOpen] = useState(false);
     const [mobile, setMobile] = useState(true);
 
@@ -70,10 +80,10 @@ const Navbar = () => {
 
     function createNavItems(item) {
         if (!item.submenu) {
-            return <li onClick={mobile && handleNavigationIcon}><Link to={item.link}>{item.title}</Link></li>
+            return <li onClick={handleNavigationIcon} key={item.text}><Link to={item.link}>{item.text}</Link></li>
         }
         return <li>
-            <button aria-controls={item.title + "-submenu"} aria-expanded="false">{item.title}</button>
+            <button aria-controls={item.text + "-submenu"} aria-expanded="false">{item.text}</button>
             <ul id={item.title + "-submenu"} aria-hidden={"true"}>
                 {item.submenu.map((nextItem) => {
                     {
@@ -86,14 +96,15 @@ const Navbar = () => {
 
     function createDeskNavItems(item) {
         if (!item.submenu) {
-        if (item.title=="Cart") {
-            return <li><Link to={item.link} title="Shopping-Cart"><img src={Cart} className={'cartIcon'}></img></Link></li>
+        if (item.text=="Cart") {
+            return <li key={item.text}><Link to={item.link} title="Shopping-Cart"><img src={Cart} className={'cartIcon'}></img></Link></li>
         }
-        return <li><Link to={item.link}>{item.title}</Link></li>
+        console.log(item);
+        return <li key={item.text}><Link to={item.link}>{item.text}</Link></li>
         }
         return <li>
-            <button aria-controls={item.title + "-submenu"} aria-expanded="false">{item.title}</button>
-            <ul id={item.title + "-submenu"} aria-hidden={"true"}>
+            <button aria-controls={item.text + "-submenu"} aria-expanded="false">{item.text}</button>
+            <ul id={item.text + "-submenu"} aria-hidden={"true"}>
                 {item.submenu.map((nextItem) => {
                     {
                         return createDeskNavItems(nextItem);
@@ -112,12 +123,13 @@ const Navbar = () => {
              </ul>
          </div>
      )*/
+     if (!navs) return <h3>Loading...</h3>
 
     return (
         <div className={"navbar"}>
             <nav className={'desktopNav'}>
                 <ul>
-                    {navigationJson.map((item) => {
+                    {navs.map((item) => {
                         return createDeskNavItems(item);
                     })}
                 </ul>
@@ -130,7 +142,7 @@ const Navbar = () => {
             {open &&
                 <nav className={"navbar--open"}>
                     <ul>
-                        {navigationJson.map((item) => {
+                        {navs.map((item) => {
                             return createNavItems(item);
                         })}
                     </ul>
