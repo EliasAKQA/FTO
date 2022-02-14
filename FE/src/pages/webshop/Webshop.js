@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ShopItemComponent from "../../components/shopItems/shopItems";
 import "./Webshop.scss"
 import ShopItem from "../shopItem/ShopItem";
-import { Route, Routes } from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import axios from 'axios';
 import Url from 'config';
 

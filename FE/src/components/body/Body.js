@@ -9,7 +9,7 @@ import Landing from "../../pages/landing/Landing";
 import Tracker from "../../pages/tracker/Tracker";
 import Cart from '../../pages/cart/Cart';
 import ShopDetail from '../../pages/shopItem/ShopItem';
-import ErrorPage from "../../pages/errorPage/errorPage"
+import ErrorPage from "../../pages/errorPage/errorPage";
 
 const Body = () => {
     return (

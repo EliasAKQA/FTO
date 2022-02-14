@@ -1,51 +1,34 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
+import Cart from '../../assets/cart.svg';
 import "./navbar.scss";
-
-
-const navigationJson = [
-    {title: "Home", link: "/"},
-    {title: "Shop", link: "/shop"},
-    {title: "Crew", link: "/crew"},
-    {title: "Inventory", link: "/inventory"},
-    {title: "Quiz", link: "/quiz"},
-    {title: "Tracker", link: "/tracker"},
-];
+// import { BsCart4 } from "react-icons/bs"
+import axios from 'axios';
+import Url from 'config';
 
 // const navigationJson = [
-//     {
-//         title: 'Game', link: '/games'
-//     },
-//     {
-//         title: 'Community', link: '/community', keyName: 'community', submenu: [
-//             {
-//                 title: 'Media', link: '/media', keyName: 'media2'
-//             },
-//             {
-//                 title: 'Gameplay', link: '/games', submenu: [{
-//                     title: 'Media', link: '/media', keyName: 'media2'
-//                 }, {
-//                     title: 'Classes', link: '/community', keyName: 'classes2'
-//                 },]
-//             },
-//             {
-//                 title: 'Classes', link: '/community', keyName: 'classes2'
-//             },
-//             {
-//                 title: 'Beta', link: '/beta'
-//             },
-//             {
-//                 title: 'Support', link: '/support'
-//             }
-//         ]
-//     },
-//     {
-//         title: 'About', link: '/about'
-//     },
+//     {title: "Home", link: "/"},
+//     {title: "Shop", link: "/shop"},
+//     {title: "Crew", link: "/crew"},
+//     {title: "Inventory", link: "/inventory"},
+//     {title: "Quiz", link: "/quiz"},
+//     {title: "Tracker", link: "/tracker"},
+//     {title: "Cart", link: "/cart"},
+//     // {title:  <BsCart4/> , link: "/cart"}
 // ];
 
+
 const Navbar = () => {
+    const [navs, setNavs] = useState(null);
+
+    useEffect(() => {
+        axios.get(Url.UMBRACO_API + "/shared/getheadercontent").then((res) => {
+            console.log(res.data.menu);
+            setNavs(res.data.menu.content);
+        })
+    }, []);
     const [open, setOpen] = useState(false);
+    const [mobile, setMobile] = useState(true);
 
     useEffect(() => {
         if (open) {
@@ -53,7 +36,8 @@ const Navbar = () => {
             let nav = document.querySelector(".navbar");
             trapFocus(nav);
         }
-    });
+        setMobile(window.innerWidth > 800);
+    }, [mobile]);
 
 
     // Research better options:
@@ -96,10 +80,10 @@ const Navbar = () => {
 
     function createNavItems(item) {
         if (!item.submenu) {
-            return <li onClick={handleNavigationIcon}><Link to={item.link}>{item.title}</Link></li>
+            return <li onClick={handleNavigationIcon} key={item.text}><Link to={item.link}>{item.text}</Link></li>
         }
         return <li>
-            <button aria-controls={item.title + "-submenu"} aria-expanded="false">{item.title}</button>
+            <button aria-controls={item.text + "-submenu"} aria-expanded="false">{item.text}</button>
             <ul id={item.title + "-submenu"} aria-hidden={"true"}>
                 {item.submenu.map((nextItem) => {
                     {
@@ -109,13 +93,18 @@ const Navbar = () => {
             </ul>
         </li>;
     }
+
     function createDeskNavItems(item) {
         if (!item.submenu) {
-            return <li><Link to={item.link}>{item.title}</Link></li>
+        if (item.text=="Cart") {
+            return <li key={item.text}><Link to={item.link} title="Shopping-Cart"><img src={Cart} className={'cartIcon'}></img></Link></li>
+        }
+        console.log(item);
+        return <li key={item.text}><Link to={item.link}>{item.text}</Link></li>
         }
         return <li>
-            <button aria-controls={item.title + "-submenu"} aria-expanded="false">{item.title}</button>
-            <ul id={item.title + "-submenu"} aria-hidden={"true"}>
+            <button aria-controls={item.text + "-submenu"} aria-expanded="false">{item.text}</button>
+            <ul id={item.text + "-submenu"} aria-hidden={"true"}>
                 {item.submenu.map((nextItem) => {
                     {
                         return createDeskNavItems(nextItem);
@@ -125,27 +114,36 @@ const Navbar = () => {
         </li>;
     }
 
+    /* if (mobile) return (
+         <div className={"desktopNav"}>
+             <ul>
+                 {navigationJson.map((item) => {
+                     return createNavItems(item);
+                 })}
+             </ul>
+         </div>
+     )*/
+     if (!navs) return <h3>Loading...</h3>
+
     return (
         <div className={"navbar"}>
             <nav className={'desktopNav'}>
                 <ul>
-                    {navigationJson.map((item) => {
+                    {navs.map((item) => {
                         return createDeskNavItems(item);
                     })}
                 </ul>
             </nav>
-            <button tabIndex="0" onClick={handleNavigationIcon} style={{backgroundColor: 'transparent', border: 'none'}}>
-            <img 
-                 src={open === false ? "/assets/images/navigation/burgerbar.svg" : "/assets/images/navigation/close-burgerbar.svg"}
-                 alt={"burgerbar"}/></button>
+            <button tabIndex="0" onClick={handleNavigationIcon}
+                    style={{backgroundColor: 'transparent', border: 'none'}}>
+                <img
+                    src={open === false ? "/assets/images/navigation/burgerbar.svg" : "/assets/images/navigation/close-burgerbar.svg"}
+                    alt={"burgerbar"}/></button>
             {open &&
                 <nav className={"navbar--open"}>
                     <ul>
-                        {navigationJson.map((item) => {
+                        {navs.map((item) => {
                             return createNavItems(item);
-                            // return <li key={item.title} onClick={handleNavigationIcon}><Link
-                            //     to={item.link}>{item.title}</Link>
-                            // </li>
                         })}
                     </ul>
                 </nav>

@@ -28,7 +28,6 @@ namespace Flight2Orbit.Controller
         public IHttpActionResult GetCrewContent()
         {
             var crew = service.FetchNode<Crew>(Crew.GetModelContentType());
-
             return Json(Mapper.Map(crew), new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
         }
     }
