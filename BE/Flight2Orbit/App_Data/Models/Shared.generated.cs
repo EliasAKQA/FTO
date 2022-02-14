@@ -19,26 +19,26 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Umbraco.Web.PublishedModels
 {
-	/// <summary>Meta data</summary>
-	[PublishedModel("metaData")]
-	public partial class MetaData : PublishedContentModel
+	/// <summary>Shared</summary>
+	[PublishedModel("shared")]
+	public partial class Shared : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		public new const string ModelTypeAlias = "metaData";
+		public new const string ModelTypeAlias = "shared";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<MetaData, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Shared, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public MetaData(IPublishedContent content)
+		public Shared(IPublishedContent content)
 			: base(content)
 		{ }
 

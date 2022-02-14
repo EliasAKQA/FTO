@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
+import Cart from '../../assets/cart.svg';
 import "./navbar.scss";
 
 
@@ -10,6 +11,7 @@ const navigationJson = [
     {title: "Inventory", link: "/inventory"},
     {title: "Quiz", link: "/quiz"},
     {title: "Tracker", link: "/tracker"},
+    {title: "Cart", link: "/cart"},
 ];
 
 // const navigationJson = [
@@ -111,7 +113,10 @@ const Navbar = () => {
     }
     function createDeskNavItems(item) {
         if (!item.submenu) {
-            return <li><Link to={item.link}>{item.title}</Link></li>
+        if (item.title=="Cart") {
+            return <li><Link to={item.link} title="Shopping-Cart"><img src={Cart} className={'cartIcon'}></img></Link></li>
+        }
+        return <li><Link to={item.link}>{item.title}</Link></li>
         }
         return <li>
             <button aria-controls={item.title + "-submenu"} aria-expanded="false">{item.title}</button>

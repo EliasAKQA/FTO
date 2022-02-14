@@ -25,12 +25,8 @@ const Crew = () => {
             <section className='main__container--lesswidth crew-page'>
             <h2 className='crew-page__title'>{sections.subHeadline}</h2>
             <p>{sections.description}</p>
-<<<<<<< HEAD
-            <div className='card-container'>
-=======
             </section>
             <div className="card-container">
->>>>>>> crewcon
                 {sections.crewMembers.map((content) => {
                     return <CrewCard name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} desc={content.description} />
                 })}
