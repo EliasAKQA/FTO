@@ -17,43 +17,45 @@ const ShopItem = () => {
 
     if (!item) return <h1>Loadingggggg....</h1>
     return (
-        <div className='shopDetailBox'>
+        <div className='shopDetail'>
             <Link className='backButton' to={'/shop'}><h3>&#60; Back</h3></Link>
-            <div className='shopDetailIMG'>
-                <img className='shopDetailRock' src={Url.SERVER_URL + item.overview.imageUrl} alt="rock" />
+            <div className='shopDetail__img'>
+                <img src={Url.SERVER_URL + item.overview.imageUrl} alt="rock" />
             </div>
             <div>
                 <h1>{item.overview.title}</h1>
-                <div className='shopDetailBox__info'>
-                    <h2>Price</h2>
-                    <p>${item.overview.price}</p>
+                <div className='shopDetail__container' >
+                    <div className='shopDetail__info'>
+                        <h2>Price</h2>
+                        <p>${item.overview.price}</p>
+                    </div>
+                    <div className="shopDetail__info">
+                        <h2>height</h2>
+                        <p>{item.dimensions.height}</p>
+                    </div>
+                    <div className="shopDetail__info">
+                        <h2>width</h2>
+                        <p>{item.dimensions.width}</p>
+                    </div>
+                    <div className="shopDetail__info">
+                        <h2>depth</h2>
+                        <p>{item.dimensions.depth}</p>
+                    </div>
+                    <div className="shopDetail__info">
+                        <h2>weight</h2>
+                        <p>{item.dimensions.weight}</p>
+                    </div>
                 </div>
-                <div className="shopDetailBox__info">
-                    <h2>height</h2>
-                    <p>{item.dimensions.height}</p>
-                </div>
-                <div className="shopDetailBox__info">
-                    <h2>width</h2>
-                    <p>{item.dimensions.width}</p>
-                </div>
-                <div className="shopDetailBox__info">
-                    <h2>depth</h2>
-                    <p>{item.dimensions.depth}</p>
-                </div>
-                <div className="shopDetailBox__info">
-                    <h2>weight</h2>
-                    <p>{item.dimensions.weight}</p>
-                </div>
-                <div className='shopDetailBox__discoverer'>
-                    <div className='shopDetailIMG'>
-                        <img className='shopDetailRock' src={Url.SERVER_URL + item.discoverer.profileImageUrl} alt="" />
+                <div className='shopDetail__container'>
+                    <div className='shopDetail__img'>
+                        <img src={Url.SERVER_URL + item.discoverer.profileImageUrl} alt="" />
                     </div>
                     <div>
-                        <div className='shopDetailBox__info'>
-                            <h2>Discovered by</h2>
+                        <div className='shopDetail__info'>
+                            <h2>Discoverer</h2>
                             <p>{item.discoverer.name}</p>
                         </div>
-                        <div className="shopDetailBox__info">
+                        <div className="shopDetail__info">
                             <h2>Role</h2>
                             <p>{item.discoverer.role}</p>
                         </div>
