@@ -22,11 +22,13 @@ const Crew = () => {
     return (
         <div className='main__container--fullwidth'>
             <h1>{sections.headline}</h1>
-            <h2>{sections.subHeadline}</h2>
+            <section className='main__container--lesswidth crew-page'>
+            <h2 className='crew-page__title'>{sections.subHeadline}</h2>
             <p>{sections.description}</p>
+            </section>
             <div className="card-container">
                 {sections.crewMembers.map((content) => {
-                    return <CrewCard name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} />
+                    return <CrewCard name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} desc={content.description} />
                 })}
             </div>
         </div>
