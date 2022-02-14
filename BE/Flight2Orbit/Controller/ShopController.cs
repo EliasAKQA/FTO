@@ -31,10 +31,6 @@ namespace Flight2Orbit.Controller
         public IHttpActionResult GetShopContent()
         {
             var shop = service.FetchNode<Shop>(Shop.GetModelContentType());
-
-
-            return Json(shop, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
-
             return Json(Mapper.Map(shop), new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
 
         }

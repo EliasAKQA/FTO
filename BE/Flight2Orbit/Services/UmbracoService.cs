@@ -23,36 +23,13 @@ namespace Flight2Orbit.Services
         {
             var node = ctx.Content.GetByContentType(type)?.FirstOrDefault();
             return Converters.ConvertPublishedContent<T>(node);
-
         }
 
-        private object FetchShop()
-        {
-            // Query Shop node from DB 
-            var shopNode = ctx.Content.GetByContentType(Shop.GetModelContentType())?.FirstOrDefault();
 
-            // Convert to Home.    
-            var shop = Converters.ConvertPublishedContent<Shop>(shopNode);
-
-            if (shop.ShopItems == null) throw new NotFoundException("Shop node was not found.");
-            List<ShopItemDTO> shopItems = new List<ShopItemDTO>();
-            foreach (var itemPC in shop.ShopItems)
-            {
-                var shopItem = Converters.ConvertPublishedContent<ShopItem>(itemPC);
-                shopItems.Add(new ShopItemDTO(shopItem.Id, shopItem.Image.Url(), shopItem.Title, shopItem.Price, new ButtonDTO(shopItem.ButtonText, shopItem.ButtonLink)));
-            }
-
-            return new ShopDTO(shop.Id, shop.Headline, shop.Description, shopItems);
-        }
-
-        
 
         public IPublishedContent FetchNodeById(int id)
         {
             return ctx.Content.GetById(id);
         }
-
-        }
-
     }
 
