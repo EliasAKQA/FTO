@@ -57,6 +57,7 @@ namespace Flight2Orbit.Helpers
             return new CrewDTO(node.Id, node.Headline, node.SubHeadline, node.Description, crewMembers, ctoDTO);
         }
 
+
         public ShopDTO Map(Shop shop)
         {
             if (shop.ShopItems == null) throw new NotFoundException("Shop node was not found.");
@@ -101,5 +102,6 @@ namespace Flight2Orbit.Helpers
 
             return list;
         }
+
     }
 }
