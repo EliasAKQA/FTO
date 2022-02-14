@@ -4,6 +4,9 @@
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   max-width: 400px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   &__image {
     // background-position: top;
     // background-repeat: no-repeat;
@@ -24,5 +27,6 @@
 
   & .autograph{
     max-height: 64px;
+    margin-top: auto;
   }
 }

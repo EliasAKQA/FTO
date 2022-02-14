@@ -15,7 +15,7 @@ const CrewCard = (props) => {
                     <div className="crew-card__text">
                         <h2>{props.name}</h2>
                         <h3>{props.title}</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dignissimos laudantium illum porro, blanditiis deleniti qui temporibus est, consequatur modi, atque eum quo veritatis iste tempore magnam. Adipisci, est eligendi.</p>
+                        <p>{props.desc}</p>
                         <img alt="autograph" src={autograph} className="autograph"></img>
                     </div>
                 </div>
