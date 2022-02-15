@@ -26,7 +26,7 @@ const Quizes = () => {
                     <p>{themes.text}</p>
                     <div className={'quizes'}>
                         {themes.themes.map(theme =>{
-                            return <QuizCard data={theme} />
+                            return <QuizCard data={theme} key={theme.id} />
                         })}
                         {/* <QuizCard name="Planets" />
                         <QuizCard name="Satellites" />

@@ -105,7 +105,9 @@ const Navbar = () => {
             <button aria-controls={item.text + "-submenu"} aria-expanded="false">{item.text}</button>
             <ul id={item.text + "-submenu"} aria-hidden={"true"}>
                 {item.submenu.map((nextItem) => {
+                    {
                         return createDeskNavItems(nextItem);
+                    }
                 })}
             </ul>
         </li>;
