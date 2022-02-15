@@ -124,7 +124,7 @@ const Navbar = () => {
 
     return (
         <div className={"navbar"}>
-            <nav className={'desktopNav'}>
+            <nav className={'desktop__nav'}>
                 <ul>
                     {navs.map((item) => {
                         return createDeskNavItems(item);
