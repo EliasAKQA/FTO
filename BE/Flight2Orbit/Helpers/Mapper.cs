@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading;
 using Flight2Orbit.Exceptions;
+using Flight2Orbit.Extensions;
 using Flight2Orbit.Models;
 using Flight2Orbit.Models.Inventory;
 using Flight2Orbit.Models.Quiz;
@@ -135,6 +136,45 @@ namespace Flight2Orbit.Helpers
                 var resource = Converters.ConvertPublishedContent<Resource>(inventoryResourcePC);
                 resources.Add(new ResourceDTO(resource.Title, resource.Colour.ToString()));
             }
+
+            // If cto is null, return the DTO without a call to action.
+            if (inventory.CallToAction == null)
+                return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
+                    clockDTO, resources);
+
+            // Map call to action to its representational class.
+            var cto = Converters.ConvertPublishedContent<CallToAction>(inventory.CallToAction);
+            var ctoDTO = Map(cto);
+
+            return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
+                clockDTO, resources, ctoDTO);
+        }
+
+        public InventoryDTO Map(Inventory inventory, ResourcesDTO res)
+        {
+            // Map clock content to its representational class.
+            var clockDTO = new ClockDTO(inventory.ClockHeadline, inventory.Colour.ToString(), inventory.Hour, inventory.Minutes,
+                inventory.Seconds);
+
+            // If there's not resources, throw an error. Inventory without resources is not valid.
+            if (inventory.Resources == null) throw new NotFoundException("Inventory must contain resources.");
+
+            // Initialise and map a list of resources.
+            var resources = new List<ResourceDTO>();
+            var inventoryResouresAsList = inventory.Resources.ToList();
+            for (int i = 0; i < inventory.Resources.ToList().Count; i++)
+            {
+                var resource = Converters.ConvertPublishedContent<Resource>(inventoryResouresAsList.ElementAt(i));
+                var resourceDTO = new ResourceDTO(resource.Title, resource.Colour.ToString());
+                var incoming = res.Resources.ElementAt(i);
+                resourceDTO.Merge(incoming);
+                resources.Add(resourceDTO);
+            }
+            //foreach (var inventoryResourcePC in inventory.Resources)
+            //{
+            //    var resource = Converters.ConvertPublishedContent<Resource>(inventoryResourcePC);
+            //    resources.Add(new ResourceDTO(resource.Title, resource.Colour.ToString()));
+            //} 
 
             // If cto is null, return the DTO without a call to action.
             if (inventory.CallToAction == null)

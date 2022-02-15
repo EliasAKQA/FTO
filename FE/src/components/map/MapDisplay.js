@@ -10,10 +10,15 @@ const MapDisplay = (props) => {
     const [allMarkers, setAllMarkers] = useState([]);
     // default map location in europe
     const uluru = {lat: 53.0000, lng: 9.0000};
+
     function updateMap() {
         axios.get("http://api.open-notify.org/iss-now.json").then((res) => {
             if (map) {
-                props.func({'lon':res.data.iss_position.longitude, 'lan':res.data.iss_position.latitude, 'timestamp': res.data.timestamp});
+                props.func({
+                    'lon': res.data.iss_position.longitude,
+                    'lan': res.data.iss_position.latitude,
+                    'timestamp': res.data.timestamp
+                });
                 setLocation(res.data.iss_position);
                 let position = {
                     lat: parseFloat(res.data.iss_position.latitude),
