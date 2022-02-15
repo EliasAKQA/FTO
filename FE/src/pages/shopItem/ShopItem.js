@@ -1,13 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import "./ShopItem.scss"
 import { Link, useParams } from "react-router-dom";
+import CartItem from "../../components/cartItems/cartItems";
 import axios from 'axios';
 import Url from 'config';
 
 const ShopItem = () => {
     let { id } = useParams();
     const [item, setItem] = useState(null);
+    const [count, setCount] = useState(0);
+    const [isActive, setActive] = useState(false);
+    const [buttonText, setButtonText] = useState("Add to cart");
 
+    // counter for cart
+    function plus() {
+        setCount((prev) => prev + 1);
+        console.log(count);
+        setActive(!isActive);
+        setButtonText("addddded!");
+    }
+
+    // get single item from api
     useEffect(() => {
         axios.get(Url.UMBRACO_API + "/shop/getshopitemdetails/?id=" + id).then((res) => {
             console.log(res);
@@ -15,6 +28,7 @@ const ShopItem = () => {
         });
     }, []);
 
+    // check if item loaded
     if (!item) return <h1>Loadingggggg....</h1>
     return (
         <div className='shopDetail'>
@@ -71,7 +85,8 @@ const ShopItem = () => {
                         </div>
                     </div>
                 </div>
-                <button className='btn btn--primary'>{item.overview.button.content}</button>
+                <button onClick={plus} className={!isActive ? 'btn btn--primary' : 'btn btn--checkout'}>{isActive ? buttonText : item.overview.button.content}</button>
+                {/* <CartItem name={item.overview.title} price={item.overview.price} /> */}
             </div>
         </div>
     );
