@@ -20,7 +20,7 @@ const ShopItem = () => {
         <div className='shopDetail'>
             <Link className='backButton' to={'/shop'}><h3>&#60; Back</h3></Link>
             <div className='shopDetail__img'>
-                <img src={Url.SERVER_URL + item.overview.imageUrl} alt="rock" />
+                <img className='shopDetail__img--product' src={Url.SERVER_URL + item.overview.imageUrl} alt="rock" />
             </div>
             <div>
                 <h1>{item.overview.title}</h1>
@@ -52,10 +52,11 @@ const ShopItem = () => {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quibusdam fugiat amet quam sint iste distinctio cum animi totam aspernatur, repudiandae, a incidunt consectetur ut rerum corporis placeat voluptatibus doloremque!
                 </div>
                 <div className='shopDetail__container'>
-                    <div className='shopDetail__img'>
-                        <img src={Url.SERVER_URL + item.discoverer.profileImageUrl} alt="" />
+                    <div className='shopDetail__container--profile'>
+                        <img className='shopDetail__img' src={Url.SERVER_URL + item.discoverer.profileImageUrl} alt="" />
+                        <img className='shopDetail__img' src={Url.SERVER_URL + item.discoverer.autographImageUrl} alt="" />
                     </div>
-                    <div>
+                    <div className='shopDetail__container--text'>
                         <div className='shopDetail__info'>
                             <h2>Discoverer</h2>
                             <p>{item.discoverer.name}</p>
@@ -63,6 +64,10 @@ const ShopItem = () => {
                         <div className="shopDetail__info">
                             <h2>Role</h2>
                             <p>{item.discoverer.role}</p>
+                        </div>
+                        <div className='shopDetail__info'>
+                            <h2>Description</h2>
+                            <p>{item.discoverer.description}</p>
                         </div>
                     </div>
                 </div>

@@ -32,9 +32,9 @@ const Clock = (props) => {
             <p>{clock.hour < 10 ? "0" + clock.hour : clock.hour}</p>
             <p>{clock.minute < 10 ? "0" + clock.minute : clock.minute}</p>
             <p>{clock.second < 10 ? "0" + clock.second : clock.second}</p>
-            <h4>HOUR</h4>
-            <h4>MIN</h4>
-            <h4>SEC</h4>
+            <h4>{props.clockData.hourPresentationText}</h4>
+            <h4>{props.clockData.minutesPresentationText}</h4>
+            <h4>{props.clockData.secondsPresentationText}</h4>
             {/*<div*/}
             {/*    className={"clock__timer"}>{clock.hour < 10 ? "0" + clock.hour : clock.hour} : {clock.minute < 10 ? "0" + clock.minute : clock.minute} : {clock.second < 10 ? "0" + clock.second : clock.second}*/}
             {/*</div>*/}
