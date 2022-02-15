@@ -86,6 +86,7 @@ namespace Flight2Orbit.Helpers
             return new ShopDTO(shop.Id, shop.Headline, shop.Description, shopItems);
         }
 
+
         public QuizDTO Map(Quiz quiz)
         {
             if (quiz.QuizTheme == null) throw new NotFoundException("Quiz must contain themes. ");

@@ -17,7 +17,6 @@ const Header = () => {
             
             <Navbar/>
             
-            <p>Cart <BsCart4/></p>
         </header>
     );
 };

@@ -4,12 +4,13 @@ import "./Cart.scss"
 
 const Cart = () => {
     return (
-        <div>
+        <div className={'cart'}>
             <h1 className='cartH1'>Cart</h1>
+            <section className={'Items'}>
             <CartItems name="Meteorite"/>
             <CartItems name="meteorites"/>
-
-            <div className='cartTotal'>
+            </section>
+            <section className='cartTotal'>
                 <div>
                 <h3>Subtotal</h3>
                 <p>100.00</p>
@@ -24,7 +25,7 @@ const Cart = () => {
                 </div>
                 <br/>
                 <button className='btn btn--primary'><h2>BUY</h2></button>
-            </div>
+            </section>
             
         </div>
     );

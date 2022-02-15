@@ -1,5 +1,5 @@
 :root {
-  --border: 0.2rem solid;
+  --border: 0.3rem solid var(--color-secondary);
   --border-radius: 0.5rem;
   --box-shadow: 0.5rem 0.5rem var(--color-secondary);
   --color-black: #000;
@@ -9,6 +9,7 @@
   --color-tertiary: #f2e84b;
   --color-white: #fff;
   --filter: brightness(70%);
+  --filter-shadow: drop-shadow(10px 10px 10px var(--color-black));
   --font-primary: "Arial", sans-serif;
   --font-secondary: "Montserrat", sans-serif;
   --font-clock: "Orbitron", sans-serif;
