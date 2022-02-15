@@ -19,7 +19,11 @@
       filter: var(--filter);
     }
   }
-
+  &--checkout {
+    background-color: var(--color-checkout);
+    border: 0;
+    color: var(--color-white);
+  }
   &--secondary {
     background-color: transparent;
     border: var(--border) var(--color-black);
