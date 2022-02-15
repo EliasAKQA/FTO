@@ -5,7 +5,7 @@ const Resource = (props) => {
     return (
         <div className={"resource__wrapper"}>
             <div className={"resource__background"}>
-                {props.type === "water" ?
+                {props.type === "Water" ?
                     <div className={"resource__foreground resource__foreground--water"}
                          style={{height: props.height}}>
                     </div> :
