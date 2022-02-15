@@ -32,12 +32,13 @@
           filter: var(--filter-shadow);
         }
     }
-    
+    button {
+      width: 100%;
+    }
     @include respond(desktop){
       display: grid;
       grid-template-columns: 1fr 1fr;
       max-width: 600px;
-
       & a{
         grid-column: 1 / -1;
         margin-bottom: 10%;
@@ -46,12 +47,7 @@
         width: 350px;
         margin: 0 auto;
     }
-
-    & button{
-      margin: 0;
     }
-    }
-
     @include respond(desktop--large){
       max-width: 70%;
 
