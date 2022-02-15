@@ -71,12 +71,21 @@
         }
     }
 
+    
     @include respond(desktop){
         width: 500px;
         margin: auto;
-
+        
         & .answerOptions{
             width: 300px;
         }
     }
+}
+.score{
+    text-align: center;
+    margin-top: 7em;
+    & p{
+        margin-bottom: 2em;
+    }
+
 }
