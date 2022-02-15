@@ -1,25 +1,25 @@
 @import "../../sass/partials/abstracts/mixins";
 
-.shopDetailBox{
-    max-width: 300px;
+.shopDetail{
+    max-width: 500px;
     margin: 0 auto;
-
-    .shopDetailPrize{
-        color: #00FF19;
-        margin-top: 5px;
+    &__info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      text-align: left;
     }
-    .shopDetailIMG{
+    &__container {
+      border: var(--border);
+      padding: var(--padding);
+      margin-bottom: var(--margin);
+    }
+    &__img {
         width: 100%;
-        // overflow: hidden;
         position: relative;
-        margin-top: 20px;
-        // height: 100px;
-        // background-color: #D8D8D8;
-        margin-bottom: 5px;
-        .shopDetailRock{
-            margin-left: 10%;
-            width: 250px;
-            height: 220px;
+        img {
+            width: 100%;
+            height: auto;
+            filter: var(--filter-shadow);
         }
     }
     

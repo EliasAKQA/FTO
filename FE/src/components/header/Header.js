@@ -16,6 +16,7 @@ const Header = () => {
             </Link>
             
             <Navbar/>
+            
         </header>
     );
 };

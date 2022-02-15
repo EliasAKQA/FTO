@@ -8,7 +8,10 @@
   & img {
     //cursor: pointer;
     height: 2.5em;
+  &.cartIcon{
+    height: 2em;
   }
+  } 
 
   & button {
     @include respond(desktop) {
@@ -76,13 +79,16 @@ nav.desktopNav ul {
 
 nav.desktopNav li {
   width: 100%;
-  margin: 1em .5em;
+  margin: 0 .5em;
+  max-height: max-content;
 }
 
 nav.desktopNav li a {
   display: block;
   text-align: center;
   min-width: 80px;
+  line-height: 35px;
+  max-height: max-content;
   width: 100%;
   transition: all .3s ease-out;
 }
