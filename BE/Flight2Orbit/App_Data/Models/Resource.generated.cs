@@ -45,13 +45,6 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Amount: Enter percentage amount of resource
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		[ImplementPropertyType("amount")]
-		public virtual int Amount => this.Value<int>("amount");
-
-		///<summary>
 		/// Colour: Enter the colour of the resource.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]

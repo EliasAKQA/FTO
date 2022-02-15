@@ -59,13 +59,6 @@ namespace Umbraco.Web.PublishedModels
 		public virtual decimal Depth => this.Value<decimal>("depth");
 
 		///<summary>
-		/// Description: Enter description of the product
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		[ImplementPropertyType("description")]
-		public virtual string Description => this.Value<string>("description");
-
-		///<summary>
 		/// Height (cm): Submit the height of the product.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
