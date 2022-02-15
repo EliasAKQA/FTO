@@ -5,6 +5,7 @@ using Flight2Orbit.Models.Shared;
 using Flight2Orbit.Services;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Umbraco.Web;
 using Umbraco.Web.PublishedModels;
 using Umbraco.Web.WebApi;
 
@@ -23,17 +24,15 @@ namespace Flight2Orbit.Controller
         public IHttpActionResult GetMetaData()
         {
             var shared = service.FetchNode<Shared>(Shared.GetModelContentType());
-            return Json(shared, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+            return Json(new { PageTitle = shared.Title, Favicon = shared.Favicon.Url() }, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
         }
 
         public IHttpActionResult GetHeaderContent()
         {
-            //var header = service.FetchNode<Header>(Header.GetModelContentType());
             var shared = service.FetchNode<Shared>(Shared.GetModelContentType());
             var headerPC = shared.Header.FirstOrDefault();
             var header = Converters.ConvertPublishedContent<Header>(headerPC);
             return Json(Mapper.Map(header), new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
-            //return Json(header.LogoText);
         }
     }
 }
