@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Img from'../../assets/quiz/NASA_logo.svg.png';
-import {useParams} from "react-router-dom";
+import {useParams, Link} from "react-router-dom";
 import './Quiz.scss';
 import axios from 'axios';
 import Url from 'config';
@@ -41,8 +41,9 @@ const Quiz = () => {
         <div>
             {showScore ? (
                 <div className={'score'}>
-                    <p>You answered {score} out of {questions.length} correctly.</p>
+                    <h3>You answered {score} out of {questions.length} correctly.</h3>
                     <button className={'btn btn--primary'} onClick={()=> {setCurrentQuestion(0); setScore(0); setShowScore(false) }}>Try again!</button>
+                    <Link to={'/quiz'} className={'btn btn--primary'}>Choose another theme</Link>
                 </div>
             ) : (
                 <div className={'quiz'} key={questions[currentQuestion].id}>
@@ -63,48 +64,6 @@ const Quiz = () => {
             </div>
             )}
         </div>
-
-
-
-
-
-    // questions.map(q=>{
-    //     num++;
-    //     return (
-
-    //         <div className={'quiz'}>
-    //             <h1>{num}/{questions.length}</h1>
-    //             <section className='text'>
-    //                 <p className={'question'}>{q.question}</p>
-    //                 <h2 className={' question questionmark'}>?</h2>
-    //                 {/* <div className={'question__img'} style={{backgroundImage: `url("${Img}")`}}></div> */}
-    //                 <img className={'question__img'} src={Img} alt="question-image"></img>
-    //             </section>
-    //             <section className={'answerOptions'}>
-    //                 <form>
-    //                     {q.answers.map(answer => {
-    //                         return(
-    //                             <div>
-    //                                 <input type={'radio'} name={q.id} id={answer.id} className={'hidden'}></input>
-    //                                 <label key={answer.id} className={'btn btn--primary'} for={answer.id}>
-    //                                     <i>{answer.answer}</i>
-    //                                 </label>
-    //                             </div>
-    //                         );
-    //                     })}
-    //                 </form>
-    //                 {/* <button className={'btn btn--primary'}>1972</button>
-    //                 <button className={'btn btn--primary'}>1982</button>
-    //                 <button className={'btn btn--primary'}>1962</button>
-    //                 <button className={'btn btn--primary'}>1992</button> */}
-    //                 <div className={'backSkip'}>
-    //                 <button className={'btn btn--primary'}>Back</button>
-    //                 <button className={'btn btn--primary'}>Next</button>
-    //                 </div>
-    //             </section>
-    //         </div>
-    //     );
-    // })
 ) 
 };
 
