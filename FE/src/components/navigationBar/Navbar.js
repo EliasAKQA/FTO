@@ -99,7 +99,6 @@ const Navbar = () => {
         if (item.text=="Cart") {
             return <li key={item.text}><Link to={item.link} title="Shopping-Cart"><img src={Cart} className={'cartIcon'}></img></Link></li>
         }
-        console.log(item);
         return <li key={item.text}><Link to={item.link}>{item.text}</Link></li>
         }
         return <li>
