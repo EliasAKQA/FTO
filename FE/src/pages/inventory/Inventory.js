@@ -10,58 +10,50 @@ const json = {milliseconds: 205204548}
 
 const Inventory = () => {
     const [time, setTime] = useState(null);
-
-    useEffect(() => {
-        let seconds = Math.floor((json.milliseconds / 1000) % 60);
-        let minutes = Math.floor(((json.milliseconds / 1000) / 60) % 60);
-        let hours = Math.floor((((json.milliseconds / 1000) / 60) / 60));
-        console.log(`seconds ${seconds} minutes ${minutes} hours: ${hours}`);
-        setTime({
-            hour: hours,
-            minute: minutes,
-            second: seconds
-        })
-    }, []);
-
-    const [resources, setResources] = useState(null);
+    const [data, setData] = useState(null);
 
     useEffect(() => {
         axios.get(Url.UMBRACO_API + "/inventory/getinventorycontent").then((res) => {
-            console.log(res);
-            setResources(res.data);
+            setData(res.data);
+            let ms = res.data.resource.millisecondsToDeath;
+            let seconds = Math.floor((ms / 1000) % 60);
+            let minutes = Math.floor(((ms / 1000) / 60) % 60);
+            let hours = Math.floor((((ms / 1000) / 60) / 60));
+            setTime({
+                hour: hours,
+                minute: minutes,
+                second: seconds
+            })
         })
     }, []);
 
-    if (!resources) return <h3>Loading...</h3>
+    if (!data) return <h3>Loading...</h3>
 
     return (
         <div className='main__container--lesswidth '>
             <section className={"inventory__header"}>
-                <h1>{resources.headline}</h1>
-                <h2>{resources.subHeadline}</h2>
-                <p>{resources.description}</p>
-
-
+                <h1>{data.headline}</h1>
+                <h2>{data.subHeadline}</h2>
+                <p>{data.description}</p>
             </section>
             <section className={"inventory__timer"}>
-                <h2>{resources.clock.headline}</h2>
+                <h2>{data.clock.headline}</h2>
                 {time &&
-                    <Clock initHour={time.hour} initMinute={time.minute} initSecond={time.second} clockData={resources.clock} />
+                    <Clock initHour={time.hour} initMinute={time.minute} initSecond={time.second}
+                           clockData={data.clock}/>
                 }
             </section>
             <section className={"resource__container"}>
-                {resources.resource.map(resource =>{
+                {data.resource.resources.map(resource => {
                     console.log(resource);
-                    return <Resource height={"70%"} type={resource.title} colour={resource.colourCode}/>
+                    return <Resource height={`${resource.amount}%`} type={resource.title} colour={resource.colourCode}/>
                 })}
-                {/* <Resource height={"43%"} type={"food"}/>
-                <Resource height={"55%"} type={"water"}/> */}
             </section>
             <section className={'section-container'}>
-                <h2>{resources.cto.headline}</h2>
-                <p>{resources.cto.paragraphs[0].text}</p>
+                <h2>{data.cto.headline}</h2>
+                <p>{data.cto.paragraphs[0].text}</p>
                 <Link to={"/shop"} className={"btn btn--primary "}>
-                    {resources.cto.buttonText}
+                    {data.cto.buttonText}
                 </Link>
             </section>
         </div>

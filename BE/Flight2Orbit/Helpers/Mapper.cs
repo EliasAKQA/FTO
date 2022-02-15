@@ -120,35 +120,35 @@ namespace Flight2Orbit.Helpers
             return list;
         }
 
-        public InventoryDTO Map(Inventory inventory)
-        {
-            // Map clock content to its representational class.
-            var clockDTO = new ClockDTO(inventory.ClockHeadline, inventory.Colour.ToString(), inventory.Hour, inventory.Minutes,
-                inventory.Seconds);
+        //public InventoryDTO Map(Inventory inventory) 
+        //{
+        //    // Map clock content to its representational class.
+        //    var clockDTO = new ClockDTO(inventory.ClockHeadline, inventory.Colour.ToString(), inventory.Hour, inventory.Minutes,
+        //        inventory.Seconds);
 
-            // If there's not resources, throw an error. Inventory without resources is not valid.
-            if (inventory.Resources == null) throw new NotFoundException("Inventory must contain resources.");
+        //    // If there's not resources, throw an error. Inventory without resources is not valid.
+        //    if (inventory.Resources == null) throw new NotFoundException("Inventory must contain resources.");
 
-            // Initialise and map a list of resources.
-            var resources = new List<ResourceDTO>();
-            foreach (var inventoryResourcePC in inventory.Resources)
-            {
-                var resource = Converters.ConvertPublishedContent<Resource>(inventoryResourcePC);
-                resources.Add(new ResourceDTO(resource.Title, resource.Colour.ToString()));
-            }
+        //    // Initialise and map a list of resources.
+        //    var resources = new List<ResourceDTO>();
+        //    foreach (var inventoryResourcePC in inventory.Resources)
+        //    {
+        //        var resource = Converters.ConvertPublishedContent<Resource>(inventoryResourcePC);
+        //        resources.Add(new ResourceDTO(resource.Title, resource.Colour.ToString()));
+        //    }
 
-            // If cto is null, return the DTO without a call to action.
-            if (inventory.CallToAction == null)
-                return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
-                    clockDTO, resources);
+        //    // If cto is null, return the DTO without a call to action.
+        //    if (inventory.CallToAction == null)
+        //        return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
+        //            clockDTO, resources);
 
-            // Map call to action to its representational class.
-            var cto = Converters.ConvertPublishedContent<CallToAction>(inventory.CallToAction);
-            var ctoDTO = Map(cto);
+        //    // Map call to action to its representational class.
+        //    var cto = Converters.ConvertPublishedContent<CallToAction>(inventory.CallToAction);
+        //    var ctoDTO = Map(cto);
 
-            return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
-                clockDTO, resources, ctoDTO);
-        }
+        //    return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
+        //        clockDTO, resources, ctoDTO);
+        //}
 
         public InventoryDTO Map(Inventory inventory, ResourcesDTO res)
         {
@@ -179,14 +179,14 @@ namespace Flight2Orbit.Helpers
             // If cto is null, return the DTO without a call to action.
             if (inventory.CallToAction == null)
                 return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
-                    clockDTO, resources);
+                    clockDTO, new ResourcesDTO(resources, res.MillisecondsToDeath));
 
             // Map call to action to its representational class.
             var cto = Converters.ConvertPublishedContent<CallToAction>(inventory.CallToAction);
             var ctoDTO = Map(cto);
 
             return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
-                clockDTO, resources, ctoDTO);
+                clockDTO, new ResourcesDTO(resources, res.MillisecondsToDeath), ctoDTO);
         }
 
         public SharedDTO Map(Shared shared)
