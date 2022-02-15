@@ -221,7 +221,7 @@ namespace Flight2Orbit.Helpers
             if (menu.TryConvertTo<MenuItem>().Success)
             {
                 var convertedItem = Converters.ConvertPublishedContent<MenuItem>(menu);
-                return new MenuItemDTO(convertedItem.Text, convertedItem.Link);
+                return new MenuItemDTO(convertedItem.Id, convertedItem.Text, convertedItem.Link);
             }
 
             var convertedMenu = Converters.ConvertPublishedContent<Menu>(menu);
