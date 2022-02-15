@@ -3,10 +3,8 @@
 .shopItemHolder{
     width: 140px;
     margin-top: 15px;
-    // padding: 5%;
-    // position: relative;
-    // overflow: hidden;
     border: solid 2px var(--color-secondary);
+    height: 17em;
     border-radius: 10px;
 
 
@@ -18,23 +16,17 @@
     }
 
 .shopItemIMG{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
     width: 100%;
-    height: 100px;
+    height: 7em;
+    padding-top: 5px;
     margin: auto;
     margin-top: auto;
-    // margin-bottom: 5px;
-    // overflow: hidden;
     text-align: center;
 
     @include respond(desktop){
         height: 150px;
     }
-    @include respond(desktop--large){
-        height: 200px;
-    }
+
 
     .shopItemRock{
         display: block;
@@ -55,11 +47,22 @@
 .shopItemName{
     margin-top: 15px;
     margin-left: 5%;
+    height: 3em;
+
+    @include respond(desktop){
+        height: 1em;
+        margin-top: 2em;
+    }
+
 }
 .shopItemPrize{
     color: #00FF19;
     margin-top: 5px;
     margin-left: 5%;
+
+    @include respond(desktop){
+        height: 1em;
+    }
 }
 .ShopItemsbutton{
     margin-top: 10px;
