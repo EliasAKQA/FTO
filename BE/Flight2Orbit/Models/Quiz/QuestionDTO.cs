@@ -5,11 +5,13 @@ namespace Flight2Orbit.Models.Quiz
 {
     public class QuestionDTO
     {
+        public int Id { get; set; }
         public string Question { get; set; }
         public IEnumerable<AnswerDTO> Answers { get; set; }
 
-        public QuestionDTO(string question, IEnumerable<AnswerDTO> answers)
+        public QuestionDTO(int id, string question, IEnumerable<AnswerDTO> answers)
         {
+            Id = id;
             Question = question;
             Answers = answers;
         }

@@ -64,7 +64,7 @@ namespace Flight2Orbit.Controller
                 resources = Newtonsoft.Json.JsonConvert.DeserializeObject<ResourcesDTO>(data);
                 var inventory = Service.FetchNode<Inventory>(Inventory.GetModelContentType());
                 var inventoryDTO = Mapper.Map(inventory, resources);
-                return Json(inventoryDTO);
+                return Json(inventoryDTO, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
             }
         }
     }

@@ -2,11 +2,13 @@
 {
     public class MenuItemDTO : MenuContainer
     {
+        public int Id { get; set; }
         public string Text { get; set; }
         public string Link { get; set; }
 
-        public MenuItemDTO(string text, string link)
+        public MenuItemDTO(int id, string text, string link)
         {
+            Id = id;
             Text = text;
             Link = link;
         }

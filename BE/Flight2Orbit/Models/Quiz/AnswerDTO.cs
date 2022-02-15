@@ -2,10 +2,12 @@
 {
     public class AnswerDTO
     {
+        public int Id { get; set; }
         public string Answer { get; set; }
         public bool IsCorrect { get; set; }
-        public AnswerDTO(string answer, bool isCorrect)
+        public AnswerDTO(int id, string answer, bool isCorrect)
         {
+            Id = id;
             Answer = answer;
             IsCorrect = isCorrect;
         }
