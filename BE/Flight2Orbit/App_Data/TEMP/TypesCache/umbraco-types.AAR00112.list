@@ -97,6 +97,12 @@ Umbraco.ModelsBuilder.Embedded.BackOffice.MediaTypeModelValidator, Umbraco.Model
 Umbraco.ModelsBuilder.Embedded.BackOffice.MemberTypeModelValidator, Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.ModelsBuilder.Embedded.BackOffice.ModelsBuilderDashboardController, Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.ModelsBuilder.Embedded.BackOffice.ContentTypeModelValidator, Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
+Flight2Orbit.Controller.CrewController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Flight2Orbit.Controller.HomeController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Flight2Orbit.Controller.InventoryController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Flight2Orbit.Controller.QuizController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Flight2Orbit.Controller.SharedController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Flight2Orbit.Controller.ShopController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.Controllers.UmbProfileController, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.Controllers.UmbLoginStatusController, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.Controllers.UmbRegisterController, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -305,12 +311,6 @@ Umbraco.Web.Cache.MemberGroupCacheRefresher, Umbraco.Web, Version=8.0.0.0, Cultu
 Umbraco.Web.Cache.PublicAccessCacheRefresher, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.Cache.TemplateCacheRefresher, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.Cache.UserCacheRefresher, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
-Flight2Orbit.Controller.CrewController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Flight2Orbit.Controller.HomeController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Flight2Orbit.Controller.InventoryController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Flight2Orbit.Controller.QuizController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Flight2Orbit.Controller.SharedController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Flight2Orbit.Controller.ShopController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 Umbraco.Core.Composing.IComposer
 
@@ -393,6 +393,12 @@ Umbraco.Web.Mvc.RenderMvcController, Umbraco.Web, Version=8.0.0.0, Culture=neutr
 Umbraco.Web.WebApi.UmbracoApiController
 
 Umbraco.ModelsBuilder.Embedded.BackOffice.ModelsBuilderDashboardController, Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
+Flight2Orbit.Controller.CrewController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Flight2Orbit.Controller.HomeController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Flight2Orbit.Controller.InventoryController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Flight2Orbit.Controller.QuizController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Flight2Orbit.Controller.SharedController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Flight2Orbit.Controller.ShopController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.Trees.LogViewerTreeController, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.Trees.FilesTreeController, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.Trees.ContentBlueprintTreeController, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -465,12 +471,6 @@ Umbraco.Web.Editors.ContentTypeController, Umbraco.Web, Version=8.0.0.0, Culture
 Umbraco.Web.Editors.MediaTypeController, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.Editors.SectionController, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.Editors.MediaController, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
-Flight2Orbit.Controller.CrewController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Flight2Orbit.Controller.HomeController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Flight2Orbit.Controller.InventoryController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Flight2Orbit.Controller.QuizController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Flight2Orbit.Controller.SharedController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-Flight2Orbit.Controller.ShopController, Flight2Orbit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
 Umbraco.Web.Mvc.SurfaceController
 

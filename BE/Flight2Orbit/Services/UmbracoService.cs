@@ -25,10 +25,9 @@ namespace Flight2Orbit.Services
             return Converters.ConvertPublishedContent<T>(node);
         }
 
-
         public IPublishedContent FetchNodeById(int id)
         {
             return ctx.Content.GetById(id);
         }
     }
-
+}

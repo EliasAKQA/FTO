@@ -110,7 +110,7 @@ const Navbar = () => {
 
     return (
         <div className={"navbar"}>
-            <nav className={'desktopNav'}>
+            <nav className={'desktop__nav'}>
                 <ul>
                     {navigationJson.map((item) => {
                         return createDeskNavItems(item);
