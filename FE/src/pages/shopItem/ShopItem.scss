@@ -6,20 +6,30 @@
     &__info {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      text-align: left;
+      p {
+        margin: unset;
+      }
     }
     &__container {
       border: var(--border);
       padding: var(--padding);
       margin-bottom: var(--margin);
+      &--profile {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--gap);
+      }
+      &--text {
+        display: block;
+      }
     }
     &__img {
         width: 100%;
         position: relative;
-        img {
-            width: 100%;
-            height: auto;
-            filter: var(--filter-shadow);
+        &--product {
+          width: 100%;
+          height: auto;
+          filter: var(--filter-shadow);
         }
     }
     
