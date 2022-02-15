@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
 import "./navbar.scss";
-// import { BsCart4 } from "react-icons/bs"
+import { BsCart4 } from "react-icons/bs"
 
 const navigationJson = [
     {title: "Home", link: "/"},
@@ -10,7 +10,7 @@ const navigationJson = [
     {title: "Inventory", link: "/inventory"},
     {title: "Quiz", link: "/quiz"},
     {title: "Tracker", link: "/tracker"},
-    // {title:  <BsCart4/> , link: "/cart"}
+    {title:  <BsCart4/> , link: "/cart"}
 ];
 
 
