@@ -209,7 +209,7 @@ namespace Flight2Orbit.Helpers
                 //var conv = item.TryConvertTo<MenuItem>();
                 //if (!conv.Success) throw new InternalServerErrorException("Conversion failed. Converting to menuItem.");
                 //var res = conv.Result;
-                //menu.Add(new MenuItemDTO(res.Text, res.Link));
+                //menu.Add(new MenuItemDTO(res.Text, res.Link)); 
             }
 
             return new HeaderDTO(header.LogoImage.Url(), header.LogoText, header.MenuIconOpen.Url(),
@@ -228,7 +228,7 @@ namespace Flight2Orbit.Helpers
             var list = new List<MenuContainer>();
             foreach (var convertedMenuItem in convertedMenu.MenuItems)
             {
-                list.Add(MapMenu(convertedMenu));
+                list.Add(MapMenu(convertedMenuItem));
             }
             return new MenuDTO(list);
         }
