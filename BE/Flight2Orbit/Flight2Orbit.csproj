@@ -360,6 +360,7 @@
     <Compile Include="Exceptions\InternalServerErrorException.cs" />
     <Compile Include="Exceptions\NoSuchTypeException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Helpers\Converters.cs" />
     <Compile Include="Helpers\Mapper.cs" />
     <Compile Include="Models\ButtonDTO.cs" />
@@ -371,6 +372,7 @@
     <Compile Include="Models\Inventory\ClockDTO.cs" />
     <Compile Include="Models\Inventory\InventoryDTO.cs" />
     <Compile Include="Models\Inventory\ResourceDTO.cs" />
+    <Compile Include="Models\Inventory\ResourcesDTO.cs" />
     <Compile Include="Models\ParagraphDTO.cs" />
     <Compile Include="Models\Quiz\AnswerDTO.cs" />
     <Compile Include="Models\Quiz\QuestionDTO.cs" />
