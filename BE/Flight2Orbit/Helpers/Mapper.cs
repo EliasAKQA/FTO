@@ -114,7 +114,7 @@ namespace Flight2Orbit.Helpers
                     var ans = Converters.ConvertPublishedContent<Answer>(answerPC);
                     answers.Add(new AnswerDTO(ans.QuizAnswer, ans.Correct));
                 }
-                list.Add(new QuestionDTO(question.Question, answers));
+                list.Add(new QuestionDTO(question.Id, question.Question, answers));
             }
 
             return list;
