@@ -6,8 +6,6 @@ import {Link} from "react-router-dom";
 import axios from 'axios';
 import Url from 'config';
 
-const json = {milliseconds: 205204548}
-
 const Inventory = () => {
     const [time, setTime] = useState(null);
     const [data, setData] = useState(null);
@@ -45,7 +43,6 @@ const Inventory = () => {
             </section>
             <section className={"resource__container"}>
                 {data.resource.resources.map(resource => {
-                    console.log(resource);
                     return <Resource height={`${resource.amount}%`} type={resource.title} colour={resource.colourCode}/>
                 })}
             </section>
