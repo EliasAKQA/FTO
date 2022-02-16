@@ -3,66 +3,31 @@
 .shopDetail{
     max-width: 500px;
     margin: 0 auto;
-    &__info {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      // border: var(--border);
-      margin-top: 10px;
-      p {
-        margin: unset;
-        font-weight: bold;
-        padding-top: 2%;
-        margin-left: 0.5em;
-      }
-      h2{
-        text-align: right;
-        margin-right: 0.5em;
-      }
-    }
-    hr{
-        width: 15em;
-        margin: 0 auto;
-        background-color: var(--color-primary);
-        border-radius: var(--border-radius);
-        height: 2px;
-        border: none;
-      }
     &__container {
-      // border: var(--border);
+      border: var(--border);
       padding: var(--padding);
       margin-bottom: var(--margin);
-      .center{
-        text-align: center;
-        margin-bottom: 0.5em;
+      h2 {
+        margin-bottom: 0.3rem;
       }
       &--profile {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: var(--gap);
       }
-      &--description {
-        display: block;
-        h2{
-          text-align: center;
-        }
-      }
-      &--text {
-        display: block;
-        .shopDeailDescription{
-          display: block;
-          margin-top: 2em;
-          h2{
-            text-align: center;
-            @include respond(desktop--large){
-            text-align: right;
-            }
-          }
-          @include respond(desktop--large){
-            display: grid; 
-            margin-top: var(--margin);
-          }
-        }
-      }
+    }
+    table {
+      table-layout: fixed;
+      width: 100%;
+    }
+    th, td {
+      padding: 0.3rem;
+    }
+    th {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      font-family: var(--font-secondary);
     }
     &__img {
         width: 95%;
@@ -73,8 +38,9 @@
           filter: var(--filter-shadow);
         }
     }
-    button {
+    &__btn-container * {
       width: 100%;
+      margin: var(--margin) 0;
     }
     @include respond(desktop){
       display: grid;
