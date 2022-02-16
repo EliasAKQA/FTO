@@ -7,8 +7,8 @@ const Cart = () => {
         <div className={'cart'}>
             <h1 className='cartH1'>Cart</h1>
             <section className={'Items'}>
-                <CartItems name="Meteorite"/>
-                <CartItems name="meteorites"/>
+                <CartItems name="Meteoritesss" />
+                <CartItems name="meteorites" />
             </section>
             <section className='cartTotal'>
                 <div>
@@ -23,7 +23,7 @@ const Cart = () => {
                     <h3>Total</h3>
                     <p>110.99</p>
                 </div>
-                <br/>
+                <br />
                 <button className='btn btn--primary'><h2>BUY</h2></button>
             </section>
 

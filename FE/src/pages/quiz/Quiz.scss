@@ -6,6 +6,7 @@
     flex-direction: column;
     min-height: 70vh;
     padding: 0 1em;
+    animation: appear 1s ease-out;
     & .question{
         position: relative;
         background-color: white;
@@ -84,8 +85,20 @@
 .score{
     text-align: center;
     margin-top: 7em;
-    & p{
+    animation: appear 1s ease-out;
+
+    & h3, button{
         margin-bottom: 2em;
     }
 
+}
+
+@keyframes appear{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
 }

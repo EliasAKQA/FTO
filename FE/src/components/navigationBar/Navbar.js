@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {Link} from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 import Cart from '../../assets/cart.svg';
 import "./navbar.scss";
 // import { BsCart4 } from "react-icons/bs"
@@ -96,10 +96,10 @@ const Navbar = () => {
 
     function createDeskNavItems(item) {
         if (!item.submenu) {
-        if (item.text=="Cart") {
-            return <li key={item.text}><Link to={item.link} title="Shopping-Cart"><img src={Cart} className={'cartIcon'}></img></Link></li>
-        }
-        return <li key={item.text}><Link to={item.link}>{item.text}</Link></li>
+            if (item.text == "Cart") {
+                return <li key={item.text}><Link to={item.link} title="Shopping-Cart"><img src={Cart} className={'cartIcon'}></img></Link></li>
+            }
+            return <li key={item.text}><Link to={item.link}>{item.text}</Link></li>
         }
         return <li>
             <button aria-controls={item.text + "-submenu"} aria-expanded="false">{item.text}</button>
@@ -122,7 +122,7 @@ const Navbar = () => {
              </ul>
          </div>
      )*/
-     if (!navs) return <h3>Loading...</h3>
+    if (!navs) return <h3>Loading...</h3>
 
     return (
         <div className={"navbar"}>
@@ -134,10 +134,10 @@ const Navbar = () => {
                 </ul>
             </nav>
             <button tabIndex="0" onClick={handleNavigationIcon}
-                    style={{backgroundColor: 'transparent', border: 'none'}}>
+                style={{ backgroundColor: 'transparent', border: 'none' }}>
                 <img
                     src={open === false ? "/assets/images/navigation/burgerbar.svg" : "/assets/images/navigation/close-burgerbar.svg"}
-                    alt={"burgerbar"}/></button>
+                    alt={"burgerbar"} /></button>
             {open &&
                 <nav className={"navbar--open"}>
                     <ul>
