@@ -72,16 +72,16 @@ const ShopItem = () => {
                     <table>
                         <tr>
                             <th>Discoverer</th>
-                            <td>{item.discoverer.name}</td>
+                            <td><Link to={'/crew/' + item.discoverer.id}>{item.discoverer.name}</Link></td>
                         </tr>
                         <tr>
                             <th>Role</th>
                             <td>{item.discoverer.role}</td>
                         </tr>
-                        <tr>
+                        {/* <tr>
                             <th>Description</th>
                             <td>{item.discoverer.description}</td>
-                        </tr>
+                        </tr> */}
                     </table>
                 </div>
                 <div className='shopDetail__btn-container'>
