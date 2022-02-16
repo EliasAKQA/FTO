@@ -21,6 +21,16 @@
     table {
       table-layout: fixed;
       width: 100%;
+      & a {
+        text-decoration: underline;
+        text-decoration-color: var(--color-secondary);
+        text-underline-offset: 0.2rem;
+        text-decoration-thickness: 0.2rem;
+        &:hover {
+          opacity: 0.5;
+          transition: var(--transition);
+        }
+      }
     }
     th, td {
       padding: 0.3rem;
