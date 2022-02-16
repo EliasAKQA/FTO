@@ -7,11 +7,17 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       p {
+        margin-left: 1em;
         margin: unset;
+        font-weight: bold;
+      }
+      h2{
+        text-align: right;
+        margin-right: 1em;
       }
     }
     &__container {
-      border: var(--border);
+      // border: var(--border);
       padding: var(--padding);
       margin-bottom: var(--margin);
       &--profile {
