@@ -3,21 +3,6 @@
 .shopDetail{
     max-width: 500px;
     margin: 0 auto;
-    &__info {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      justify-content: center;
-      align-items: center;
-      p {
-        margin-left: 1em;
-        margin: unset;
-        font-weight: bold;
-      }
-      h2{
-        text-align: right;
-        margin-right: 1em;
-      }
-    }
     &__container {
       border: var(--border);
       padding: var(--padding);
@@ -27,9 +12,17 @@
         grid-template-columns: 1fr 1fr;
         gap: var(--gap);
       }
-      &--text {
-        display: block;
-      }
+    }
+    table {
+      table-layout: fixed;
+      width: 100%;
+    }
+    th, td {
+      padding: 0.3rem;
+    }
+    th {
+      text-align: right;
+      font-family: var(--font-secondary);
     }
     &__img {
         width: 95%;

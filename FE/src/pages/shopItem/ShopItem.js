@@ -39,25 +39,25 @@ const ShopItem = () => {
             <div>
                 <h1>{item.overview.title}</h1>
                 <table className='shopDetail__container'>
-                    <tr className='shopDetail__info'>
+                    <tr>
                         <th>Price</th>
-                        <td>{item.overview.price}</td>
+                        <td>${item.overview.price}</td>
                     </tr>
-                    <tr className='shopDetail__info'>
+                    <tr>
                         <th>Height</th>
-                        <td>{item.dimensions.height}</td>
+                        <td>{item.dimensions.height}cm</td>
                     </tr>
-                    <tr className='shopDetail__info'>
+                    <tr>
                         <th>Width</th>
-                        <td>{item.dimensions.width}</td>
+                        <td>{item.dimensions.width}cm</td>
                     </tr>
-                    <tr className='shopDetail__info'>
+                    <tr>
                         <th>Depth</th>
-                        <td>{item.dimensions.depth}</td>
+                        <td>{item.dimensions.depth}cm</td>
                     </tr>
-                    <tr className='shopDetail__info'>
+                    <tr>
                         <th>Weight</th>
-                        <td>{item.dimensions.weight}</td>
+                        <td>{item.dimensions.weight}kg</td>
                     </tr>
                 </table>
                 <div className='shopDetail__container'>
@@ -71,15 +71,15 @@ const ShopItem = () => {
                         <img className='shopDetail__img' src={Url.SERVER_URL + item.discoverer.autographImageUrl} alt="" />
                     </div>
                     <table>
-                        <tr className='shopDetail__info'>
+                        <tr>
                             <th>Discoverer</th>
                             <td>{item.discoverer.name}</td>
                         </tr>
-                        <tr className='shopDetail__info'>
+                        <tr>
                             <th>Role</th>
                             <td>{item.discoverer.role}</td>
                         </tr>
-                        <tr className='shopDetail__info'>
+                        <tr>
                             <th>Description</th>
                             <td>{item.discoverer.description}</td>
                         </tr>
