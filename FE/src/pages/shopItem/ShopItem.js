@@ -86,6 +86,7 @@ const ShopItem = () => {
                     </div>
                 </div>
                 <button onClick={plus} className={!isActive ? 'btn btn--primary' : 'btn btn--checkout'}>{isActive ? buttonText : item.overview.button.content}</button>
+                <Link to={'/cart'} className='btn btn--secondary'>Go to cart</Link>
                 {/* <CartItem name={item.overview.title} price={item.overview.price} /> */}
             </div>
         </div>
