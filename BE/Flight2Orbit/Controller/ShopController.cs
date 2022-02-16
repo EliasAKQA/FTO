@@ -42,13 +42,19 @@ namespace Flight2Orbit.Controller
         {
             var shopitemPC = service.FetchNodeById(id);
             var shopItem = Converters.ConvertPublishedContent<ShopItem>(shopitemPC);
+
             var button = new ButtonDTO(shopItem.ButtonText, shopItem.ButtonLink);
+
             var shopItemDTO = new ShopItemDTO(shopItem.Id, shopItem.Image.Url(), shopItem.Title, shopItem.Price, button);
+
             var crewPC = shopItem.CrewMember.FirstOrDefault();
             var crew = Converters.ConvertPublishedContent<CrewMember>(crewPC);
             var crewMemberDTO = new CrewMemberDTO(crew.Id, crew.Name, crew.Role, crew.Description, crew.Image.Url(), crew.Autograph.Url());
+
             var dimensionsDTO = new Dimensions(shopItem.Height, shopItem.Width, shopItem.Depth, shopItem.Weight);
-            var shopitemDetailsDTO = new ShopitemDetailsDTO(shopItemDTO, crewMemberDTO, dimensionsDTO);
+
+            var shopitemDetailsDTO = new ShopitemDetailsDTO(shopItemDTO, shopItem.Description, crewMemberDTO, dimensionsDTO);
+
             return Json(shopitemDetailsDTO, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
         }
 
