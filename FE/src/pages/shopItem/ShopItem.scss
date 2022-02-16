@@ -19,6 +19,14 @@
         margin-right: 0.5em;
       }
     }
+    hr{
+        width: 15em;
+        margin: 0 auto;
+        background-color: var(--color-primary);
+        border-radius: var(--border-radius);
+        height: 2px;
+        border: none;
+      }
     &__container {
       // border: var(--border);
       padding: var(--padding);

@@ -35,26 +35,32 @@ const ShopItem = () => {
             <Link className='backButton' to={'/shop'}><h3>&#60; Back</h3></Link>
             <div className='shopDetail__img'>
                 <img className='shopDetail__img--product' src={Url.SERVER_URL + item.overview.imageUrl} alt="rock" />
+                
             </div>
             <div>
                 <h1>{item.overview.title}</h1>
                 <div className='shopDetail__container' >
+                    {/* <h2 className='center'>specification</h2> */}
                     <div className='shopDetail__info'>
                         <h2>Price</h2>
                         <p>${item.overview.price}</p>
                     </div>
+                    <hr/>
                     <div className="shopDetail__info">
                         <h2>height</h2>
                         <p>{item.dimensions.height} cm</p>
                     </div>
+                    <hr/>
                     <div className="shopDetail__info">
                         <h2>width</h2>
                         <p>{item.dimensions.width} cm</p>
                     </div>
+                    <hr/>
                     <div className="shopDetail__info">
                         <h2>depth</h2>
                         <p>{item.dimensions.depth} cm</p>
                     </div>
+                    <hr/>
                     <div className="shopDetail__info">
                         <h2>weight</h2>
                         <p>{item.dimensions.weight} kg</p>
