@@ -3,7 +3,7 @@ import './CrewMember.scss';
 import CrewMemberImage from "../../assets/crew/astronaut-raja-chari.jpg";
 import { Link, useParams } from "react-router-dom";
 
-const CrewMember = (props) => {
+const CrewMember = () => {
     let { member } = useParams();
     return (
         <div className='main__container--less-width'>

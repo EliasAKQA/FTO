@@ -14,6 +14,8 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: var(--gap);
+        justify-content: center;
+        align-items: center;
       }
     }
     table {
@@ -36,6 +38,7 @@
           width: 100%;
           height: auto;
           filter: var(--filter-shadow);
+          animation: var(--animation);
         }
     }
     &__btn-container * {
@@ -62,4 +65,10 @@
           width: 350px;
       }
     }
+}
+
+@keyframes floating {
+  to{
+    transform: var(--transform);
+  }
 }

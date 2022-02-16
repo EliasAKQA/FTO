@@ -18,7 +18,7 @@ const Body = () => {
                 <Route exact path={"/"} element={<Landing />} />
                 <Route path={"/shop"} element={<Webshop />} />
                 <Route path={"/crew/*"} element={<Crew />} />
-                {/* <Route path={"/crew/*"} element={<CrewMember />} /> */}
+                <Route path={"/crew/:id"} element={<CrewMember />} />
                 <Route path={"/inventory"} element={<Inventory />} />
                 <Route path={"/tracker"} element={<Tracker />} />
                 <Route path={"/quiz/*"} element={<Quizes />} />

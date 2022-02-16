@@ -1,4 +1,5 @@
 :root {
+  --animation: floating 3s ease-in-out alternate infinite;
   --border: 0.3rem solid var(--color-secondary);
   --border-radius: 0.5rem;
   --box-shadow: 0.5rem 0.5rem var(--color-secondary);
@@ -22,4 +23,5 @@
   --padding: 1rem;
   --padding-btn: 0.5rem;
   --text-shadow: 0 0 4px #518abc, 0 0 2px #86beee, 0 0 1px #86beee;
+  --transform: translateY(10px);
 }
