@@ -45,34 +45,6 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Answer: Enter answer
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		[ImplementPropertyType("answer")]
-		public virtual string Answer => this.Value<string>("answer");
-
-		///<summary>
-		/// Answer: Enter answer
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		[ImplementPropertyType("answer1")]
-		public virtual string Answer1 => this.Value<string>("answer1");
-
-		///<summary>
-		/// Answer: Enter answer
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		[ImplementPropertyType("answer2")]
-		public virtual string Answer2 => this.Value<string>("answer2");
-
-		///<summary>
-		/// Answer: Enter answer
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
-		[ImplementPropertyType("answer3")]
-		public virtual string Answer3 => this.Value<string>("answer3");
-
-		///<summary>
 		/// Answers: Add answers to this quiz question. (Maximum of 4)
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.17.2")]
