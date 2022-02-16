@@ -61,7 +61,7 @@ const ShopItem = () => {
                     </div>
                 </div>
                 <div className='shopDetail__container'>
-                    <h2>Description</h2>
+                    <h2 className='center'>Description</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dignissimos dolore eius qui vel fugiat ipsa tenetur! Voluptatem delectus suscipit ad harum, fugit praesentium. Rerum optio cum nisi distinctio qui?
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quibusdam fugiat amet quam sint iste distinctio cum animi totam aspernatur, repudiandae, a incidunt consectetur ut rerum corporis placeat voluptatibus doloremque!</p>
                 </div>
@@ -79,13 +79,14 @@ const ShopItem = () => {
                             <h2>Role</h2>
                             <p>{item.discoverer.role}</p>
                         </div>
-                        <div className='shopDetail__info'>
+                        <div className='shopDetail__info shopDeailDescription'>
                             <h2>Description</h2>
                             <p>{item.discoverer.description}</p>
                         </div>
                     </div>
                 </div>
                 <button onClick={plus} className={!isActive ? 'btn btn--primary' : 'btn btn--checkout'}>{isActive ? buttonText : item.overview.button.content}</button>
+                <br/>
                 <Link to={'/cart'} className='btn btn--secondary'>Go to cart</Link>
                 {/* <CartItem name={item.overview.title} price={item.overview.price} /> */}
             </div>
