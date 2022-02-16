@@ -26,8 +26,8 @@
   }
   &--secondary {
     background-color: transparent;
-    border: var(--border) var(--color-black);
-    color: var(--color-black);
+    border: var(--border);
+    color: var(--color-white);
     &:hover {
       opacity: 0.5;
     }
