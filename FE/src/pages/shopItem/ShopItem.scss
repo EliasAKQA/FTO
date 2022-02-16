@@ -6,6 +6,8 @@
     &__info {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      align-items: center;
       p {
         margin-left: 1em;
         margin: unset;

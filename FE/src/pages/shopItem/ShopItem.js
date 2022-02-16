@@ -17,7 +17,7 @@ const ShopItem = () => {
         setCount((prev) => prev + 1);
         console.log(count);
         setActive(!isActive);
-        setButtonText("addddded!");
+        setButtonText("added to cart");
     }
 
     // get single item from api
@@ -29,7 +29,7 @@ const ShopItem = () => {
     }, []);
 
     // check if item loaded
-    if (!item) return <h1>Loadingggggg....</h1>
+    if (!item) return <h1>Loading...</h1>
     return (
         <div className='shopDetail'>
             <Link className='backButton' to={'/shop'}><h3>&#60; Back</h3></Link>
@@ -38,28 +38,28 @@ const ShopItem = () => {
             </div>
             <div>
                 <h1>{item.overview.title}</h1>
-                <div className='shopDetail__container' >
-                    <div className='shopDetail__info'>
-                        <h2>Price</h2>
-                        <p>${item.overview.price}</p>
-                    </div>
-                    <div className="shopDetail__info">
-                        <h2>height</h2>
-                        <p>{item.dimensions.height} cm</p>
-                    </div>
-                    <div className="shopDetail__info">
-                        <h2>width</h2>
-                        <p>{item.dimensions.width} cm</p>
-                    </div>
-                    <div className="shopDetail__info">
-                        <h2>depth</h2>
-                        <p>{item.dimensions.depth} cm</p>
-                    </div>
-                    <div className="shopDetail__info">
-                        <h2>weight</h2>
-                        <p>{item.dimensions.weight} kg</p>
-                    </div>
-                </div>
+                <table className='shopDetail__container'>
+                    <tr className='shopDetail__info'>
+                        <th>Price</th>
+                        <td>{item.overview.price}</td>
+                    </tr>
+                    <tr className='shopDetail__info'>
+                        <th>Height</th>
+                        <td>{item.dimensions.height}</td>
+                    </tr>
+                    <tr className='shopDetail__info'>
+                        <th>Width</th>
+                        <td>{item.dimensions.width}</td>
+                    </tr>
+                    <tr className='shopDetail__info'>
+                        <th>Depth</th>
+                        <td>{item.dimensions.depth}</td>
+                    </tr>
+                    <tr className='shopDetail__info'>
+                        <th>Weight</th>
+                        <td>{item.dimensions.weight}</td>
+                    </tr>
+                </table>
                 <div className='shopDetail__container'>
                     <h2>Description</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dignissimos dolore eius qui vel fugiat ipsa tenetur! Voluptatem delectus suscipit ad harum, fugit praesentium. Rerum optio cum nisi distinctio qui?
@@ -70,20 +70,20 @@ const ShopItem = () => {
                         <img className='shopDetail__img' src={Url.SERVER_URL + item.discoverer.profileImageUrl} alt="" />
                         <img className='shopDetail__img' src={Url.SERVER_URL + item.discoverer.autographImageUrl} alt="" />
                     </div>
-                    <div className='shopDetail__container--text'>
-                        <div className='shopDetail__info'>
-                            <h2>Discoverer</h2>
-                            <p>{item.discoverer.name}</p>
-                        </div>
-                        <div className="shopDetail__info">
-                            <h2>Role</h2>
-                            <p>{item.discoverer.role}</p>
-                        </div>
-                        <div className='shopDetail__info'>
-                            <h2>Description</h2>
-                            <p>{item.discoverer.description}</p>
-                        </div>
-                    </div>
+                    <table>
+                        <tr className='shopDetail__info'>
+                            <th>Discoverer</th>
+                            <td>{item.discoverer.name}</td>
+                        </tr>
+                        <tr className='shopDetail__info'>
+                            <th>Role</th>
+                            <td>{item.discoverer.role}</td>
+                        </tr>
+                        <tr className='shopDetail__info'>
+                            <th>Description</th>
+                            <td>{item.discoverer.description}</td>
+                        </tr>
+                    </table>
                 </div>
                 <div className='shopDetail__btn-container'>
                     <button onClick={plus} className={!isActive ? 'btn btn--primary' : 'btn btn--checkout'}>{isActive ? buttonText : item.overview.button.content}</button>
