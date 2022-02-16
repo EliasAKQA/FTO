@@ -123,12 +123,14 @@
   }
   
   & .landingWrapper .btn--secondary {
-    border: var(--border) var(--color-primary);
+    border: var(--border);
+    border-color: var(--color-primary);
     color: var(--color-primary);
     margin: 2em 0;
   }
   & .landingWrapper .btn--primary {
-    border: var(--border) var(--color-primary);
+    border: var(--border);
+    border-color: var(--color-primary);
     color: var(--color-primary);
     background-color: var(--color-white);
     margin: 2em 0;
@@ -243,7 +245,8 @@
     margin: 2em 0;
   }
   & .landingWrapper .btn--primary {
-    border: var(--border) var(--color-white);
+    border: var(--border);
+    border-color: var(--color-white);
     color: var(--color-white);
     background-color: var(--color-secondary);
     margin: 2em 0;
