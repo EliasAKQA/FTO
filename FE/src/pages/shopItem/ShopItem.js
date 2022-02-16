@@ -45,25 +45,25 @@ const ShopItem = () => {
                     </div>
                     <div className="shopDetail__info">
                         <h2>height</h2>
-                        <p>{item.dimensions.height}</p>
+                        <p>{item.dimensions.height} cm</p>
                     </div>
                     <div className="shopDetail__info">
                         <h2>width</h2>
-                        <p>{item.dimensions.width}</p>
+                        <p>{item.dimensions.width} cm</p>
                     </div>
                     <div className="shopDetail__info">
                         <h2>depth</h2>
-                        <p>{item.dimensions.depth}</p>
+                        <p>{item.dimensions.depth} cm</p>
                     </div>
                     <div className="shopDetail__info">
                         <h2>weight</h2>
-                        <p>{item.dimensions.weight}</p>
+                        <p>{item.dimensions.weight} kg</p>
                     </div>
                 </div>
                 <div className='shopDetail__container'>
                     <h2>Description</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dignissimos dolore eius qui vel fugiat ipsa tenetur! Voluptatem delectus suscipit ad harum, fugit praesentium. Rerum optio cum nisi distinctio qui?</p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quibusdam fugiat amet quam sint iste distinctio cum animi totam aspernatur, repudiandae, a incidunt consectetur ut rerum corporis placeat voluptatibus doloremque!
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dignissimos dolore eius qui vel fugiat ipsa tenetur! Voluptatem delectus suscipit ad harum, fugit praesentium. Rerum optio cum nisi distinctio qui?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quibusdam fugiat amet quam sint iste distinctio cum animi totam aspernatur, repudiandae, a incidunt consectetur ut rerum corporis placeat voluptatibus doloremque!</p>
                 </div>
                 <div className='shopDetail__container'>
                     <div className='shopDetail__container--profile'>
