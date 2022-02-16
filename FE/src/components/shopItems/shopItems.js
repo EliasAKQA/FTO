@@ -9,13 +9,14 @@ const shopItems = (props) => {
             <Link to={'/shop/' + props.id}>
                 <div className='shopItemHolder' >
                     <div className='shopItemIMG'>
-                        <div className='shopItemCircle'></div>
                         <img className='shopItemRock' src={Url.SERVER_URL + props.image} alt={props.image} />
                     </div>
                     <p className='shopItemName'>{props.name}</p>
                     <p className='shopItemPrize'>{props.price}$</p>
-                    <button className='btn btn--primary ShopItemsbutton'>{props.button}</button>
-                    <div className='shopItemdark'></div>
+                    <div className='shopItemBtnContainer'>
+                        <button className='btn btn--secondary ShopItemsbutton'>info</button>
+                        <button className='btn btn--primary ShopItemsbutton'>{props.button}</button>
+                    </div>
                 </div>
             </Link>
         </div>
