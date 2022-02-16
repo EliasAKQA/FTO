@@ -60,10 +60,10 @@ const ShopItem = () => {
                         <td>{item.dimensions.weight}kg</td>
                     </tr>
                 </table>
-                <div className='shopDetail__container'>
-                    <h2 className='center'>Description</h2>
+                <section className='shopDetail__container'>
+                    <h2>Description</h2>
                     <p>{item.description}</p>
-                </div>
+                </section>
                 <div className='shopDetail__container'>
                     <div className='shopDetail__container--profile'>
                         <img className='shopDetail__img' src={Url.SERVER_URL + item.discoverer.profileImageUrl} alt="" />

@@ -7,9 +7,8 @@
       border: var(--border);
       padding: var(--padding);
       margin-bottom: var(--margin);
-      .center{
-        text-align: center;
-        margin-bottom: 0.5em;
+      h2 {
+        margin-bottom: 0.3rem;
       }
       &--profile {
         display: grid;
