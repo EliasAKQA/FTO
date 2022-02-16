@@ -38,8 +38,9 @@
           filter: var(--filter-shadow);
         }
     }
-    button {
+    button, a {
       width: 100%;
+      margin: var(--margin) 0;
     }
     @include respond(desktop){
       display: grid;
