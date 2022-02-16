@@ -62,8 +62,7 @@ const ShopItem = () => {
                 </table>
                 <div className='shopDetail__container'>
                     <h2 className='center'>Description</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dignissimos dolore eius qui vel fugiat ipsa tenetur! Voluptatem delectus suscipit ad harum, fugit praesentium. Rerum optio cum nisi distinctio qui?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quibusdam fugiat amet quam sint iste distinctio cum animi totam aspernatur, repudiandae, a incidunt consectetur ut rerum corporis placeat voluptatibus doloremque!</p>
+                    <p>{item.description}</p>
                 </div>
                 <div className='shopDetail__container'>
                     <div className='shopDetail__container--profile'>
