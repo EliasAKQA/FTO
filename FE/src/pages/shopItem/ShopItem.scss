@@ -26,6 +26,8 @@
     }
     th {
       text-align: right;
+      display: flex;
+      flex-direction: column;
       font-family: var(--font-secondary);
     }
     &__img {
