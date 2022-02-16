@@ -43,7 +43,8 @@ const Inventory = () => {
             </section>
             <section className={"resource__container"}>
                 {data.resource.resources.map(resource => {
-                    return <Resource height={`${resource.amount}%`} type={resource.title} colour={resource.colourCode}/>
+                    return <Resource height={`${resource.amount}%`} type={resource.title}
+                                     colour={resource.colourCode}/>
                 })}
             </section>
             <section className={'section-container'}>

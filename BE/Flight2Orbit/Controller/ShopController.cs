@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Results;
 using System.Web.Mvc;
+using Flight2Orbit.Exceptions;
 using Flight2Orbit.Helpers;
 using Flight2Orbit.Models;
 using Flight2Orbit.Services;
@@ -46,6 +50,26 @@ namespace Flight2Orbit.Controller
             var dimensionsDTO = new Dimensions(shopItem.Height, shopItem.Width, shopItem.Depth, shopItem.Weight);
             var shopitemDetailsDTO = new ShopitemDetailsDTO(shopItemDTO, crewMemberDTO, dimensionsDTO);
             return Json(shopitemDetailsDTO, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+        }
+
+        [System.Web.Http.HttpPost]
+        public async Task<IHttpActionResult> Post([FromBody] double price)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var apiUrl = $"http://localhost:49390/api/resource/post?price={price}";
+                client.BaseAddress = new Uri(apiUrl);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = await client.PostAsync(apiUrl, new HttpMessageContent(new HttpRequestMessage(HttpMethod.Post, apiUrl)));
+                if (!response.IsSuccessStatusCode)
+                    throw new InternalServerErrorException("Error connecting to resource service.");
+
+                var data = await response.Content.ReadAsStringAsync();
+
+
+                return Ok("Succesfully posted.");
+            }
         }
     }
 }

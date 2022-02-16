@@ -24,28 +24,6 @@ namespace Flight2Orbit.Controller
             Mapper = new Mapper();
         }
 
-        //public async Task<JsonResult<InventoryDTO>> GetInventoryContent()
-        //{
-        //    ResourcesDTO resources;
-        //    var apiUrl = "http://localhost:49390/api/resource/getresource";
-        //    using (HttpClient client = new HttpClient())
-        //    {
-        //        client.BaseAddress = new Uri(apiUrl);
-        //        client.DefaultRequestHeaders.Accept.Clear();
-        //        client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-
-        //        HttpResponseMessage response = await client.GetAsync(apiUrl);
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            var data = await response.Content.ReadAsStringAsync();
-        //            resources = Newtonsoft.Json.JsonConvert.DeserializeObject<ResourcesDTO>(data);
-        //        }
-        //    }
-
-        //    var inventory = Service.FetchNode<Inventory>(Inventory.GetModelContentType());
-        //    var inventDTO = Mapper.Map(inventory);
-        //    return Json(resources, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
-        //}
         public async Task<JsonResult<InventoryDTO>> GetInventoryContent()
         {
             using (HttpClient client = new HttpClient())
