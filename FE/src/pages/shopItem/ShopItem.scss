@@ -32,7 +32,7 @@
       font-family: var(--font-secondary);
     }
     &__img {
-        width: 95%;
+        width: 100%;
         position: relative;
         &--product {
           width: 100%;
@@ -67,8 +67,8 @@
     }
 }
 
-@keyframes floating {
-  to{
+@keyframes floatings {
+  to {
     transform: var(--transform);
   }
 }
