@@ -19,9 +19,9 @@ const Tracker = () => {
             <section className={"tracker__header"}>
                 <h1>Tracker</h1>
             </section>
-            <section>
+            {/* <section>
                 <Map/>
-            </section>
+            </section> */}
             <section>
                 <Leaflet func={data_pull}/>
             </section>
