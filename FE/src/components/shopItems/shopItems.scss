@@ -1,5 +1,18 @@
 @import "../../sass/partials/abstracts/mixins";
 
+// fade in mixin animation for cards
+@include fade-in;
+
+// animation loop for cards
+@for $i from 1 through 10 {
+  .container {
+    &:nth-child(#{$i}) {
+      // Delay increases as items loop.
+      animation-delay: $i * (.2s);
+    }
+  }
+}
+
 .shopItemHolder{
     width: 165px;
     height: 100%;

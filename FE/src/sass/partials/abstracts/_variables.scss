@@ -1,5 +1,6 @@
 :root {
   --animation: floatings 10s ease-in-out alternate infinite;
+  --animation-cards: .6s cubic-bezier(.25, .25, .25, 1.15) both fade-in;
   --border: 0.3rem solid var(--color-secondary);
   --border-radius: 0.5rem;
   --box-shadow: 0.5rem 0.5rem var(--color-secondary);

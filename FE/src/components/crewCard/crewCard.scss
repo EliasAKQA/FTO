@@ -1,8 +1,22 @@
+@import "../../sass/partials/abstracts/mixins";
 
-.container {
-  animation: .6s cubic-bezier(.25, .25, .25, 1.15) both fadeIn;
+// fade in mixin animation for cards
+@include fade-in;
+
+// animation loop for cards
+@for $i from 1 through 6 {
+  .container {
+    &:nth-child(#{$i}) {
+      // Delay increases as items loop.
+      animation-delay: $i * (.2s);
+    }
+  }
 }
 
+// main container for animation
+.container {
+  animation:var(--animation-cards);
+}
 .crew-card {
   padding: var(--padding);
   background-color: var(--color-primary-light);
@@ -12,11 +26,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-
   &__image {
-    // background-position: top;
-    // background-repeat: no-repeat;
-    // background-size: cover;
     overflow: hidden;
     & img {
       width: 100%;
@@ -41,23 +51,4 @@
   }
 }
 
-// animation loop for cards
-@for $i from 1 through 6 {
-  .container {
-    &:nth-child(#{$i}) {
-      // Delay the animation. Delay increases as items loop.
-      animation-delay: $i * (.2s);
-    }
-  }
-}
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
