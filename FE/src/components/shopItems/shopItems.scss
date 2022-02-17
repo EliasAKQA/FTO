@@ -1,11 +1,13 @@
 @import "../../sass/partials/abstracts/mixins";
 
 .shopItemHolder{
-    width: 140px;
+    width: 165px;
+    height: 100%;
     margin-top: 15px;
     border: var(--border);
-    // height: 17em;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
     @include respond(desktop){
         width: 200px;
     }
@@ -46,7 +48,6 @@
 .shopItemName{
     margin-top: 15px;
     margin-left: 5%;
-    height: 3em;
     @include respond(desktop){
         height: 1em;
         margin-top: 2em;
