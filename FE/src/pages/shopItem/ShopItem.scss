@@ -51,6 +51,9 @@
           animation: var(--animation);
         }
     }
+    .autograph {
+      filter: invert(100%);
+    }
     &__btn-container * {
       width: 100%;
       margin: var(--margin) 0;

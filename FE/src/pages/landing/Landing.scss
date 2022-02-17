@@ -120,8 +120,8 @@
     min-height: 50px;
     & img{
       position: absolute;
-      max-width: 100%;
-      left: -140px;
+      width: 300px;
+      left: -100px;
       top: -130px;
       z-index: 2;
       animation: floating 3s ease-in-out alternate infinite;
@@ -141,8 +141,8 @@
     background-color: var(--color-white);
     margin: 2em 0;
   }
-  
-  @include respond(desktop){
+
+  @include respond(tablet){
     & .landingWrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -159,6 +159,8 @@
       & img {
         left: 0;
         top: -50px;
+        width: 100%;
+        max-width: 100%;
       }
     }
     
@@ -197,8 +199,9 @@
     }
 
     &--img img {
-      top: -40px;
-      left: 40px;
+      max-width: 90%;
+      top: -100px;
+      left: -40px;
     }
   }
 }
@@ -258,7 +261,7 @@
     margin: 2em 0;
   }
 
-  @include respond(desktop){
+  @include respond(tablet){
     & .landingWrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -293,6 +296,9 @@
       grid-area: clock;
       width: 100%;
       margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       & img {
         position: static;
         display: block;
@@ -321,35 +327,3 @@
   }
 }
 
-@media all and (min-width: 550px) {
-  .part1 {
-    & img.rockImg {
-      width: 50%;
-    }
-
-    & .btn {
-      display: block;
-      max-width: 300px;
-      margin: auto;
-    }
-  }
-  .part2 {
-    & .ast_con {
-      min-height: 100px;
-    }
-
-    & .astronaut {
-      top: -100px;
-    }
-  }
-
-  .part3 {
-    & .clock_con {
-      min-height: 50px;
-    }
-
-    & .clock {
-      right: -50px;
-    }
-  }
-}

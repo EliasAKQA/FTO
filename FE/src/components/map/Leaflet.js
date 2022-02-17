@@ -8,8 +8,8 @@ import issIcon from "assets/satellite.png";
 
 const Leaflet = (props) => {
     
-    const [lat, setLat] = useState(null);
-    const [lng, setLng] = useState(null);
+    const [lat, setLat] = useState(0);
+    const [lng, setLng] = useState(0);
     
     function updateMap(){
         axios.get("http://api.open-notify.org/iss-now.json").then(res=>{
@@ -18,9 +18,9 @@ const Leaflet = (props) => {
                 'lng': res.data.iss_position.longitude,
                 'timestamp': res.data.timestamp
             });
-            console.log(`lat: ${lat}, lng: ${lng}`);
             setLat(res.data.iss_position.latitude);
             setLng(res.data.iss_position.longitude);
+            console.log(`lat: ${lat}, lng: ${lng}`);
         })
     }
     useEffect(()=>{
@@ -40,9 +40,8 @@ const Leaflet = (props) => {
     })
     return (
         <div>
-        {lat == null ? <h3>Loading location of ISS</h3> : (
 
-            <MapContainer center={[lat, lng]} zoom={5}>
+            <MapContainer center={[lat, lng]} zoom={1}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -53,9 +52,8 @@ const Leaflet = (props) => {
                     </Popup>
                 </Marker>
             </MapContainer>
-        )}
 
-            </div>
+        </div>
     )
 };
 export default Leaflet;
