@@ -1,3 +1,22 @@
+@import "../../sass/partials/abstracts/mixins";
+
+// fade in mixin animation for cards
+@include fade-in;
+
+// animation loop for cards
+@for $i from 1 through 6 {
+  .container {
+    &:nth-child(#{$i}) {
+      // Delay increases as items loop.
+      animation-delay: $i * (.2s);
+    }
+  }
+}
+
+// main container for animation
+.container {
+  animation:var(--animation-cards);
+}
 .crew-card {
   padding: var(--padding);
   background-color: var(--color-primary-light);
@@ -8,9 +27,6 @@
   display: flex;
   flex-direction: column;
   &__image {
-    // background-position: top;
-    // background-repeat: no-repeat;
-    // background-size: cover;
     overflow: hidden;
     & img {
       width: 100%;
@@ -20,14 +36,19 @@
     }
   }
   &__text {
+    display: flex;
+    flex-direction: column;
     color: var(--color-black);
     & p {
       color: var(--color-black);
     }
   }
-
   & .autograph{
-    max-height: 64px;
-    margin-top: auto;
+    max-height: 150px;
+    // margin-top: auto;
+    align-self: flex-end;
+
   }
 }
+
+
