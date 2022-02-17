@@ -5,7 +5,7 @@ import Url from "config";
 
 const CrewCard = (props) => {
     return (
-        <div>
+        <div className="container">
             <Link to={'/crew/' + props.name}>
                 <div className="crew-card">
                     <figure className="crew-card__image">
