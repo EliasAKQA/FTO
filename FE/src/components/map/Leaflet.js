@@ -48,7 +48,7 @@ const Leaflet = (props) => {
                 />
                 <Marker position={[lat, lng]} icon={Iss}>
                     <Popup>
-                        A pretty CSS3 popup. <br /> Easily customizable.
+                        ISS
                     </Popup>
                 </Marker>
             </MapContainer>
