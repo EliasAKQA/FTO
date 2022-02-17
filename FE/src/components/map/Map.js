@@ -10,7 +10,7 @@ const Map = (props) => {
 
     return <div>
         <Wrapper apiKey={"AIzaSyAJUPREgqqrQ7rD1F2knXBF74o2duPA2y4"} render={render}>
-            <MapDisplay func={props.func}/>
+            <MapDisplay/>
         </Wrapper>
     </div>
 };

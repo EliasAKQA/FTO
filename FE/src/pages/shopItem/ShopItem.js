@@ -35,6 +35,7 @@ const ShopItem = () => {
             <Link className='backButton' to={'/shop'}><h3>&#60; Back</h3></Link>
             <div className='shopDetail__img'>
                 <img className='shopDetail__img--product' src={Url.SERVER_URL + item.overview.imageUrl} alt="rock" />
+                
             </div>
             <div>
                 <h1>{item.overview.title}</h1>
