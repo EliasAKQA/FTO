@@ -39,7 +39,7 @@
     content: "";
     background: url('../../assets/MaskGroup1.svg'), linear-gradient(0deg, #011b31, #012d5400 );
     height: 10em;
-    background-size: cover;
+    background-size: cover; 
     width: 100%;
     @include respond(desktop--large){
       height: 250px;
@@ -108,6 +108,12 @@
     width: 50%;
     text-align: right;
     margin-left: auto;
+    height: 200px;
+    padding-top: 50px;
+    @include respond (desktop){
+      height: auto;
+      padding-top: 0;
+    }
   }
 
   &--img {
