@@ -14,7 +14,7 @@ const CrewCard = (props) => {
                     <div className="crew-card__text">
                         <h2>{props.name}</h2>
                         <h3>{props.title}</h3>
-                        <p>{props.desc}</p>
+                        {/* <p>{props.desc}</p> */}
                         <img alt="autograph" src={Url.SERVER_URL + props.autographImageUrl} className="autograph"></img>
                     </div>
                 </div>

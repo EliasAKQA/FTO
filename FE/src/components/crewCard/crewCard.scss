@@ -20,6 +20,8 @@
     }
   }
   &__text {
+    display: flex;
+    flex-direction: column;
     color: var(--color-black);
     & p {
       color: var(--color-black);
@@ -27,7 +29,9 @@
   }
 
   & .autograph{
-    max-height: 100px;
-    margin-top: auto;
+    max-height: 150px;
+    // margin-top: auto;
+    align-self: flex-end;
+
   }
 }
