@@ -1,16 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import './Tracker.scss';
 import Map from "../../components/map/Map";
+import Leaflet from "../../components/map/Leaflet";
 import {Link} from 'react-router-dom';
 
 
-
 const Tracker = () => {
-    const [position, setPosition] = useState({lon:'loading', lan:'loading', timestamp:'loading'});
+    const [position, setPosition] = useState({lat:'loading', lng:'loading', timestamp:'loading'});
     
     const data_pull = (data) => {
-        setPosition({lon: data.lon,
-                    lan: data.lan,
+        setPosition({lat: data.lat,
+                    lng: data.lng,
                     timestamp: Date(data.timestamp)})
     }
 
@@ -20,13 +20,16 @@ const Tracker = () => {
                 <h1>Tracker</h1>
             </section>
             <section>
-                <Map func={data_pull}/>
+                <Map/>
+            </section>
+            <section>
+                <Leaflet func={data_pull}/>
             </section>
             <section>
                 <div className={"tracker__info"}>
                     <div>
                         <h3>Location</h3>
-                        <p>{position.lon}, {position.lan}</p>
+                        <p>{position.lat}, {position.lng}</p>
                     </div>
                     <div>
                         <h3>Speed</h3>
