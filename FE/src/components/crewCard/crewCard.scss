@@ -57,11 +57,25 @@
     & p {
       color: var(--color-black);
     }
+& h3 {
+  font-family: 'Courier New', Courier, monospace;
+}
   }
-  & .autograph{
-    max-height: 150px;
-    // margin-top: auto;
-    align-self: flex-end;
 
+}
+
+.test {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  .testlogo {
+    height: auto;
+    width: 100%;
+    filter: drop-shadow(2px 2px 3px var(--color-black));
+  }
+  .autograph{
+    max-height: auto;
+    width: 100%;
+    // margin-top: auto;
   }
 }
