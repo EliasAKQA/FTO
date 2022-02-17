@@ -68,7 +68,7 @@ const ShopItem = () => {
                 <div className='shopDetail__container'>
                     <div className='shopDetail__container--profile'>
                         <img className='shopDetail__img' src={Url.SERVER_URL + item.discoverer.profileImageUrl} alt="" />
-                        <img className='shopDetail__img' src={Url.SERVER_URL + item.discoverer.autographImageUrl} alt="" />
+                        <img className='shopDetail__img autograph' src={Url.SERVER_URL + item.discoverer.autographImageUrl} alt="" />
                     </div>
                     <table>
                         <tr>
