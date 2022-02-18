@@ -30,5 +30,12 @@ namespace Flight2Orbit.Controller
             var crew = service.FetchNode<Crew>(Crew.GetModelContentType());
             return Json(Mapper.Map(crew), new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
         }
+
+        public IHttpActionResult GetCrewMemberDetails(int id)
+        {
+            var crewMember = service.FetchNodeById(id);
+            var crewMemberConverted = Converters.ConvertPublishedContent<CrewMember>(crewMember);
+            return Json(Mapper.Map(crewMemberConverted), new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+        }
     }
 }

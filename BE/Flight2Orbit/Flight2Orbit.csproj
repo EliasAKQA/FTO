@@ -367,6 +367,7 @@
     <Compile Include="Models\CallToActionDTO.cs" />
     <Compile Include="Models\Crew\CrewDTO.cs" />
     <Compile Include="Models\Crew\CrewMemberDTO.cs" />
+    <Compile Include="Models\Crew\InfoSectionDTO.cs" />
     <Compile Include="Models\Dimensions.cs" />
     <Compile Include="Models\Home\HomeDTO.cs" />
     <Compile Include="Models\Inventory\ClockDTO.cs" />
