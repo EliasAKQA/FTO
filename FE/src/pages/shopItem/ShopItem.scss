@@ -3,70 +3,60 @@
 .shopDetail{
     max-width: 500px;
     margin: 0 auto;
-    &__info {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      // border: var(--border);
-      margin-top: 10px;
-      p {
-        margin: unset;
-        font-weight: bold;
-        padding-top: 2%;
-        margin-left: 0.5em;
-      }
-      h2{
-        text-align: right;
-        margin-right: 0.5em;
-      }
-    }
     &__container {
-      // border: var(--border);
+      border: var(--border);
       padding: var(--padding);
       margin-bottom: var(--margin);
-      .center{
-        text-align: center;
-        margin-bottom: 0.5em;
+      h2 {
+        margin-bottom: 0.3rem;
       }
       &--profile {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: var(--gap);
+        justify-content: center;
+        align-items: center;
       }
-      &--description {
-        display: block;
-        h2{
-          text-align: center;
-        }
-      }
-      &--text {
-        display: block;
-        .shopDeailDescription{
-          display: block;
-          margin-top: 2em;
-          h2{
-            text-align: center;
-            @include respond(desktop--large){
-            text-align: right;
-            }
-          }
-          @include respond(desktop--large){
-            display: grid; 
-            margin-top: var(--margin);
-          }
+    }
+    table {
+      table-layout: fixed;
+      width: 100%;
+      & a {
+        text-decoration: underline;
+        text-decoration-color: var(--color-secondary);
+        text-underline-offset: 0.2rem;
+        text-decoration-thickness: 0.2rem;
+        &:hover {
+          opacity: 0.5;
+          transition: var(--transition);
         }
       }
     }
+    th, td {
+      padding: 0.3rem;
+    }
+    th {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      font-family: var(--font-secondary);
+    }
     &__img {
-        width: 95%;
+        width: 100%;
         position: relative;
         &--product {
           width: 100%;
           height: auto;
           filter: var(--filter-shadow);
+          animation: var(--animation);
         }
     }
-    button {
+    .autograph {
+      filter: invert(100%);
+    }
+    &__btn-container * {
       width: 100%;
+      margin: var(--margin) 0;
     }
     @include respond(desktop){
       display: grid;
@@ -88,4 +78,10 @@
           width: 350px;
       }
     }
+}
+
+@keyframes floatings {
+  to {
+    transform: var(--transform);
+  }
 }

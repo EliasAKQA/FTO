@@ -1,8 +1,12 @@
-.map {
-    padding-top: 30%;
-    min-height: 20em;
+.map, .leaflet-container {
+    padding-top: 40%;
     max-width: 1000px;
     margin: auto;
     margin-block: 3em;
     border-radius: 8px;
+    filter: hue-rotate(10deg);
+    & img.leaflet-marker-icon{
+        filter: drop-shadow(3px 3px 2px black);
+        // filter:invert(90%);
+    }
 }

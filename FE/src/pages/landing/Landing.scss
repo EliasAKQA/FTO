@@ -31,6 +31,8 @@
     margin: 1em auto;
     & img{
       width: 100%;
+      filter: drop-shadow(5px 10px 20px black);
+      animation: floating 3s alternate infinite ease-in-out;
     }
   } 
 
@@ -39,7 +41,7 @@
     content: "";
     background: url('../../assets/MaskGroup1.svg'), linear-gradient(0deg, #011b31, #012d5400 );
     height: 10em;
-    background-size: cover;
+    background-size: cover; 
     width: 100%;
     @include respond(desktop--large){
       height: 250px;
@@ -108,14 +110,20 @@
     width: 50%;
     text-align: right;
     margin-left: auto;
+    height: 200px;
+    padding-top: 50px;
+    @include respond (desktop){
+      height: auto;
+      padding-top: 0;
+    }
   }
 
   &--img {
     min-height: 50px;
     & img{
       position: absolute;
-      max-width: 100%;
-      left: -140px;
+      width: 300px;
+      left: -100px;
       top: -130px;
       z-index: 2;
       animation: floating 3s ease-in-out alternate infinite;
@@ -135,8 +143,8 @@
     background-color: var(--color-white);
     margin: 2em 0;
   }
-  
-  @include respond(desktop){
+
+  @include respond(tablet){
     & .landingWrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -153,6 +161,8 @@
       & img {
         left: 0;
         top: -50px;
+        width: 100%;
+        max-width: 100%;
       }
     }
     
@@ -191,8 +201,9 @@
     }
 
     &--img img {
-      top: -40px;
-      left: 40px;
+      max-width: 90%;
+      top: -100px;
+      left: -40px;
     }
   }
 }
@@ -212,15 +223,28 @@
   &--img {
     min-height: 10px;
     width: 50%;
-    & img {
+    & img, .svg {
       position: absolute;
+      height: max-content;
       top: -3em;
       right: -7em;
       // left: 10em;
       z-index: 100;
       width: 70%;
       max-width: 300px;
+      & .seconds{
+        transform-origin: 269.5px 261.5px;
+        animation: spin 60s infinite steps(60);
     }
+      & .minutes{
+        transform-origin: 269.5px 261.5px;
+        animation: spin 3600s infinite linear;
+    }
+      & .hours{
+        transform-origin: 269.5px 261.5px;
+        animation: spin 3600s infinite linear;
+    }
+  }
   }
 
 
@@ -252,7 +276,7 @@
     margin: 2em 0;
   }
 
-  @include respond(desktop){
+  @include respond(tablet){
     & .landingWrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -287,7 +311,10 @@
       grid-area: clock;
       width: 100%;
       margin-bottom: 0;
-      & img {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      & img, .svg {
         position: static;
         display: block;
         width: 70%;
@@ -307,7 +334,7 @@
       margin: auto;
     }
 
-    &--img img {
+    &--img img, --img .svg {
       position: static;
       display: block;
       margin: auto;
@@ -315,35 +342,12 @@
   }
 }
 
-@media all and (min-width: 550px) {
-  .part1 {
-    & img.rockImg {
-      width: 50%;
-    }
-
-    & .btn {
-      display: block;
-      max-width: 300px;
-      margin: auto;
-    }
+@keyframes spin{
+  from{
+    transform: rotate(0deg);
   }
-  .part2 {
-    & .ast_con {
-      min-height: 100px;
-    }
-
-    & .astronaut {
-      top: -100px;
-    }
-  }
-
-  .part3 {
-    & .clock_con {
-      min-height: 50px;
-    }
-
-    & .clock {
-      right: -50px;
-    }
+  to{
+    transform: rotate(360deg);
   }
 }
+

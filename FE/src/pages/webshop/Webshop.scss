@@ -14,7 +14,7 @@
   gap: 1em;
 
   @include respond(desktop){
-    justify-content:flex-start ; 
+    justify-content:center ; 
   }
 }
 
