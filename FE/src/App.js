@@ -7,7 +7,8 @@ import LoadingScreen from "./components/loading/LoadingScreen";
 
 function App() {
     const [loading, setLoading] = useState(true);
-
+    const [cart, setCart] = useState([]);
+    localStorage.setItem('shoppingCart', cart)
     useEffect(() => {
         let myStorage = window.sessionStorage;
         if (myStorage.getItem("loading") !== "false") {

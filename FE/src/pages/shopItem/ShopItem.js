@@ -31,7 +31,7 @@ const ShopItem = () => {
     // check if item loaded
     if (!item) return <h1>Loading...</h1>
     return (
-        <div className='shopDetail'>
+        <div className='shopDetail main__container--lesswidth'>
             <Link className='backButton' to={'/shop'}><h3>&#60; Back</h3></Link>
             <div className='shopDetail__img'>
                 <img className='shopDetail__img--product' src={Url.SERVER_URL + item.overview.imageUrl} alt="rock" />
