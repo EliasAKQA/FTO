@@ -4,7 +4,7 @@ using ResourceService.Models;
 
 namespace ResourceService.DAL
 {
-    public class ResourceInitializer : DropCreateDatabaseAlways<ResourceContext>
+    public class ResourceInitializer : DropCreateDatabaseIfModelChanges<ResourceContext>
     {
         protected override void Seed(ResourceContext context)
         {
