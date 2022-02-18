@@ -26,6 +26,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  transition: var(--transition);
   &__image {
     overflow: hidden;
     position: relative;
@@ -49,6 +50,9 @@
       left: 0;
       opacity: 1;
     }
+  }
+  &:hover {
+    transform: translateY(-10px);
   }
   &__text {
     display: flex;
