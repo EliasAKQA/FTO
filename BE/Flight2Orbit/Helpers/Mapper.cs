@@ -169,6 +169,18 @@ namespace Flight2Orbit.Helpers
                 clockDTO, new ResourcesDTO(resources, res.MillisecondsToDeath), ctoDTO);
         }
 
+        public ResourcesDTO Map(Inventory inventory)
+        {
+            var resources = new List<ResourceDTO>();
+            foreach (var resourcePC in inventory.Resources)
+            {
+                var resource = Converters.ConvertPublishedContent<Resource>(resourcePC);
+                resources.Add(new ResourceDTO(resource.Title, resource.Colour.ToString()));
+            }
+
+            return new ResourcesDTO(resources);
+        }
+
         public SharedDTO Map(Shared shared)
         {
             return new SharedDTO(shared.Favicon.Url(), shared.Title);

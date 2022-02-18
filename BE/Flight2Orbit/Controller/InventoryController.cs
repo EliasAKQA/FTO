@@ -24,6 +24,12 @@ namespace Flight2Orbit.Controller
             Mapper = new Mapper();
         }
 
+        public IHttpActionResult GetResources()
+        {
+            var inventory = Service.FetchNode<Inventory>(Inventory.GetModelContentType());
+            return Json(Mapper.Map(inventory), new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+        }
+
         public async Task<JsonResult<InventoryDTO>> GetInventoryContent()
         {
             using (HttpClient client = new HttpClient())

@@ -11,6 +11,10 @@ namespace Flight2Orbit.Models.Inventory
             Resources = resources;
             MillisecondsToDeath = millisecondsToDeath;
         }
+        public ResourcesDTO(IEnumerable<ResourceDTO> resources)
+        {
+            Resources = resources;
+        }
 
         public ResourcesDTO()
         {
