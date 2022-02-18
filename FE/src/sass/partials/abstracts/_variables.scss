@@ -1,5 +1,6 @@
 :root {
   --animation: floatings 10s ease-in-out alternate infinite;
+  --animation-cards: .6s cubic-bezier(.25, .25, .25, 1.15) both fade-in;
   --border: 0.3rem solid var(--color-secondary);
   --border-radius: 0.5rem;
   --box-shadow: 0.5rem 0.5rem var(--color-secondary);
@@ -11,6 +12,7 @@
   --color-tertiary: #f2e84b;
   --color-white: #fff;
   --filter: brightness(70%);
+  --filter-crew: contrast(175%) brightness(93%);
   --filter-shadow: drop-shadow(10px 10px 10px var(--color-black));
   --font-primary: "Arial", sans-serif;
   --font-secondary: "Montserrat", sans-serif;
@@ -20,6 +22,7 @@
   --gap: 2rem;
   --letter-spacing: 0.1rem;
   --margin: 1rem;
+  --overlay: linear-gradient(180deg, rgba(9,9,121,0) 60%, var(--color-primary-light) 100%);
   --padding: 1rem;
   --padding-btn: 0.5rem;
   --text-shadow: 0 0 4px #518abc, 0 0 2px #86beee, 0 0 1px #86beee;

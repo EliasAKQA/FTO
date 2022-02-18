@@ -5,7 +5,7 @@ import Url from 'config';
 
 const shopItems = (props) => {
     return (
-        <div>
+        <div className='container'>
             <Link to={'/shop/' + props.id}>
                 <div className='shopItemHolder' >
                     <div className='shopItemIMG'>

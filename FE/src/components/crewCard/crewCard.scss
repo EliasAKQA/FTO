@@ -1,3 +1,22 @@
+@import "../../sass/partials/abstracts/mixins";
+
+// fade in mixin animation for cards
+@include fade-in;
+
+// animation loop for cards
+@for $i from 1 through 6 {
+  .container {
+    &:nth-child(#{$i}) {
+      // Delay increases as items loop.
+      animation-delay: $i * (.2s);
+    }
+  }
+}
+
+// main container for animation
+.container {
+  animation:var(--animation-cards);
+}
 .crew-card {
   padding: var(--padding);
   background-color: var(--color-primary-light);
@@ -8,26 +27,55 @@
   display: flex;
   flex-direction: column;
   &__image {
-    // background-position: top;
-    // background-repeat: no-repeat;
-    // background-size: cover;
     overflow: hidden;
+    position: relative;
     & img {
+      position: relative;
       width: 100%;
       height: 300px;
       object-fit: cover;
       object-position: top;
+      filter: var(--filter-crew);
+    }
+    &::after {
+      content: '';
+      height: 100%;
+      width: 100%;
+      background: var(--overlay);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 1;
     }
   }
   &__text {
+    display: flex;
+    flex-direction: column;
     color: var(--color-black);
     & p {
       color: var(--color-black);
     }
+& h3 {
+  font-family: 'Courier New', Courier, monospace;
+}
   }
 
-  & .autograph{
-    max-height: 64px;
-    margin-top: auto;
+}
+
+.test {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  .testlogo {
+    height: auto;
+    width: 100%;
+    filter: drop-shadow(2px 2px 3px var(--color-black));
+  }
+  .autograph{
+    max-height: auto;
+    width: 100%;
+    // margin-top: auto;
   }
 }

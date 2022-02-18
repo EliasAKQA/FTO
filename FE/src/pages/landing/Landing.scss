@@ -31,6 +31,8 @@
     margin: 1em auto;
     & img{
       width: 100%;
+      filter: drop-shadow(5px 10px 20px black);
+      animation: floating 3s alternate infinite ease-in-out;
     }
   } 
 
@@ -221,15 +223,28 @@
   &--img {
     min-height: 10px;
     width: 50%;
-    & img {
+    & img, .svg {
       position: absolute;
+      height: max-content;
       top: -3em;
       right: -7em;
       // left: 10em;
       z-index: 100;
       width: 70%;
       max-width: 300px;
+      & .seconds{
+        transform-origin: 269.5px 261.5px;
+        animation: spin 60s infinite steps(60);
     }
+      & .minutes{
+        transform-origin: 269.5px 261.5px;
+        animation: spin 3600s infinite linear;
+    }
+      & .hours{
+        transform-origin: 269.5px 261.5px;
+        animation: spin 3600s infinite linear;
+    }
+  }
   }
 
 
@@ -299,7 +314,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      & img {
+      & img, .svg {
         position: static;
         display: block;
         width: 70%;
@@ -319,11 +334,20 @@
       margin: auto;
     }
 
-    &--img img {
+    &--img img, --img .svg {
       position: static;
       display: block;
       margin: auto;
     }
+  }
+}
+
+@keyframes spin{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
   }
 }
 

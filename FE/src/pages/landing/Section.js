@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useEffect, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
 import Url from 'config';
 import './Landing.scss';
+import {ReactSVG} from 'react-svg';
 
 function Section(props) {
     return (
@@ -10,7 +11,11 @@ function Section(props) {
                 <h1>{props.header}</h1>
                 <p>{props.description}</p>
                 <div className={`part${props.index}--img`}>
-                    <img src={Url.SERVER_URL + props.imageUrl}/>
+                    {props.index == 3 ? (
+                        <ReactSVG src={Url.SERVER_URL + props.imageUrl}/>
+                    ) : (
+                        <img src={Url.SERVER_URL + props.imageUrl}/>
+                    )}
                 </div>
                 <Link className={"btn btn--primary"} to={props.button.url}>{props.button.content}</Link>
             </div>
