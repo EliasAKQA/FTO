@@ -1,26 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import InfoSection from "../../components/sections/InfoSection";
 import './CrewMember.scss';
-import CrewMemberImage from "../../assets/crew/astronaut-raja-chari.jpg";
 import { Link, useParams } from "react-router-dom";
+import axios from 'axios';
+import Url from 'config';
 
 const CrewMember = () => {
-    let { member } = useParams();
+    let { id } = useParams();
+    const [member, setMember] = useState(null);
+
+    // get single member from api
+    useEffect(() => {
+        axios.get(Url.UMBRACO_API + "/crew/getCrewMemberDetails?id=" + id).then((res) => {
+            console.log(res);
+            setMember(res.data);
+        })
+    }, []);
+
+    // check if item loaded
+    if (!member) return <h1>Loading ...</h1>
     return (
         <div className='main__container--less-width'>
             <section className='crew-member'>
                 <figure className='crew-member__image'>
-                    <img src={CrewMemberImage} alt="Crew member name" />
+                    <img src={Url.SERVER_URL + member.profileImageUrl} alt={member.name} />
                 </figure>
                 <div className='crew-member__text main__container--lesswidth'>
-                    <h1>{member}</h1>
-                    <h2>Job title</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias voluptate repellendus iste in voluptatem accusantium illo, non at harum quasi, a sunt corporis debitis error, aut incidunt tempora molestias ratione.</p>
-                    <h2>Personal Info</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab placeat doloremque vero? Labore fugiat deleniti quia voluptatem temporibus qui, corrupti voluptas odit voluptates ratione architecto recusandae ducimus incidunt, cum blanditiis.</p>
-                    <h2>Education</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perspiciatis placeat quo pariatur temporibus asperiores consequuntur eos a, ducimus autem quam quia ut saepe molestias quasi, voluptas debitis optio? Animi.</p>
-                    <h2>Experience</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias assumenda odit ipsa aperiam quidem vel veniam, quibusdam beatae quos doloremque hic laudantium voluptatem natus nobis, repudiandae quaerat deleniti suscipit nisi.</p>
+                    <h1 className='crew-member__text--title'>{member.name}</h1>
+                    <p>{member.description}</p>
+                    <div>
+                        {member.infoSections.map((content, index) => {
+                            return <InfoSection key={index} title={content.title} content={content.content} />
+                        })}
+                    </div>
                 </div>
             </section>
         </div>
