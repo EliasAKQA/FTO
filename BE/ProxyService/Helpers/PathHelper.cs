@@ -18,6 +18,7 @@ namespace ProxyService.Services
             {"quizContentById", "/quiz/GetQuestions"},
             {"sharedMetaContent", "/shared/GetMetaData"},
             {"sharedHeaderContent", "/shared/GetHeaderContent"},
+            {"trackerContent", "/tracker/GetTrackerContent"},
         };
 
         public PathHelper() { }

@@ -135,6 +135,7 @@
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\Offline\UmbracoController.cs" />
+    <Compile Include="Controllers\TrackerController.cs" />
     <Compile Include="Extensions\ArrayExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
