@@ -6,15 +6,36 @@ import Url from 'config';
 
 const Crew = () => {
     const [sections, setSections] = useState(null);
-
+    const [crew, setCrew] = useState(null);
+    const [current, setCurrent] = useState(null);
     useEffect(() => {
-        axios.get(Url.UMBRACO_API + "/crew/getcrewcontent").then((res) => {
-            console.log(res);
-            setSections(res.data);
+        axios.get("http://api.open-notify.org/astros.json").then((res) => {
+            console.log(res.data.people.filter(ast => ast.craft == "ISS"));
+            setCrew(res.data.people.filter(ast => ast.craft == "ISS"));
         })
     }, []);
 
-    if (!sections) return <h1>Loading...</h1>
+    useEffect(() => {
+        axios.get(Url.UMBRACO_API + "/crew/getcrewcontent").then((res) => {
+            setSections(res.data);
+            console.log(res.data.crewMembers);
+        })
+    }, []);
+
+    if (!current) {
+        if (crew && sections) {
+            console.log('yes');
+            console.log(sections.crewMembers);
+            setCurrent(sections.crewMembers.filter(memberA => {
+                return crew.find(memberB => {
+                    return memberA.name === memberB.name;
+                })
+            }));
+            console.log(current);
+        }
+    }
+
+    if (!current) return <h1>Loading...</h1>
 
     return (
         <div className='main__container--fullwidth'>
@@ -24,8 +45,8 @@ const Crew = () => {
                 <p>{sections.description}</p>
             </section>
             <div className="card-container">
-                {sections.crewMembers.map((content, index) => {
-                    return <CrewCard key={index} id={content.id} name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} autographImageUrl={content.autographImageUrl}
+                {current.map((content) => {
+                    return <CrewCard key={content.id} name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} autographImageUrl={content.autographImageUrl}
                         desc={content.description} />
                 })}
             </div>
