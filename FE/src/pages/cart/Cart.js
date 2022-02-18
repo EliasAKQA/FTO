@@ -3,12 +3,17 @@ import CartItems from "../../components/cartItems/cartItems"
 import "./Cart.scss"
 
 const Cart = () => {
+    if (!localStorage.getItem('FTOCart')) {
+        localStorage.setItem('FTOCart', '[]');
+    }
+    let cart = JSON.parse(localStorage.getItem('FTOCart'));
     return (
         <div className={'cart'}>
             <h1 className='cartH1'>Cart</h1>
             <section className={'Items'}>
-                <CartItems name="Meteoritesss" />
-                <CartItems name="meteorites" />
+                {cart.map((item)=>{
+                    return <CartItems name={item.name} />
+                })}
             </section>
             <section className='cartTotal'>
                 <div>
