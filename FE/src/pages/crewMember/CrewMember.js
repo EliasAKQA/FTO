@@ -34,7 +34,6 @@ const CrewMember = () => {
                         })};
                     </div>
                 </div>
-
             </section>
         </div>
     )
