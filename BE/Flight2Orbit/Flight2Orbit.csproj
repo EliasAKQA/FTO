@@ -357,6 +357,7 @@
     <Compile Include="Controller\QuizController.cs" />
     <Compile Include="Controller\SharedController.cs" />
     <Compile Include="Controller\ShopController.cs" />
+    <Compile Include="Controller\TrackerController.cs" />
     <Compile Include="Exceptions\InternalServerErrorException.cs" />
     <Compile Include="Exceptions\NoSuchTypeException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
@@ -388,6 +389,7 @@
     <Compile Include="Models\Shop\ShopDTO.cs" />
     <Compile Include="Models\Shop\ShopitemDetailsDTO.cs" />
     <Compile Include="Models\Shop\ShopItemDTO.cs" />
+    <Compile Include="Models\Tracker\TrackerDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\UmbracoService.cs" />
   </ItemGroup>

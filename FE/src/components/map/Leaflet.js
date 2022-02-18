@@ -1,18 +1,17 @@
 import React, {useEffect, useRef, useState} from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet'
 import axios from "axios";
 import L from 'leaflet';
 import issIcon from "assets/satellite.png";
 
 
-
 const Leaflet = (props) => {
-    
+ 
     const [lat, setLat] = useState(0);
     const [lng, setLng] = useState(0);
-    
-    function updateMap(){
-        axios.get("http://api.open-notify.org/iss-now.json").then(res=>{
+
+    function updateMap() {
+        axios.get("http://api.open-notify.org/iss-now.json").then(res => {
             props.func({
                 'lat': res.data.iss_position.latitude,
                 'lng': res.data.iss_position.longitude,
@@ -23,10 +22,11 @@ const Leaflet = (props) => {
             console.log(`lat: ${lat}, lng: ${lng}`);
         })
     }
-    useEffect(()=>{
+
+    useEffect(() => {
         const id = setInterval(updateMap, 3000);
 
-        return(()=>{
+        return (() => {
             clearInterval(id);
         })
     })
@@ -34,13 +34,12 @@ const Leaflet = (props) => {
     const Iss = L.icon({
         iconUrl: issIcon,
         iconSize: [64, 64],
-        iconAnchor:[32, 32],
+        iconAnchor: [32, 32],
         popupAnchor: [0, 32]
-
     })
+
     return (
         <div>
-
             <MapContainer center={[lat, lng]} zoom={1}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -52,7 +51,6 @@ const Leaflet = (props) => {
                     </Popup>
                 </Marker>
             </MapContainer>
-
         </div>
     )
 };

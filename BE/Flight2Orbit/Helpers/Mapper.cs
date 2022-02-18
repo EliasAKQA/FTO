@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using Flight2Orbit.Exceptions;
@@ -7,6 +8,7 @@ using Flight2Orbit.Models;
 using Flight2Orbit.Models.Inventory;
 using Flight2Orbit.Models.Quiz;
 using Flight2Orbit.Models.Shared;
+using Flight2Orbit.Models.Tracker;
 using Microsoft.AspNet.SignalR.Hubs;
 using Umbraco.Core;
 using Umbraco.Core.Models.PublishedContent;
@@ -18,7 +20,6 @@ namespace Flight2Orbit.Helpers
 {
     public class Mapper
     {
-
         public HomeDTO Map(Home node)
         {
             if (node.Sections == null) throw new NotFoundException("Sections cannot be null");
@@ -210,6 +211,14 @@ namespace Flight2Orbit.Helpers
                 list.Add(MapMenu(convertedMenuItem));
             }
             return new MenuDTO(list);
+        }
+
+        public TrackerDTO Map(Tracker tracker)
+        {
+            // Map call to action to its representational class.
+            var cto = Converters.ConvertPublishedContent<CallToAction>(tracker.CallToAction);
+            var ctoDTO = Map(cto);
+            return new TrackerDTO(tracker.Headline, tracker.Location, tracker.Speed, tracker.Timestamp, ctoDTO);
         }
     }
 }
