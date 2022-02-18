@@ -51,6 +51,9 @@
           animation: var(--animation);
         }
     }
+    .profile {
+      filter: var(--filter-crew);
+    }
     .autograph {
       filter: invert(100%);
     }
