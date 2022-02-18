@@ -46,7 +46,7 @@ const Crew = () => {
             </section>
             <div className="card-container">
                 {current.map((content) => {
-                    return <CrewCard key={content.id} name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} autographImageUrl={content.autographImageUrl}
+                    return <CrewCard key={content.id} id={content.id} name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} autographImageUrl={content.autographImageUrl}
                         desc={content.description} />
                 })}
             </div>
