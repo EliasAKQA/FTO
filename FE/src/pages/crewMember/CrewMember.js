@@ -34,8 +34,8 @@ const CrewMember = () => {
                     <p>{member.description}</p>
                 </div>
                 <div>
-                    {member.infoSections.map((content) => {
-                        return <CrewInfoSection title={content.title} content={content.content} />
+                    {member.infoSections.map((content, index) => {
+                        return <CrewInfoSection key={index} title={content.title} content={content.content} />
                     })};
                 </div>
             </section>
