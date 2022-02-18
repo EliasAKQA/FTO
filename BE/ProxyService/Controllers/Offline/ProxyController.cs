@@ -14,13 +14,25 @@ namespace ProxyService.Controllers
             _httpClient = new HttpClient();
         }
 
-        [System.Web.Http.HttpGet]
-        public IHttpActionResult Umbraco()
-        {
-            var url = RequestContext.Url;
-            return Json("test");
-            //return await ProxyTo(Service_Url.Umbraco); 
-        }
+        //[System.Web.Http.HttpGet]
+        //[System.Web.Http.Route("{**catchAll}")]
+        //public IHttpActionResult Umbraco()
+        //{
+        //    var url = Request.RequestUri;
+
+        //    return Json("umbraco");
+        //    //return await ProxyTo(Service_Url.Umbraco); 
+        //}
+
+        //[System.Web.Http.HttpGet]
+        //[System.Web.Http.Route("{**catchAll}")]
+        //public IHttpActionResult Resource()
+        //{
+        //    var url = Request.RequestUri;
+
+        //    return Json("resource");
+        //    //return await ProxyTo(Service_Url.Umbraco); 
+        //}
 
 
 
