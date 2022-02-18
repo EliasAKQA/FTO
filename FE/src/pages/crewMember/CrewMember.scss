@@ -18,6 +18,7 @@
             width: 100%;
             height: auto;
             animation: var(--animation-cards);
+            filter: var(--filter-crew);
             @include respond(desktop){
                 box-shadow: var(--box-shadow);
             }
