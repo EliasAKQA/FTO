@@ -234,11 +234,11 @@
       max-width: 300px;
       & .seconds{
         transform-origin: 269.5px 261.5px;
-        animation: spin 60s infinite steps(60);
+        animation: spin 30s infinite steps(60);
     }
       & .minutes{
         transform-origin: 269.5px 261.5px;
-        animation: spin 3600s infinite linear;
+        animation: spin 1800s infinite linear;
     }
       & .hours{
         transform-origin: 269.5px 261.5px;
