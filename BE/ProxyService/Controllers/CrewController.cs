@@ -20,5 +20,10 @@ namespace ProxyService.Controllers
         {
             return _httpClient.GetAsync($"{Service_Url.Umbraco}{_pathHelper.Paths.Get("crewContent")}");
         }
+        [HttpGet]
+        public Task<HttpResponseMessage> Content(int id)
+        {
+            return _httpClient.GetAsync($"{Service_Url.Umbraco}{_pathHelper.Paths.Get("crewContentById")}?id={id}");
+        }
     }
 }
