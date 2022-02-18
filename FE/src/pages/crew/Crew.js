@@ -28,7 +28,7 @@ const Crew = () => {
             </section>
             <div className="card-container">
                 {sections.crewMembers.map((content) => {
-                    return <CrewCard name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} autographImageUrl={content.autographImageUrl}
+                    return <CrewCard id={content.id} name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} autographImageUrl={content.autographImageUrl}
                         desc={content.description} />
                 })}
             </div>
