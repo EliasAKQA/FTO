@@ -128,12 +128,14 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CrewController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\Offline\ProxyController.cs" />
     <Compile Include="Controllers\Offline\ResourceController.cs" />
     <Compile Include="Controllers\QuizController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\Offline\UmbracoController.cs" />
+    <Compile Include="Controllers\TrackerController.cs" />
     <Compile Include="Extensions\ArrayExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

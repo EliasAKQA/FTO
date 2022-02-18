@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Crew.scss';
 import CrewCard from "../../components/crewCard/CrewCard";
-import CrewMember from "../crewMember/CrewMember";
-import { Link } from "react-router-dom";
-import { Route, Routes } from "react-router-dom";
 import axios from 'axios';
 import Url from 'config';
 
@@ -17,26 +14,26 @@ const Crew = () => {
             setCrew(res.data.people.filter(ast => ast.craft == "ISS"));
         })
     }, []);
-    
+
     useEffect(() => {
         axios.get(Url.UMBRACO_API + "/crew/getcrewcontent").then((res) => {
             setSections(res.data);
             console.log(res.data.crewMembers);
         })
-        }, []);
+    }, []);
 
-        if (!current) {
-            if (crew && sections) {
-                console.log('yes');
-                console.log(sections.crewMembers);
-                setCurrent(sections.crewMembers.filter(memberA=> {
-                    return crew.find(memberB=>{
-                        return memberA.name === memberB.name;
-                    })
-                }));
-                console.log(current); 
-         }  
+    if (!current) {
+        if (crew && sections) {
+            console.log('yes');
+            console.log(sections.crewMembers);
+            setCurrent(sections.crewMembers.filter(memberA => {
+                return crew.find(memberB => {
+                    return memberA.name === memberB.name;
+                })
+            }));
+            console.log(current);
         }
+    }
 
     if (!current) return <h1>Loading...</h1>
 
@@ -49,7 +46,7 @@ const Crew = () => {
             </section>
             <div className="card-container">
                 {current.map((content) => {
-                    return <CrewCard key={content.id} name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} autographImageUrl={content.autographImageUrl}
+                    return <CrewCard key={content.id} id={content.id} name={content.name} role={content.role} profileImageUrl={content.profileImageUrl} autographImageUrl={content.autographImageUrl}
                         desc={content.description} />
                 })}
             </div>

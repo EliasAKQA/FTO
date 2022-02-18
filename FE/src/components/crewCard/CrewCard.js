@@ -7,7 +7,7 @@ import Url from "config";
 const CrewCard = (props) => {
     return (
         <div className="container">
-            <Link to={'/crew/' + props.name}>
+            <Link to={'/crew/' + props.id}>
                 <div className="crew-card">
                     <figure className="crew-card__image">
                         <img src={Url.SERVER_URL + props.profileImageUrl} alt="Crew member name" />
