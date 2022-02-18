@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Crew.scss';
 import CrewCard from "../../components/crewCard/CrewCard";
-import CrewMember from "../crewMember/CrewMember";
-import { Link } from "react-router-dom";
-import { Route, Routes } from "react-router-dom";
 import axios from 'axios';
 import Url from 'config';
 

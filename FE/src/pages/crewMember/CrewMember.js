@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import CrewInfoSection from "../../pages/crewMember/section";
+import InfoSection from "../../components/sections/InfoSection";
 import './CrewMember.scss';
-import CrewMemberImage from "../../assets/crew/astronaut-raja-chari.jpg";
 import { Link, useParams } from "react-router-dom";
 import axios from 'axios';
 import Url from 'config';
@@ -19,7 +18,7 @@ const CrewMember = () => {
     }, []);
 
     // check if item loaded
-    if (!member) return <h1>Loadddddddddingggg...</h1>
+    if (!member) return <h1>Loading ...</h1>
     return (
         <div className='main__container--less-width'>
             <section className='crew-member'>
@@ -32,7 +31,7 @@ const CrewMember = () => {
                 </div>
                 <div>
                     {member.infoSections.map((content, index) => {
-                        return <CrewInfoSection key={index} title={content.title} content={content.content} />
+                        return <InfoSection key={index} title={content.title} content={content.content} />
                     })};
                 </div>
             </section>
