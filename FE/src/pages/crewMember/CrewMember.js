@@ -26,7 +26,7 @@ const CrewMember = () => {
                     <img src={Url.SERVER_URL + member.profileImageUrl} alt={member.name} />
                 </figure>
                 <div className='crew-member__text main__container--lesswidth'>
-                    <h1>{member.name}</h1>
+                    <h1 className='crew-member__text--title'>{member.name}</h1>
                     <p>{member.description}</p>
                     <div>
                         {member.infoSections.map((content, index) => {
