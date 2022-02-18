@@ -21,10 +21,10 @@ namespace ProxyService.Controllers
             return _httpClient.GetAsync($"{Service_Url.Umbraco}{_pathHelper.Paths.Get("sharedMetaContent")}");
         }
 
-        //[HttpGet]
-        //public Task<HttpResponseMessage> Header()
-        //{
-        //    return _httpClient.GetAsync($"{Service_Url.Umbraco}{_pathHelper.Paths.Get("sharedHeaderContent")}");
-        //}
+        [HttpGet]
+        public Task<HttpResponseMessage> Header()
+        {
+            return _httpClient.GetAsync($"{Service_Url.Umbraco}{_pathHelper.Paths.Get("sharedHeaderContent")}");
+        }
     }
 }
