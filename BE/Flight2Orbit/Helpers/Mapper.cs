@@ -59,6 +59,19 @@ namespace Flight2Orbit.Helpers
             return new CrewDTO(node.Id, node.Headline, node.SubHeadline, node.Description, crewMembers, ctoDTO);
         }
 
+        public CrewMemberDTO Map(CrewMember crewMember)
+        {
+            var infoSections = new List<InfoSectionDTO>();
+
+            // for each crew member, add it to the list.    
+            foreach (var infoPC in crewMember.InfoSections)
+            {
+                var info = Converters.ConvertPublishedContent<CrewMemberInfoSection>(infoPC);
+                infoSections.Add(new InfoSectionDTO(info.Header, info.Content));
+            }
+            return new CrewMemberDTO(crewMember.Id, crewMember.CrewName, crewMember.Role, crewMember.Description, crewMember.Image.Url(), crewMember.Autograph.Url(), infoSections);
+        }
+
         public CallToActionDTO Map(CallToAction cto)
         {
 
