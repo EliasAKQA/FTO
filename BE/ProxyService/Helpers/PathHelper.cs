@@ -13,6 +13,7 @@ namespace ProxyService.Services
             {"shopContentById", "/shop/GetShopItemDetails"},
             {"homeContent", "/home/GetHomeContent"},
             {"crewContent", "/crew/GetCrewContent"},
+            {"crewContentById", "/crew/GetCrewMemberDetails"},
             {"quizContent", "/quiz/GetQuizContent"},
             {"quizContentById", "/quiz/GetQuestions"},
             {"sharedMetaContent", "/shared/GetMetaData"},
