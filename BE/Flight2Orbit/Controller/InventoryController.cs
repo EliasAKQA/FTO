@@ -29,7 +29,7 @@ namespace Flight2Orbit.Controller
             using (HttpClient client = new HttpClient())
             {
                 ResourcesDTO resources;
-                var apiUrl = "http://localhost:49390/api/resource/getresource";
+                var apiUrl = "https://localhost:44307/api/resource/GetResources";
                 client.BaseAddress = new Uri(apiUrl);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
