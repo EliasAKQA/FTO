@@ -28,9 +28,6 @@ const CrewMember = () => {
                 </figure>
                 <div className='crew-member__text main__container--lesswidth'>
                     <h1>{member.name}</h1>
-                    <h2>Job title</h2>
-                    <p>{member.role}</p>
-                    <h2>Personal Info</h2>
                     <p>{member.description}</p>
                 </div>
                 <div>
