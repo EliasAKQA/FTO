@@ -28,6 +28,7 @@ function App() {
         <div className={"bg--animated main__container--fullwidth"}>
             <div id="stars"></div>
             <div id="stars2"></div>
+            <div id="stars3"></div>
             <Header />
             <Body />
             <Footer />
