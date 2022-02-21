@@ -6,8 +6,10 @@ import Url from 'config';
 const shopItems = (props) => {
     return (
         <div className='container'>
+
             <Link to={'/shop/' + props.id}>
                 <div className='shopItemHolder' >
+
                     <div className='shopItemIMG'>
                         <img className='shopItemRock' src={Url.SERVER_URL + props.image} alt={props.image} />
                     </div>

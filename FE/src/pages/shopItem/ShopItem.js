@@ -32,10 +32,11 @@ const ShopItem = () => {
     if (!item) return <h1>Loading...</h1>
     return (
         <div className='shopDetail'>
+            <div id="stars"></div>
+            <div id="stars2"></div>
             <Link className='backButton' to={'/shop'}><h3>&#60; Back</h3></Link>
             <div className='shopDetail__img'>
                 <img className='shopDetail__img--product' src={Url.SERVER_URL + item.overview.imageUrl} alt="rock" />
-                
             </div>
             <div>
                 <h1>{item.overview.title}</h1>
@@ -67,7 +68,7 @@ const ShopItem = () => {
                 </section>
                 <div className='shopDetail__container'>
                     <div className='shopDetail__container--profile'>
-                        <img className='shopDetail__img' src={Url.SERVER_URL + item.discoverer.profileImageUrl} alt="" />
+                        <img className='shopDetail__img profile' src={Url.SERVER_URL + item.discoverer.profileImageUrl} alt="" />
                         <img className='shopDetail__img autograph' src={Url.SERVER_URL + item.discoverer.autographImageUrl} alt="" />
                     </div>
                     <table>
