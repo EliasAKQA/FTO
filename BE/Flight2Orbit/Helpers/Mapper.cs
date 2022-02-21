@@ -137,40 +137,40 @@ namespace Flight2Orbit.Helpers
             return list;
         }
 
-        public InventoryDTO Map(Inventory inventory, ResourcesDTO res)
-        {
-            // Map clock content to its representational class.
-            var clockDTO = new ClockDTO(inventory.ClockHeadline, inventory.Colour.ToString(), inventory.Hour, inventory.Minutes,
-                inventory.Seconds);
+        //public InventoryDTO Map(Inventory inventory, ResourcesDTO res)
+        //{
+        //    // Map clock content to its representational class.
+        //    var clockDTO = new ClockDTO(inventory.ClockHeadline, inventory.Colour.ToString(), inventory.Hour, inventory.Minutes,
+        //        inventory.Seconds);
 
-            // If there's not resources, throw an error. Inventory without resources is not valid.
-            if (inventory.Resources == null) throw new NotFoundException("Inventory must contain resources.");
+        //    // If there's not resources, throw an error. Inventory without resources is not valid.
+        //    if (inventory.Resources == null) throw new NotFoundException("Inventory must contain resources.");
 
-            // Initialise and map a list of resources.
-            var resources = new List<ResourceDTO>();
-            var inventoryResouresAsList = inventory.Resources.ToList();
-            for (int i = 0; i < inventory.Resources.ToList().Count; i++)
-            {
-                var resource = Converters.ConvertPublishedContent<Resource>(inventoryResouresAsList.ElementAt(i));
-                var resourceDTO = new ResourceDTO(resource.Title, resource.Colour.ToString());
-                //var incoming = res.Resources.ElementAt(i); 
-                //var incoming = res.Resources.Select().Where((item) => item.Type.Equals(resource.Title))).FirstOrDefault();
-                var incoming = res.Resources.Select((item) => item).FirstOrDefault(item => item.Type.Equals(resource.Title));
-                resourceDTO.Merge(incoming);
-                resources.Add(resourceDTO);
-            }
+        //    // Initialise and map a list of resources.
+        //    var resources = new List<ResourceDTO>();
+        //    var inventoryResouresAsList = inventory.Resources.ToList();
+        //    for (int i = 0; i < inventory.Resources.ToList().Count; i++)
+        //    {
+        //        var resource = Converters.ConvertPublishedContent<Resource>(inventoryResouresAsList.ElementAt(i));
+        //        var resourceDTO = new ResourceDTO(resource.Title, resource.Colour.ToString());
+        //        //var incoming = res.Resources.ElementAt(i); 
+        //        //var incoming = res.Resources.Select().Where((item) => item.Type.Equals(resource.Title))).FirstOrDefault();
+        //        var incoming = res.Resources.Select((item) => item).FirstOrDefault(item => item.Type.Equals(resource.Title));
+        //        resourceDTO.Merge(incoming);
+        //        resources.Add(resourceDTO);
+        //    }
 
-            if (inventory.CallToAction == null)
-                return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
-                    clockDTO, new ResourcesDTO(resources, res.MillisecondsToDeath));
+        //    if (inventory.CallToAction == null)
+        //        return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
+        //            clockDTO, new ResourcesDTO(resources, res.MillisecondsToDeath));
 
-            // Map call to action to its representational class.
-            var cto = Converters.ConvertPublishedContent<CallToAction>(inventory.CallToAction);
-            var ctoDTO = Map(cto);
+        //    // Map call to action to its representational class.
+        //    var cto = Converters.ConvertPublishedContent<CallToAction>(inventory.CallToAction);
+        //    var ctoDTO = Map(cto);
 
-            return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
-                clockDTO, new ResourcesDTO(resources, res.MillisecondsToDeath), ctoDTO);
-        }
+        //    return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
+        //        clockDTO, new ResourcesDTO(resources, res.MillisecondsToDeath), ctoDTO);
+        //} 
 
         public ResourcesDTO Map(Inventory inventory)
         {
