@@ -29,6 +29,7 @@
   $shadows-medium: multiple-box-shadow(200);
   $shadows-large: multiple-box-shadow(100);
   $shadow-single: multiple-box-shadow(1);
+  $shadow-single-fast: multiple-box-shadow(1);
     
 #stars {
     width: 1px;
@@ -66,7 +67,7 @@
     box-shadow: $shadow-single;
     animation: glowingStar 20s linear infinite ;
 }
-      
+
 @keyframes animStar {
     from	{
       transform: translateY(0vh);

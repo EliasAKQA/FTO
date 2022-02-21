@@ -12,10 +12,20 @@ h4 {
 h1 {
   font-size: 48px;
   text-shadow: 0 0 4px #518abc, 0 0 2px #86beee, 0 0 1px #86beee;
+  animation: textGlow 4s ease-in-out infinite alternate;
 }
 
 body,
 p {
   font-family: var(--font-primary);
   color: white;
+}
+
+@keyframes textGlow {
+  from {
+    text-shadow: 0 0 4px #518abc, 0 0 2px #86beee, 0 0 1px #86beee;
+  }
+  to {
+    text-shadow: 0 0 5px #518abc, 0 0 4px #86beee, 0 0 6px #fff;
+  }
 }
