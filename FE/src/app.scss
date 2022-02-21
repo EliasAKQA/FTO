@@ -51,6 +51,8 @@
     width: 3px;
     height: 3px;
     background: transparent;
+    border-radius: 50%;
+    filter: blur(1px);
     box-shadow: $shadows-large;
     animation : animStar 150s linear infinite;
 }
@@ -82,15 +84,3 @@
       opacity: 1;
     }
 }
-
-// @keyframes fade {
-//     0% {
-//         opacity: 0;
-//     }
-//     50% {
-//         opacity: 1;
-//     }
-//     100% {
-//         opacity: 0;
-//     }
-// }
