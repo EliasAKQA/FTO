@@ -44,6 +44,7 @@
     background: transparent;
     box-shadow: $shadows-medium;
     animation : animStar 100s linear infinite;
+    filter: blur(1px);
   }
 
 #stars3 {
