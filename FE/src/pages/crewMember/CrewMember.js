@@ -33,7 +33,9 @@ const CrewMember = () => {
                             return <InfoSection key={index} title={content.title} content={content.content} />
                         })}
                     </div>
+                    <button className='btn btn--primary'>{member.name} collection</button>
                 </div>
+
             </section>
         </div>
     )
