@@ -17,6 +17,7 @@ namespace Flight2Orbit.Models.Quiz
             ImageUrl = imageUrl;
             Answers = answers;
         }
+
         public QuestionDTO(int id, string question, IEnumerable<AnswerDTO> answers)
         {
             Id = id;
