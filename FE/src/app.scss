@@ -28,56 +28,68 @@
   $shadows-small:  multiple-box-shadow(700);
   $shadows-medium: multiple-box-shadow(200);
   $shadows-large: multiple-box-shadow(100);
+  $shadow-single: multiple-box-shadow(1);
     
-  #stars {
+#stars {
     width: 1px;
     height: 1px;
     background: transparent;
     box-shadow: $shadows-small;
     animation : animStar 50s linear infinite;
-    &:after {
-      content: " ";
-      position: absolute;
-      top: 0vh;
-      width: 1px;
-      height: 1px;
-      background: transparent;
-      box-shadow: $shadows-small;
-    }
   }
   
-  #stars2 {
+#stars2 {
     width: 2px;
     height: 2px;
     background: transparent;
     box-shadow: $shadows-medium;
     animation : animStar 100s linear infinite;
-    &:after {
-      content: " ";
-      position: absolute;
-      top: 0vh;
-      width: 2px;
-      height: 2px;
-      background: transparent;
-      box-shadow: $shadows-medium;
-    }
   }
 
-  #stars3 {
+#stars3 {
     width: 3px;
     height: 3px;
     background: transparent;
     box-shadow: $shadows-large;
     animation : animStar 150s linear infinite;
-    filter: blur(30px);
-    opacity: 0.1;
-  }
+}
+
+#stars4 {
+    width: 15px;
+    height: 15px;
+    filter: blur(5px);
+    box-shadow: $shadow-single;
+    animation: glowingStar 20s linear infinite ;
+}
       
-  @keyframes animStar {
+@keyframes animStar {
     from	{
       transform: translateY(0vh);
     } 
     to {
       transform: translateY(-100vh);
     }
-  }
+}
+
+@keyframes glowingStar {
+    from	{
+      transform: translateY(0vh);
+      opacity: 0;
+    } 
+    to {
+      transform: translateY(-100vh);
+      opacity: 1;
+    }
+}
+
+// @keyframes fade {
+//     0% {
+//         opacity: 0;
+//     }
+//     50% {
+//         opacity: 1;
+//     }
+//     100% {
+//         opacity: 0;
+//     }
+// }
