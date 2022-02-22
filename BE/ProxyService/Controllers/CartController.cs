@@ -20,5 +20,12 @@ namespace ProxyService.Controllers
         {
             return _httpClient.GetAsync($"{Service_Url.Cart}{_pathHelper.Paths.Get("cartContent")}");
         }
+
+        [HttpPost]
+        public Task<HttpResponseMessage> Post()
+        {
+            var content = new HttpMessageContent(Request);
+            return _httpClient.PostAsync($"{Service_Url.Cart}{_pathHelper.Paths.Get("cartContent")}", null);
+        }
     }
 }

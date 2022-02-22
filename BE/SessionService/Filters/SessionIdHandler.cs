@@ -22,7 +22,6 @@ namespace SessionService.Filters
             var cookie = request.Headers.GetCookies(SessionIdToken).FirstOrDefault();
             if (cookie == null)
             {
-                //throw new InternalServerErrorException("Cookie shows as if it's null");
                 sessionId = Guid.NewGuid().ToString();
             }
             else
@@ -48,7 +47,7 @@ namespace SessionService.Filters
             cookieHeader.MaxAge = TimeSpan.FromDays(60);
 
             // Set the session ID as a cookie in the response message.
-            response.Headers.AddCookies(new CookieHeaderValue[] {
+            response.Headers.AddCookies(new CookieHeaderValue[] { 
                 //new CookieHeaderValue(SessionIdToken, sessionId)
                 cookieHeader
             });

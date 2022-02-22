@@ -1,17 +1,18 @@
-﻿namespace SessionService.Models
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SessionService.Models
 {
     public class Product
     {
-        public string Id { get; set; }
-
-        public Product(string id)
-        {
-            Id = id;
-        }
-
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid Id { get; set; }
+        public string ReferenceId { get; set; }
+        //public ICollection<CartLine> CartLines { get; set; }
         public Product()
         {
-            // EF 
+            // EF  
         }
     }
 }

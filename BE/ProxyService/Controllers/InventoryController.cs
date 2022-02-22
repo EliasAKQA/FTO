@@ -30,15 +30,15 @@ namespace ProxyService.Controllers
 
             // retrieve resource display data from umbracoService.
             var resourceFromUmbracoService =
-                await HttpHelper.GetRequest<ResourcesDTO>($"{Service_Url.Umbraco}{_pathHelper.Paths.Get("inventoryContent")}", _httpClient);
+                await HttpHelper.GetRequest<InventoryDTO>($"{Service_Url.Umbraco}{_pathHelper.Paths.Get("inventoryContent")}", _httpClient);
 
             // loop through the resources and merge the two. 
-            foreach (var resource in resourceFromUmbracoService.Resources)
+            foreach (var resource in resourceFromUmbracoService.Resource.Resources)
             {
                 resource.Merge(resourceFromResourceService.Resources.Select((item) => item).FirstOrDefault(item => item.Type.Equals(resource.Title)));
             }
 
-            return Json(new ResourcesDTO(resourceFromUmbracoService.Resources, resourceFromResourceService.MillisecondsToDeath), new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+            return Json(new ResourcesDTO(resourceFromUmbracoService.Resource.Resources, resourceFromResourceService.MillisecondsToDeath), new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
         }
 
 
