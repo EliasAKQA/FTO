@@ -95,7 +95,10 @@ namespace Flight2Orbit.Helpers
             foreach (var itemPC in shop.ShopItems)
             {
                 var shopItem = Converters.ConvertPublishedContent<ShopItem>(itemPC);
-                shopItems.Add(new ShopItemDTO(shopItem.Id, shopItem.Image.Url(), shopItem.Title, shopItem.Price, new ButtonDTO(shopItem.ButtonText, shopItem.ButtonLink)));
+                var crewPC = shopItem.CrewMember.FirstOrDefault();
+                var crew = Converters.ConvertPublishedContent<CrewMember>(crewPC);
+                var crewMemberDTO = new CrewMemberDTO(crew.Id, crew.Name, crew.Role, crew.Description, crew.Image.Url(), crew.Autograph.Url());
+                shopItems.Add(new ShopItemDTO(shopItem.Id, shopItem.Image.Url(), shopItem.Title, shopItem.Price, crewMemberDTO, new ButtonDTO(shopItem.ButtonText, shopItem.ButtonLink)));
             }
             return new ShopDTO(shop.Id, shop.Headline, shop.Description, shopItems);
         }
