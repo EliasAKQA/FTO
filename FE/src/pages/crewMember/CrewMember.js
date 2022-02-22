@@ -8,6 +8,15 @@ import Url from 'config';
 const CrewMember = () => {
     let { id } = useParams();
     const [member, setMember] = useState(null);
+    const [shopItems, setShopItems] = useState(null);
+
+    // get shop items
+    useEffect(() => {
+        axios.get(Url.UMBRACO_API + "/shop/getshopitemdetails/?id=" + id).then((res) => {
+            console.log(res);
+            setShopItems(res.data);
+        })
+    }, []);
 
     // get single member from api
     useEffect(() => {

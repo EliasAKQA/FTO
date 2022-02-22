@@ -2,22 +2,11 @@ import React, { useEffect, useState } from 'react';
 import ShopItemComponent from "../../components/shopItems/shopItems";
 import "./Webshop.scss"
 import ShopItem from "../shopItem/ShopItem";
-import { useParams } from "react-router-dom";
 import axios from 'axios';
 import Url from 'config';
 
 const Webshop = () => {
-    let { id } = useParams();
     const [sections, setSections] = useState(null);
-    const [selection, setSelection] = useState(null);
-
-    // get single crew member to filter
-    useEffect(() => {
-        axios.get(Url.UMBRACO_API + "/crew/getCrewMemberDetails?id=" + id).then((res) => {
-            console.log(res);
-            setSelection(res.data);
-        })
-    }, []);
 
     // get shop items
     useEffect(() => {
@@ -26,9 +15,6 @@ const Webshop = () => {
             setSections(res.data);
         })
     }, []);
-
-
-
 
     if (!sections) return <h1>Loading...</h1>
     return (
