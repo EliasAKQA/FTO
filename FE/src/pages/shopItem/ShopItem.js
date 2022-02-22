@@ -22,7 +22,7 @@ const ShopItem = () => {
 
     // get single item from api
     useEffect(() => {
-        axios.get(Url.UMBRACO_API + "/shop/getshopitemdetails/?id=" + id).then((res) => {
+        axios.get(Url.UMBRACO_API + "/shop/content?id=" + id).then((res) => {
             console.log(res);
             setItem(res.data);
         });

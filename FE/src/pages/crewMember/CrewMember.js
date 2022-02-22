@@ -20,7 +20,7 @@ const CrewMember = () => {
 
     // get single member from api
     useEffect(() => {
-        axios.get(Url.UMBRACO_API + "/crew/getCrewMemberDetails?id=" + id).then((res) => {
+        axios.get(Url.UMBRACO_API + "/crew/content?id=" + id).then((res) => {
             console.log(res);
             setMember(res.data);
         })
