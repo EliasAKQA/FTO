@@ -20,10 +20,17 @@ import Url from 'config';
 
 const Navbar = () => {
     const [navs, setNavs] = useState(null);
+    const [cart, setCart] = useState([]);
     if (!localStorage.getItem('FTOCart')) {
         localStorage.setItem('FTOCart', '[]');
     }
-    let cart = JSON.parse(localStorage.getItem('FTOCart'));
+
+    
+    useEffect(()=>{
+        setInterval(()=>{
+            setCart(JSON.parse(localStorage.getItem('FTOCart')));
+        }, 5000)
+    }, [])
 
     useEffect(() => {
         axios.get(Url.UMBRACO_API + "/shared/getheadercontent").then((res) => {
