@@ -1,6 +1,8 @@
 @import "../../sass/partials/abstracts/mixins";
 
 .shopDetail{
+    // max-width: 500px;
+    // padding: 0 1rem;
     margin: 0 auto;
     &__container {
       border: var(--border);
@@ -50,6 +52,9 @@
           animation: var(--animation);
         }
     }
+    .profile {
+      filter: var(--filter-crew);
+    }
     .autograph {
       filter: invert(100%);
     }
@@ -92,3 +97,4 @@
     transform: var(--transform);
   }
 }
+

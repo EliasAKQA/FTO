@@ -22,7 +22,7 @@ namespace ResourceService.Controllers
         [HttpGet]
         public IHttpActionResult GetResources()
         {
-            //context.Resources.Load();  
+            //context.Resources.Load();   
             var res = Context.Resources;
             var resources = new List<ResourceDTO>();
             var milliseconds = 0;

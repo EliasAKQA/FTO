@@ -23,6 +23,7 @@ const Landing = () => {
     if (!sections) return <h1>Loading...</h1>
     return (
         <div className='landingpage main__container--fullwidth'>
+            <title>Flight To Orbit</title>
             {sections.map((content, index) => {
                 return <Section key={index} index={(index + 1) % 4} header={content.header}
                                 description={content.description}

@@ -14,3 +14,76 @@
 
 // layout
 @import "sass/partials/layout/main";
+
+
+// n is number of stars required
+@function multiple-box-shadow ($n) {
+    $value: '#{random(2000)}px #{random(2000)}px #FFF';
+    @for $i from 2 through $n {
+      $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+    }
+    @return unquote($value);
+  }
+   
+  $shadows-small:  multiple-box-shadow(700);
+  $shadows-medium: multiple-box-shadow(200);
+  $shadows-large: multiple-box-shadow(100);
+  $shadow-single: multiple-box-shadow(1);
+  $shadow-single-fast: multiple-box-shadow(1);
+    
+#stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: $shadows-small;
+    animation : animStar 50s linear infinite;
+    // filter: blur(1px);
+  }
+  
+#stars2 {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $shadows-medium;
+    animation : animStar 100s linear infinite;
+    filter: blur(2px);
+  }
+
+#stars3 {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    border-radius: 50%;
+    filter: blur(1px);
+    box-shadow: $shadows-large;
+    animation : animStar 150s linear infinite;
+}
+
+#stars4 {
+    width: 15px;
+    height: 15px;
+    filter: blur(5px);
+    box-shadow: $shadow-single;
+    animation: glowingStar 20s linear infinite ;
+}
+
+@keyframes animStar {
+    from	{
+      transform: translateY(0vh);
+    } 
+    to {
+      transform: translateY(-100vh);
+    }
+}
+
+@keyframes glowingStar {
+    from	{
+      transform: translateY(0vh);
+      opacity: 0;
+    } 
+    to {
+      transform: translateY(-100vh);
+      opacity: 1;
+    }
+}
