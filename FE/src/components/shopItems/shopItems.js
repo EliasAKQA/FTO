@@ -1,28 +1,63 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./shopItems.scss";
 import { Link } from "react-router-dom";
 import Url from 'config';
 
-const shopItems = (props) => {
+const ShopItems = (props) => {
+    const [isActive, setActive] = useState(false)
+    if (!localStorage.getItem('FTOCart')) {
+        localStorage.setItem('FTOCart', '[]');
+    }
+    let cart = JSON.parse(localStorage.getItem('FTOCart'));
+    useEffect(()=>{
+        if (cart.filter(item=>item.id === props.id).length>0) {
+        setActive(!isActive);
+    }}, [])
+    function addToCart(){
+        cart = JSON.parse(localStorage.getItem('FTOCart'));
+        const cartItem = {
+            id: props.id,
+            name:props.name,
+            price:props.price,
+            url: Url.SERVER_URL + props.image,
+        }
+        console.log(cart.length);
+        if (cart.filter(item=>item.id === cartItem.id).length>0) {
+            cart = cart.filter(item=>item.id !== cartItem.id);
+            console.log('This Item already is in the cart');
+            setActive(!isActive);
+        }else{
+            cart.push(cartItem)
+            console.log(cart.length);
+            console.log(cart);
+            setActive(!isActive);
+        }
+        localStorage.setItem('FTOCart', JSON.stringify(cart));
+    }
     return (
         <div className='container'>
+<<<<<<< HEAD
 
             <Link to={'/shop/' + props.id}>
                 <div className='shopItemHolder' >
 
+=======
+            <div className='shopItemHolder' >
+                <Link to={'/shop/' + props.id}>
+>>>>>>> cartstuff
                     <div className='shopItemIMG'>
                         <img className='shopItemRock' src={Url.SERVER_URL + props.image} alt={props.image} />
                     </div>
-                    <p className='shopItemName'>{props.name}</p>
-                    <p className='shopItemPrize'>{props.price}$</p>
-                    <div className='shopItemBtnContainer'>
-                        <button className='btn btn--secondary ShopItemsbutton'>info</button>
-                        <button className='btn btn--primary ShopItemsbutton'>{props.button}</button>
-                    </div>
+                </Link>
+                <p className='shopItemName'>{props.name}</p>
+                <p className='shopItemPrize'>{props.price}$</p>
+                <div className='shopItemBtnContainer'>
+                    <Link to={'/shop/' + props.id} className='btn btn--secondary ShopItemsbutton'>info</Link>
+                    <button className={isActive ? ('btn btn--checkout ShopItemsbutton') : ('btn btn--primary ShopItemsbutton')} onClick={addToCart}>{isActive ? ('Added') : (props.button)}</button>
                 </div>
-            </Link>
+            </div>
         </div>
     );
 };
 
-export default shopItems;
+export default ShopItems;
