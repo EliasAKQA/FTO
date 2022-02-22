@@ -36,15 +36,8 @@ const ShopItems = (props) => {
     }
     return (
         <div className='container'>
-<<<<<<< HEAD
-
-            <Link to={'/shop/' + props.id}>
-                <div className='shopItemHolder' >
-
-=======
             <div className='shopItemHolder' >
                 <Link to={'/shop/' + props.id}>
->>>>>>> cartstuff
                     <div className='shopItemIMG'>
                         <img className='shopItemRock' src={Url.SERVER_URL + props.image} alt={props.image} />
                     </div>
