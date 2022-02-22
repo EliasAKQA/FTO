@@ -27,6 +27,9 @@ const Webshop = () => {
         })
     }, []);
 
+
+
+
     if (!sections) return <h1>Loading...</h1>
     return (
         <div className='main__container--lesswidth'>

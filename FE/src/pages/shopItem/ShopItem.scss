@@ -1,8 +1,8 @@
 @import "../../sass/partials/abstracts/mixins";
 
 .shopDetail{
-    max-width: 500px;
-    padding: 0 1rem;
+    // max-width: 500px;
+    // padding: 0 1rem;
     margin: 0 auto;
     &__container {
       border: var(--border);
@@ -62,10 +62,18 @@
       width: 100%;
       margin: var(--margin) 0;
     }
+    @include respond(tablet){
+         .shopDetail__img--product{
+           display: block;
+           margin: auto;
+           max-width: 450px;
+         }
+    }
+
     @include respond(desktop){
       display: grid;
+      grid-column-gap: 3em;
       grid-template-columns: 1fr 1fr;
-      max-width: 600px;
       & a{
         grid-column: 1 / -1;
         margin-bottom: 10%;

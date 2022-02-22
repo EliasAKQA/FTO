@@ -140,9 +140,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Mapper.cs" />
     <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\CartLine.cs" />
+    <Compile Include="Models\DTO\CartDTO.cs" />
+    <Compile Include="Models\DTO\CartLineDTO.cs" />
+    <Compile Include="Models\DTO\ProductDTO.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CartRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

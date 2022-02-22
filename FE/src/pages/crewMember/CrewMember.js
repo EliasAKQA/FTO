@@ -21,6 +21,7 @@ const CrewMember = () => {
     if (!member) return <h1>Loading ...</h1>
     return (
         <div className='main__container--less-width'>
+            <title>Crew Member - Flight To Orbit</title>
             <section className='crew-member'>
                 <figure className='crew-member__image'>
                     <img src={Url.SERVER_URL + member.profileImageUrl} alt={member.name} />

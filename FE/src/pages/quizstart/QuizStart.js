@@ -7,6 +7,7 @@ const QuizStart = (props) => {
     console.log(theme, id);
     return (
         <div className='quizStart'>
+            <title>Quiz - Flight To Orbit</title>
             <Link to={'/quiz'} className={'backButton'}><h3>&#60; Back</h3></Link>
             <h2>You have chosen the theme {theme}</h2>
             <p>Click start to start the quiz, or go back to choose another theme</p>

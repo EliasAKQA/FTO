@@ -20,6 +20,10 @@ import Url from 'config';
 
 const Navbar = () => {
     const [navs, setNavs] = useState(null);
+    if (!localStorage.getItem('FTOCart')) {
+        localStorage.setItem('FTOCart', '[]');
+    }
+    let cart = JSON.parse(localStorage.getItem('FTOCart'));
 
     useEffect(() => {
         axios.get(Url.UMBRACO_API + "/shared/getheadercontent").then((res) => {
@@ -97,7 +101,7 @@ const Navbar = () => {
     function createDeskNavItems(item) {
         if (!item.submenu) {
             if (item.text == "Cart") {
-                return <li key={item.text}><Link to={item.link} title="Shopping-Cart"><img src={Cart} className={'cartIcon'}></img></Link></li>
+                return <li key={item.text}><Link to={item.link} title="Shopping-Cart"><div className='icon--container'>{cart.length>0 ? (<p className='cart--amount'>{cart.length}</p>): (<></>)}<img src={Cart} className={'cartIcon'}></img></div></Link></li>
             }
             return <li key={item.text}><Link to={item.link}>{item.text}</Link></li>
         }

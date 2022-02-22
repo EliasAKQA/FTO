@@ -1,18 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SessionService.Models
 {
-    public class Product
+    public class CartLine
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
-        public string ReferenceId { get; set; }
-        //public ICollection<CartLine> CartLines { get; set; }
-        public Product()
+        public virtual Cart Cart { get; set; }
+        public virtual Product Product { get; set; }
+        public int Qty { get; set; }
+
+        public CartLine()
         {
-            // EF  
+            // EF
         }
     }
 }

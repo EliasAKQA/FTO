@@ -170,10 +170,17 @@ namespace Flight2Orbit.Helpers
 
         //    return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
         //        clockDTO, new ResourcesDTO(resources, res.MillisecondsToDeath), ctoDTO);
-        //} 
+        //}
 
-        public ResourcesDTO Map(Inventory inventory)
+        public InventoryDTO Map(Inventory inventory)
         {
+            // Map clock content to its representational class.
+            var clockDTO = new ClockDTO(inventory.ClockHeadline, inventory.Colour.ToString(), inventory.Hour, inventory.Minutes,
+                inventory.Seconds);
+
+            // If there's not resources, throw an error. Inventory without resources is not valid.
+            if (inventory.Resources == null) throw new NotFoundException("Inventory must contain resources.");
+
             var resources = new List<ResourceDTO>();
             foreach (var resourcePC in inventory.Resources)
             {
@@ -181,7 +188,18 @@ namespace Flight2Orbit.Helpers
                 resources.Add(new ResourceDTO(resource.Title, resource.Colour.ToString()));
             }
 
-            return new ResourcesDTO(resources);
+            var resourcesDto = new ResourcesDTO(resources);
+
+            if (inventory.CallToAction == null)
+                return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
+                    clockDTO, resourcesDto);
+
+            // Map call to action to its representational class.
+            var cto = Converters.ConvertPublishedContent<CallToAction>(inventory.CallToAction);
+            var ctoDTO = Map(cto);
+
+            return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
+                clockDTO, resourcesDto, ctoDTO);
         }
 
         public SharedDTO Map(Shared shared)
