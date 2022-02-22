@@ -3,7 +3,94 @@
 .cart{
     display: grid;
     grid-template-columns: 1fr;
+    grid-gap: 1em;
+    
+    & .confirm{
+        text-align: center;
+        grid-column: 1/-1;
+        margin-top: 2em;
+        & *{
+            margin-bottom: 1em;
+        }
 
+    }
+    button.btn.btn--primary:disabled{
+        background-color: rgb(100, 100, 100);
+    }
+    button.backButton{
+        border: none;
+        color: var(--color-white);
+        cursor: pointer;
+    }
+
+    & .paymentStage{
+        grid-column: 1/-1;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: 20px;
+        transition: all linear .3s;
+
+
+        & .stage{
+            position: relative;
+            border-radius: 50px;
+            width: 100%;
+            text-align: center;
+            margin-top: 40px;
+
+            &::before{
+                position: absolute;
+                z-index: 2;
+                content: "";
+                width: 100%;
+                top: 20px;
+                left: -50%;
+                border-bottom: 2px solid var(--color-white);
+                transition: all linear .3s;
+
+                
+            }
+            &.active::before{                    
+                border-bottom: 2px solid var(--color-secondary);
+            }
+            // &::after{
+            //     position: absolute;
+            //     content: "";
+            //     width: 100%;
+            //     top: 20px;
+            //     left: 50%;
+            //     border-bottom: 2px solid var(--color-white);
+                
+            // }
+            // & .active::after{                    
+            //     border-bottom: 2px solid var(--color-secondary);
+            // }
+
+            & .step--counter{
+                position: relative;
+                z-index: 5;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: #ccc;
+                margin-bottom: 6px;
+                &.active{                    
+                    background: var(--color-secondary);
+                }
+            }
+            &:first-child::before {
+                content: none;
+              }
+              &:last-child::after {
+                content: none;
+              }
+        }
+    }
     @include respond(desktop){
         grid-template-columns: 1fr 1fr;
     }
@@ -16,9 +103,10 @@
     border: 3px solid var(--color-white);
     margin: 40px auto;
     padding: 20px;
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    height: max-content;
    
     div{
         text-align: right;
@@ -40,6 +128,49 @@
         margin-bottom: 0;
     }
 }
+
+.payment{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+
+    & form div.input--container{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 1em;
+        width: 100%;
+    }
+
+    & .StripeElement, & input, & label{
+        border: 3px solid var(--color-white);
+        display: block;
+        background-color: transparent;
+        padding: .8em;
+        font-size: 16px;
+        width: 100%;
+        color: var(--color-white);
+        margin: 0;
+    }
+
+    & input::placeholder{
+        color: rgb(146, 146, 146);
+    }
+
+    & button{
+        margin: 0;
+    }
+    
+    & label{
+        // border-right: 1px solid gray;
+        width: 160px;
+        font-size: 16px;
+        // background-color: #fac8d146;
+        font-family: var(--font-secondary);
+        font-weight: bold;
+        border-right: none;
+    }
+    }
+
 
 @media all and (min-width: 450px){
     .cartTotal{
