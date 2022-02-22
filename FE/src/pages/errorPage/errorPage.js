@@ -7,6 +7,7 @@ const errorPage = () => {
   return (
       
     <div className='errorPageHolder main__container--lesswidth'>
+            <title>Error - Flight To Orbit</title>
         <div>
         <img className='errorPageLogo' src={Logo}/>
         <h3>Error, 404 Page not found</h3>

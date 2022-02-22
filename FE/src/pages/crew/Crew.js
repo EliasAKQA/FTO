@@ -39,6 +39,7 @@ const Crew = () => {
 
     return (
         <div className='main__container--fullwidth'>
+            <title>Crew - Flight To Orbit</title>
             <h1>{sections.headline}</h1>
             <section className='main__container--lesswidth crew-page'>
                 <h2 className='crew-page__title'>{sections.subHeadline}</h2>
