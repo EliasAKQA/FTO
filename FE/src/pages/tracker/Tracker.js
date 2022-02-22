@@ -16,6 +16,7 @@ const Tracker = () => {
 
     return (
         <div className={"main__container--lesswidth"}>
+            <title>Tracker - Flight To Orbit</title>
             <section className={"tracker__header"}>
                 <h1>Tracker</h1>
             </section>

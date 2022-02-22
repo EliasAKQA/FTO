@@ -29,6 +29,7 @@ const Inventory = () => {
 
     return (
         <div className='main__container--lesswidth '>
+            <title>Inventory - Flight To Orbit</title>
             <section className={"inventory__header"}>
                 <h1>{data.headline}</h1>
                 <h2>{data.subHeadline}</h2>

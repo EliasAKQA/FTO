@@ -108,6 +108,7 @@ nav.desktop__nav li a::after {
 nav.desktop__nav li a:hover::after {
   background-color: var(--color-secondary);
   width: 100%;
+  border-radius: 10px;
 }
 
 nav.desktop__nav li a:hover {

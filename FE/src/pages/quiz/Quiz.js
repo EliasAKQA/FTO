@@ -39,6 +39,7 @@ const Quiz = () => {
     if (!questions) return <h3>Loading...</h3>
     return (
         <div>
+            <title>Quiz - Flight To Orbit</title>
             {showScore ? (
                 <div className={'score'}>
                     <h3>You answered {score} out of {questions.length} correctly.</h3>

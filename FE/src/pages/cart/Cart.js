@@ -5,6 +5,7 @@ import "./Cart.scss"
 const Cart = () => {
     return (
         <div className={'cart'}>
+            <title>Cart - Flight To Orbit</title>
             <h1 className='cartH1'>Cart</h1>
             <section className={'Items'}>
                 <CartItems name="Meteoritesss" />
