@@ -33,9 +33,8 @@ const CrewMember = () => {
                             return <InfoSection key={index} title={content.title} content={content.content} />
                         })}
                     </div>
-                    <button className='btn btn--primary'>{member.name} collection</button>
+                    <Link className='btn btn--primary' to={'/shop/filter/' + id}>{member.name} collection</Link>
                 </div>
-
             </section>
         </div>
     )
