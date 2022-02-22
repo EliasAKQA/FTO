@@ -1,30 +1,67 @@
 @import "../../sass/partials/abstracts/mixins";
 
-.cartHolder{
-        display: grid;
-    grid-template-areas: 
-    "itemPic cartAmount"
-    ;
-    max-width: 375px;
-    margin: 0 auto;
-    width: 90%;
-    
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
 .cart{
     width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
+
+.Items{
+    margin-top: 40px;
+    & .cartItem{
+        &--holder{
+            border: var(--border);
+            border-radius: var(--border-radius);
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 1em;
+            padding: .5em;
+            gap: 1em;
+        }
+
+        &--img{
+            max-height: 100px;
+            width: 100px;
+            & img{
+                max-height: 90px;
+                max-width: 90px;
+                filter: var(--filter-shadow);
+            }
+        }
+        
+        &--text{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            text-align: left;
+            & .remove{
+                font-size: 10px;
+                width: max-content;
+                margin: 0;
+            }
+        }
+        &--name{
+            margin: 0;
+        }
+        &--price{
+            color: #00FF19;
+            margin: 0;
+        }
+        &--remove{
+            text-decoration: underline;
+            border: none;
+            background: transparent;
+            color: var(--color-white);
+            cursor: pointer;
+            text-decoration-color: var(--color-secondary);
+            text-underline-offset: 0.2rem;
+            text-decoration-thickness: 0.2rem;
+            width: max-content;
+        }
+
+        }
+}
+
 
 .cartItemHolder{
     grid-area: "itemPic";
@@ -72,5 +109,5 @@ input[type=number] {
         font-weight: 600;
     }
 }
-}
+// }
 

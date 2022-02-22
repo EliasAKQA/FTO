@@ -19,7 +19,21 @@
     }
   }
 }
-
+.icon--container{
+  margin: auto;
+  position: relative;
+  width: 60px;
+}
+.cart--amount{
+  background-color: var(--color-secondary);
+  font-size: 12px;
+  line-height: 24px;
+  width: 24px;
+  border-radius: 50px;
+  position: absolute;
+  top: auto;
+  right: 0;
+}
 .navbar--open {
   position: fixed;
   top: 4.5em;
