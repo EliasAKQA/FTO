@@ -145,6 +145,9 @@
     <Compile Include="Helpers\HttpHelper.cs" />
     <Compile Include="Helpers\PathHelper.cs" />
     <Compile Include="Models\CallToActionDTO.cs" />
+    <Compile Include="Models\Cart\CartDTO.cs" />
+    <Compile Include="Models\Cart\CartLineDTO.cs" />
+    <Compile Include="Models\Cart\ProductDTO.cs" />
     <Compile Include="Models\ClockDTO.cs" />
     <Compile Include="Models\InventoryDTO.cs" />
     <Compile Include="Models\ParagraphDTO.cs" />

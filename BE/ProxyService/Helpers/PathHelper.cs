@@ -25,7 +25,7 @@ namespace ProxyService.Services
             {"resourceContent", "/Resource/GetResources"},
             // Cart end-points 
             {"cartContent", "/Cart/GetCartItems"},
-            {"cartContent", "/Cart/PostCartItems"},
+            {"postCartContent", "/Cart/PostCartItems"},
         };
 
         public PathHelper() { }
