@@ -14,6 +14,7 @@ import ErrorPage from "../../pages/errorPage/errorPage";
 const Body = () => {
     return (
         <main>
+            {/* <title>Flight to orbit</title> */}
             <Routes>
                 <Route exact path={"/"} element={<Landing />} />
                 <Route path={"/shop"} element={<Webshop />} />

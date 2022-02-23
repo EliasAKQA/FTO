@@ -6,6 +6,11 @@ import axios from 'axios';
 import Url from 'config';
 
 const Quiz = () => {
+
+    useEffect(() => {
+        document.title = "Quiz - Flight To Orbit";  
+      }, []);
+
     const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
@@ -39,7 +44,6 @@ const Quiz = () => {
     if (!questions) return <h3>Loading...</h3>
     return (
         <div>
-            <title>Quiz - Flight To Orbit</title>
             {showScore ? (
                 <div className={'score'}>
                     <h3>You answered {score} out of {questions.length} correctly.</h3>

@@ -7,17 +7,13 @@ import axios from 'axios';
 import Url from 'config';
 
 const Webshop = () => {
-    let { id } = useParams();
-    const [sections, setSections] = useState(null);
-    const [selection, setSelection] = useState(null);
+    // let { id } = useParams();
 
-    // get single crew member to filter
     useEffect(() => {
-        axios.get(Url.UMBRACO_API + "/crew/getCrewMemberDetails?id=" + id).then((res) => {
-            console.log(res);
-            setSelection(res.data);
-        })
+        document.title = "Shop - Flight To Orbit";
     }, []);
+
+    const [sections, setSections] = useState(null);
 
     // get shop items
     useEffect(() => {
@@ -27,19 +23,18 @@ const Webshop = () => {
         })
     }, []);
 
-
-
-
     if (!sections) return <h1>Loading...</h1>
     return (
         <div className='main__container--lesswidth'>
-            <h1>{sections.headline}</h1>
-            <p>{sections.description}</p>
-            <div className='shopItemsHolder'>
-                {sections.shopItems.map((content) => {
-                    return < ShopItemComponent id={content.id} name={content.title} price={content.price} image={content.imageUrl} button={content.button.content} />
-                })}
-            </div>
+            <section className='section-container'>
+                <h1>{sections.headline}</h1>
+                <p>{sections.description}</p>
+                <div className='shopItemsHolder'>
+                    {sections.shopItems.map((content) => {
+                        return < ShopItemComponent id={content.id} name={content.title} price={content.price} image={content.imageUrl} button={content.button.content} />
+                    })}
+                </div>
+            </section>
         </div>
     );
 };

@@ -40,12 +40,11 @@ namespace Flight2Orbit.Controller
         // ENDPOINT EXAMPLE: http://localhost:54252/umbraco/api/shop/getshopitemdetails?id=1073
         public IHttpActionResult GetShopItemDetails(int id)
         {
+            // Code below needs to be moved to Mapper.
             var shopitemPC = service.FetchNodeById(id);
             var shopItem = Converters.ConvertPublishedContent<ShopItem>(shopitemPC);
 
             var button = new ButtonDTO(shopItem.ButtonText, shopItem.ButtonLink);
-
-
 
             var crewPC = shopItem.CrewMember.FirstOrDefault();
             var crew = Converters.ConvertPublishedContent<CrewMember>(crewPC);
@@ -58,6 +57,13 @@ namespace Flight2Orbit.Controller
             var shopitemDetailsDTO = new ShopitemDetailsDTO(shopItemDTO, shopItem.Description, dimensionsDTO);
 
             return Json(shopitemDetailsDTO, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+        }
+
+        public IHttpActionResult GetShopitemOverview(int id)
+        {
+            var shopItemPC = service.FetchNodeById(id);
+            var shopItem = Converters.ConvertPublishedContent<ShopItem>(shopItemPC);
+            return Json(new ShopItemOverviewDTO(shopItem.Id, shopItem.Image.Url(), shopItem.Title, shopItem.Price));
         }
 
         [System.Web.Http.HttpPost]
