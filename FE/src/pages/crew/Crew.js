@@ -5,10 +5,10 @@ import axios from 'axios';
 import Url from 'config';
 
 const Crew = () => {
-
+    // 
     useEffect(() => {
-        document.title = "Crew - Flight To Orbit";  
-      }, []);
+        document.title = "Crew - Flight To Orbit";
+    }, []);
 
     const [sections, setSections] = useState(null);
     const [crew, setCrew] = useState(null);

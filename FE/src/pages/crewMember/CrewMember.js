@@ -7,38 +7,32 @@ import Url from 'config';
 import LoadingScreen from "../../components/loading/LoadingScreen";
 
 const CrewMember = () => {
+    let { ids } = useParams();
+    const [member, setMember] = useState(null);
+    const [shopItems, setShopItems] = useState(null);
+    const [memberItems, setMemberItems] = useState(null);
 
     useEffect(() => {
         document.title = "Crew Member - Flight To Orbit";
     }, []);
 
-    let { ids } = useParams();
-    const [member, setMember] = useState(null);
-    const [shopItems, setShopItems] = useState(null);
-    const [memberItems, setMemberItems] = useState();
-
     // get shop items
     useEffect(() => {
-        axios.get(Url.SERVER_API + "/shop/content").then((res) => {
-            console.log(res.data.shopItems);
-            setShopItems(res.data.shopItems);
-        })
-    }, []);
+        if (!shopItems) {
+            axios.get(Url.SERVER_API + "/shop/content").then((res) => {
+                console.log(res.data.shopItems);
+                setShopItems(res.data.shopItems);
+            })
+        }
+        if (!member) {
+            axios.get(Url.SERVER_API + "/crew/content?id=" + ids).then((res) => {
+                console.log(res);
+                setMember(res.data);
+            })
+        }
+        if (member && shopItems) setShopItems(shopItems.filter(e => e.discoverer.id === member.id));
+    }, [shopItems, member]);
 
-    // get single member from api
-    useEffect(() => {
-        axios.get(Url.SERVER_API + "/crew/content?id=" + ids).then((res) => {
-            console.log(res);
-            setMember(res.data);
-        })
-    }, []);
-
-    if (member && shopItems) {
-        console.log('yes');
-        console.log(member);
-        const filtered = shopItems.filter(e => e.discoverer.id === member.id);
-        console.log(filtered);
-    };
 
     // check if item loaded
     if (!member) return <LoadingScreen />
@@ -58,7 +52,9 @@ const CrewMember = () => {
                     </div>
                     {/*                     <Link className='btn btn--primary' to={'/shop/filter/' + id}>{member.name} collection</Link> */}
                     <h1>test</h1>
-                    <div></div>
+                    <div>{shopItems.map((content) => {
+                        return <div>{content.title}</div>
+                    })}</div>
                 </div>
             </section>
         </div>
