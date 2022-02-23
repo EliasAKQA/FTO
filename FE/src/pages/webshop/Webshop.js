@@ -6,7 +6,6 @@ import axios from 'axios';
 import Url from 'config';
 
 const Webshop = () => {
-    // let { id } = useParams();
 
     useEffect(() => {
         document.title = "Shop - Flight To Orbit";
