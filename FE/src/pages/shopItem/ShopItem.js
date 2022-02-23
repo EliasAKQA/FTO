@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import "./ShopItem.scss"
-import { Link, useParams } from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import CartItem from "../../components/cartItems/cartItems";
 import axios from 'axios';
 import Url from 'config';
@@ -8,10 +8,10 @@ import Url from 'config';
 const ShopItem = () => {
 
     useEffect(() => {
-        document.title = "Shop Item - Flight To Orbit";  
-      }, []);
+        document.title = "Shop Item - Flight To Orbit";
+    }, []);
 
-    let { id } = useParams();
+    let {id} = useParams();
     const [item, setItem] = useState(null);
     const [count, setCount] = useState(0);
     const [isActive, setActive] = useState(false);
@@ -39,7 +39,7 @@ const ShopItem = () => {
         <div className='shopDetail main__container--lesswidth'>
             <Link className='backButton' to={'/shop'}><h3>&#60; Back</h3></Link>
             <div className='shopDetail__img'>
-                <img className='shopDetail__img--product' src={Url.UMBRACO_SERVER + item.overview.imageUrl} alt="rock" />
+                <img className='shopDetail__img--product' src={Url.UMBRACO_SERVER + item.overview.imageUrl} alt="rock"/>
             </div>
             <div>
                 <h1>{item.overview.title}</h1>
@@ -71,17 +71,20 @@ const ShopItem = () => {
                 </section>
                 <div className='shopDetail__container'>
                     <div className='shopDetail__container--profile'>
-                        <img className='shopDetail__img profile' src={Url.UMBRACO_SERVER + item.discoverer.profileImageUrl} alt="" />
-                        <img className='shopDetail__img autograph' src={Url.UMBRACO_SERVER + item.discoverer.autographImageUrl} alt="" />
+                        <img className='shopDetail__img profile'
+                             src={Url.UMBRACO_SERVER + item.overview.discoverer.profileImageUrl} alt=""/>
+                        <img className='shopDetail__img autograph'
+                             src={Url.UMBRACO_SERVER + item.overview.discoverer.autographImageUrl} alt=""/>
                     </div>
                     <table>
                         <tr>
                             <th>Discoverer</th>
-                            <td><Link to={'/crew/' + item.discoverer.id}>{item.discoverer.name}</Link></td>
+                            <td><Link to={'/crew/' + item.overview.discoverer.id}>{item.overview.discoverer.name}</Link>
+                            </td>
                         </tr>
                         <tr>
                             <th>Role</th>
-                            <td>{item.discoverer.role}</td>
+                            <td>{item.overview.discoverer.role}</td>
                         </tr>
                         {/* <tr>
                             <th>Description</th>
@@ -90,7 +93,8 @@ const ShopItem = () => {
                     </table>
                 </div>
                 <div className='shopDetail__btn-container'>
-                    <button onClick={plus} className={!isActive ? 'btn btn--primary' : 'btn btn--checkout'}>{isActive ? buttonText : item.overview.button.content}</button>
+                    <button onClick={plus}
+                            className={!isActive ? 'btn btn--primary' : 'btn btn--checkout'}>{isActive ? buttonText : item.overview.button.content}</button>
                     <Link to={'/cart'} className='btn btn--secondary'>Go to cart</Link>
                 </div>
             </div>
