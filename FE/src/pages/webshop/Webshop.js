@@ -7,6 +7,11 @@ import axios from 'axios';
 import Url from 'config';
 
 const Webshop = () => {
+
+    useEffect(() => {
+        document.title = "Shop - Flight To Orbit";  
+      }, []);
+
     const [sections, setSections] = useState(null);
 
     useEffect(() => {
@@ -20,7 +25,6 @@ const Webshop = () => {
     return (
         <div className='main__container--lesswidth'>
             <section className='section-container'>
-            <title>Shop - Flight To Orbit</title>
             <h1>{sections.headline}</h1>
             <p>{sections.description}</p>
             </section>

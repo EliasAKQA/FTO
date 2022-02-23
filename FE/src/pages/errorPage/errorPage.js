@@ -1,13 +1,17 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./errorPage.scss"
 import Logo from "../../assets/logo/logoSad.svg"
 import {Link} from "react-router-dom"
 
-const errorPage = () => {
+const ErrorPage = () => {
+
+  useEffect(() => {
+    document.title = "Error - Flight To Orbit";  
+  }, []);
+
   return (
       
     <div className='errorPageHolder main__container--lesswidth'>
-            <title>Error - Flight To Orbit</title>
         <div>
         <img className='errorPageLogo' src={Logo}/>
         <h3>Error, 404 Page not found</h3>
@@ -20,4 +24,4 @@ const errorPage = () => {
   )
 }
 
-export default errorPage
+export default ErrorPage
