@@ -4,37 +4,37 @@ import {Link, useParams} from "react-router-dom";
 import CartItem from "../../components/cartItems/cartItems";
 import axios from 'axios';
 import Url from 'config';
+import LoadingScreen from "../../components/loading/LoadingScreen";
 
 const ShopItem = () => {
+    const [item, setItem] = useState(null);
+    const [count, setCount] = useState(0);
+    const [isActive, setActive] = useState(false);
+    const [buttonText, setButtonText] = useState("Add to cart");
+    let {id} = useParams();
 
     useEffect(() => {
         document.title = "Shop Item - Flight To Orbit";
     }, []);
 
-    let {id} = useParams();
-    const [item, setItem] = useState(null);
-    const [count, setCount] = useState(0);
-    const [isActive, setActive] = useState(false);
-    const [buttonText, setButtonText] = useState("Add to cart");
-
     // counter for cart
     function plus() {
         setCount((prev) => prev + 1);
-        console.log(count);
         setActive(!isActive);
         setButtonText("added to cart");
     }
 
     // get single item from api
     useEffect(() => {
-        axios.get(Url.SERVER_API + "/shop/content?id=" + id).then((res) => {
-            console.log(res);
-            setItem(res.data);
-        });
-    }, []);
+        if (!item) {
+            axios.get(Url.SERVER_API + "/shop/content?id=" + id).then((res) => {
+                setItem(res.data);
+            });
+        }
+    }, [item]);
 
     // check if item loaded
-    if (!item) return <h1>Loading...</h1>
+    if (!item) return <LoadingScreen/>
     return (
         <div className='shopDetail main__container--lesswidth'>
             <Link className='backButton' to={'/shop'}><h3>&#60; Back</h3></Link>
@@ -86,10 +86,6 @@ const ShopItem = () => {
                             <th>Role</th>
                             <td>{item.overview.discoverer.role}</td>
                         </tr>
-                        {/* <tr>
-                            <th>Description</th>
-                            <td>{item.discoverer.description}</td>
-                        </tr> */}
                     </table>
                 </div>
                 <div className='shopDetail__btn-container'>

@@ -9,11 +9,11 @@ import CheckoutForm from './CheckoutForm';
 
 const Checkout = (props) => {
     const stripePromise = loadStripe('pk_test_51HzJxADA3uJiKcuR4X3s8HnqtQUW6CaWBI0f03dR064VRvTE10LUaBoYNgsL7wGgqAknPicUMgGeKcSlzpFDkmQf00VXwvFGJu');
-    
+
     return (
-      <Elements stripe={stripePromise}>
-        <CheckoutForm state={props.state} setstate={props.setState} func={props.func}/>
-      </Elements>
+        <Elements stripe={stripePromise}>
+            <CheckoutForm amount={props.amount} state={props.state} setstate={props.setState} func={props.func}/>
+        </Elements>
     );
 };
 

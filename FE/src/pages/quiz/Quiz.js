@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Img from '../../assets/quiz/NASA_logo.svg.png';
-import { useParams, Link } from "react-router-dom";
+import {useParams, Link} from "react-router-dom";
 import './Quiz.scss';
 import axios from 'axios';
 import Url from 'config';
+import LoadingScreen from "../../components/loading/LoadingScreen";
 
 const Quiz = () => {
-
-    useEffect(() => {
-        document.title = "Quiz - Flight To Orbit";  
-      }, []);
-
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showScore, setShowScore] = useState(false);
     const [score, setScore] = useState(0);
+    const [questions, setQuestions] = useState(null);
+    let {id} = useParams();
+
+    useEffect(() => {
+        document.title = "Quiz - Flight To Orbit";
+    }, []);
 
     const handleAnswerOptionClick = (isCorrect) => {
         if (isCorrect) {
@@ -28,26 +30,27 @@ const Quiz = () => {
         }
     };
 
-    let { id } = useParams();
-    const [questions, setQuestions] = useState(null);
-
     useEffect(() => {
-        axios.get(Url.SERVER_API + "/quiz/content?id=" + id).then((res) => {
-            // res.data.questions.map(data =>{
-            //     console.log(data);
-            // })
-            console.log(res.data.questions);
-            setQuestions(res.data.questions);
-        })
-    }, []);
+        if (!questions) {
+            axios.get(Url.SERVER_API + "/quiz/content?id=" + id).then((res) => {
+                setQuestions(res.data.questions);
+            })
+        }
+    }, [questions]);
     let num = 0;
-    if (!questions) return <h3>Loading...</h3>
+ 
+    if (!questions) return <LoadingScreen/>
     return (
         <div>
             {showScore ? (
                 <div className={'score'}>
                     <h3>You answered {score} out of {questions.length} correctly.</h3>
-                    <button className={'btn btn--primary'} onClick={() => { setCurrentQuestion(0); setScore(0); setShowScore(false) }}>Try again!</button>
+                    <button className={'btn btn--primary'} onClick={() => {
+                        setCurrentQuestion(0);
+                        setScore(0);
+                        setShowScore(false)
+                    }}>Try again!
+                    </button>
                     <Link to={'/quiz'} className={'btn btn--primary'}>Choose another theme</Link>
                 </div>
             ) : (
@@ -62,7 +65,8 @@ const Quiz = () => {
                     <section className={'answerOptions'}>
                         {questions[currentQuestion].answers.map(answer => {
                             return (
-                                <button key={answer.id} className='btn btn--primary' onClick={() => handleAnswerOptionClick(answer.isCorrect)}>{answer.answer}</button>
+                                <button key={answer.id} className='btn btn--primary'
+                                        onClick={() => handleAnswerOptionClick(answer.isCorrect)}>{answer.answer}</button>
                             );
                         })}
                     </section>

@@ -5,6 +5,7 @@ import Resource from "../../components/resource/Resource";
 import {Link} from "react-router-dom";
 import axios from 'axios';
 import Url from 'config';
+import LoadingScreen from "../../components/loading/LoadingScreen";
 
 const Inventory = () => {
     const [time, setTime] = useState(null);
@@ -12,23 +13,24 @@ const Inventory = () => {
 
     useEffect(() => {
         document.title = "Inventory - Flight To Orbit";
-        axios.get(Url.SERVER_API + "/inventory/content").then((res) => {
-            console.log(res.data)
-            setData(res.data);
-            let ms = res.data.resource.millisecondsToDeath;
-            let seconds = Math.floor((ms / 1000) % 60);
-            let minutes = Math.floor(((ms / 1000) / 60) % 60);
-            let hours = Math.floor((((ms / 1000) / 60) / 60));
-            setTime({
-                hour: hours,
-                minute: minutes,
-                second: seconds
+
+        if (!data) {
+            axios.get(Url.SERVER_API + "/inventory/content").then((res) => {
+                setData(res.data);
+                let ms = res.data.resource.millisecondsToDeath;
+                let seconds = Math.floor((ms / 1000) % 60);
+                let minutes = Math.floor(((ms / 1000) / 60) % 60);
+                let hours = Math.floor((((ms / 1000) / 60) / 60));
+                setTime({
+                    hour: hours,
+                    minute: minutes,
+                    second: seconds
+                })
             })
-        })
-    }, []);
+        }
+    }, [data]);
 
-    if (!data) return <h3>Loading...</h3>
-
+    if (!data) return <LoadingScreen/>
     return (
         <div className='main__container--lesswidth '>
             <section className={"inventory__header"}>
@@ -45,7 +47,7 @@ const Inventory = () => {
             </section>
             <section className={"resource__container"}>
                 {data.resource.resources.map(resource => {
-                    return <Resource height={`${resource.amount}%`} type={resource.title}
+                    return <Resource key={resource.title} height={`${resource.amount}%`} type={resource.title}
                                      colour={resource.colourCode}/>
                 })}
             </section>
