@@ -7,6 +7,11 @@ import axios from 'axios';
 import Url from 'config';
 
 const Inventory = () => {
+
+    useEffect(() => {
+        document.title = "Inventory - Flight To Orbit";  
+      }, []);
+
     const [time, setTime] = useState(null);
     const [data, setData] = useState(null);
 
@@ -29,7 +34,6 @@ const Inventory = () => {
 
     return (
         <div className='main__container--lesswidth '>
-            <title>Inventory - Flight To Orbit</title>
             <section className={"inventory__header"}>
                 <h1>{data.headline}</h1>
                 <h2>{data.subHeadline}</h2>

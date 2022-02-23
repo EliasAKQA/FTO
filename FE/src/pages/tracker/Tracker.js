@@ -6,6 +6,11 @@ import {Link} from 'react-router-dom';
 
 
 const Tracker = () => {
+
+    useEffect(() => {
+        document.title = "Tracker - Flight To Orbit";  
+      }, []);
+
     const [position, setPosition] = useState({lat:'loading', lng:'loading', timestamp:'loading'});
     
     const data_pull = (data) => {
@@ -16,7 +21,6 @@ const Tracker = () => {
 
     return (
         <div className={"main__container--lesswidth"}>
-            <title>Tracker - Flight To Orbit</title>
             <section className={"tracker__header"}>
                 <h1>Tracker</h1>
             </section>

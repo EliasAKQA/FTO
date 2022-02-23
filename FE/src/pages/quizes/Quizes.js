@@ -8,6 +8,11 @@ import axios from 'axios';
 import Url from 'config';
 
 const Quizes = () => {
+
+    useEffect(() => {
+        document.title = "Quiz - Flight To Orbit";  
+      }, []);
+
     const [themes, setThemes] = useState(null);
 
     useEffect(() => {
@@ -20,7 +25,6 @@ const Quizes = () => {
 
     return (
         <div className={"main__container--lesswidth"}>
-            <title>Quiz - Flight To Orbit</title>
             <Routes>
                 <Route exact path={"/"} element={<div className={'info'}>
                     <h1>{themes.headline}</h1>
