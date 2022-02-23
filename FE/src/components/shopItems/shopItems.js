@@ -9,24 +9,25 @@ const ShopItems = (props) => {
         localStorage.setItem('FTOCart', '[]');
     }
     let cart = JSON.parse(localStorage.getItem('FTOCart'));
-    useEffect(()=>{
-        if (cart.filter(item=>item.id === props.id).length>0) {
-        setActive(!isActive);
-    }}, [])
-    function addToCart(){
+    useEffect(() => {
+        if (cart.filter(item => item.id === props.id).length > 0) {
+            setActive(!isActive);
+        }
+    }, [])
+    function addToCart() {
         cart = JSON.parse(localStorage.getItem('FTOCart'));
         const cartItem = {
             id: props.id,
-            name:props.name,
-            price:props.price,
-            url: Url.SERVER_URL + props.image,
+            name: props.name,
+            price: props.price,
+            url: Url.UMBRACO_SERVER + props.image,
         }
         console.log(cart.length);
-        if (cart.filter(item=>item.id === cartItem.id).length>0) {
-            cart = cart.filter(item=>item.id !== cartItem.id);
+        if (cart.filter(item => item.id === cartItem.id).length > 0) {
+            cart = cart.filter(item => item.id !== cartItem.id);
             console.log('This Item already is in the cart');
             setActive(!isActive);
-        }else{
+        } else {
             cart.push(cartItem)
             console.log(cart.length);
             console.log(cart);
@@ -39,7 +40,7 @@ const ShopItems = (props) => {
             <div className='shopItemHolder' >
                 <Link to={'/shop/' + props.id}>
                     <div className='shopItemIMG'>
-                        <img className='shopItemRock' src={Url.SERVER_URL + props.image} alt={props.image} />
+                        <img className='shopItemRock' src={Url.UMBRACO_SERVER + props.image} alt={props.image} />
                     </div>
                 </Link>
                 <p className='shopItemName'>{props.name}</p>

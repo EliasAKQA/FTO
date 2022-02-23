@@ -22,7 +22,7 @@ const ShopItem = () => {
 
     // get single item from api
     useEffect(() => {
-        axios.get(Url.UMBRACO_API + "/shop/content?id=" + id).then((res) => {
+        axios.get(Url.SERVER_API + "/shop/content?id=" + id).then((res) => {
             console.log(res);
             setItem(res.data);
         });
@@ -35,7 +35,7 @@ const ShopItem = () => {
             <title>Shop Item - Flight To Orbit</title>
             <Link className='backButton' to={'/shop'}><h3>&#60; Back</h3></Link>
             <div className='shopDetail__img'>
-                <img className='shopDetail__img--product' src={Url.SERVER_URL + item.overview.imageUrl} alt="rock" />
+                <img className='shopDetail__img--product' src={Url.UMBRACO_SERVER + item.overview.imageUrl} alt="rock" />
             </div>
             <div>
                 <h1>{item.overview.title}</h1>
@@ -67,8 +67,8 @@ const ShopItem = () => {
                 </section>
                 <div className='shopDetail__container'>
                     <div className='shopDetail__container--profile'>
-                        <img className='shopDetail__img profile' src={Url.SERVER_URL + item.discoverer.profileImageUrl} alt="" />
-                        <img className='shopDetail__img autograph' src={Url.SERVER_URL + item.discoverer.autographImageUrl} alt="" />
+                        <img className='shopDetail__img profile' src={Url.UMBRACO_SERVER + item.discoverer.profileImageUrl} alt="" />
+                        <img className='shopDetail__img autograph' src={Url.UMBRACO_SERVER + item.discoverer.autographImageUrl} alt="" />
                     </div>
                     <table>
                         <tr>

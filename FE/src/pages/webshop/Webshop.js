@@ -10,7 +10,7 @@ const Webshop = () => {
 
     // get shop items
     useEffect(() => {
-        axios.get(Url.UMBRACO_API + "/shop/content").then((res) => {
+        axios.get(Url.SERVER_API + "/shop/content").then((res) => {
             console.log(res);
             setSections(res.data);
         })
