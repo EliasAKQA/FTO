@@ -6,6 +6,11 @@ import axios from 'axios';
 import Url from 'config';
 
 const CrewMember = () => {
+
+    useEffect(() => {
+        document.title = "Crew Member - Flight To Orbit";  
+      }, []);
+
     let { id } = useParams();
     const [member, setMember] = useState(null);
     const [shopItems, setShopItems] = useState(null);
@@ -30,7 +35,6 @@ const CrewMember = () => {
     if (!member) return <h1>Loading ...</h1>
     return (
         <div className='main__container--less-width'>
-            <title>Crew Member - Flight To Orbit</title>
             <section className='crew-member'>
                 <figure className='crew-member__image'>
                     <img src={Url.UMBRACO_SERVER + member.profileImageUrl} alt={member.name} />

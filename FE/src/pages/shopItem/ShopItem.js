@@ -6,6 +6,11 @@ import axios from 'axios';
 import Url from 'config';
 
 const ShopItem = () => {
+
+    useEffect(() => {
+        document.title = "Shop Item - Flight To Orbit";  
+      }, []);
+
     let { id } = useParams();
     const [item, setItem] = useState(null);
     const [count, setCount] = useState(0);
@@ -32,7 +37,6 @@ const ShopItem = () => {
     if (!item) return <h1>Loading...</h1>
     return (
         <div className='shopDetail main__container--lesswidth'>
-            <title>Shop Item - Flight To Orbit</title>
             <Link className='backButton' to={'/shop'}><h3>&#60; Back</h3></Link>
             <div className='shopDetail__img'>
                 <img className='shopDetail__img--product' src={Url.UMBRACO_SERVER + item.overview.imageUrl} alt="rock" />

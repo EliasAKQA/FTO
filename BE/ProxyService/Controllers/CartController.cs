@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -24,7 +25,7 @@ namespace ProxyService.Controllers
         }
 
         [HttpGet]
-        public async Task<HttpResponseMessage> Content()
+        public async Task<List<ProductDTO>> Content()
         {
             var cookie = Request.Headers.GetCookies("session-id").FirstOrDefault();
 
@@ -35,7 +36,20 @@ namespace ProxyService.Controllers
                        new HttpRequestMessage(HttpMethod.Get, $"{Service_Url.Cart}{_pathHelper.Paths.Get("cartContent")}"))
                 {
                     if (cookie != null) requestMessage.Headers.Add("cookie", $"session-id={cookie["session-id"].Value}");
-                    return await client.SendAsync(requestMessage);
+
+
+                    var res = await client.SendAsync(requestMessage);
+                    var data = await res.Content.ReadAsStringAsync();
+                    var cart = Newtonsoft.Json.JsonConvert.DeserializeObject<CartDTO>(data);
+                    var productDtos = new List<ProductDTO>();
+                    foreach (var cartLine in cart.CartLines)
+                    {
+                        var tempRes = await HttpHelper.GetRequest<ProductDTO>(
+                            $"{Service_Url.Umbraco}{_pathHelper.Paths.Get("shopItemOverview")}?id={cartLine.Product.Id}", client);
+                        productDtos.Add(tempRes);
+                    }
+
+                    return productDtos;
                 }
             }
         }

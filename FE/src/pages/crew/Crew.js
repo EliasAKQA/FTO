@@ -5,6 +5,11 @@ import axios from 'axios';
 import Url from 'config';
 
 const Crew = () => {
+
+    useEffect(() => {
+        document.title = "Crew - Flight To Orbit";  
+      }, []);
+
     const [sections, setSections] = useState(null);
     const [crew, setCrew] = useState(null);
     const [current, setCurrent] = useState(null);
@@ -39,7 +44,6 @@ const Crew = () => {
 
     return (
         <div className='main__container--fullwidth'>
-            <title>Crew - Flight To Orbit</title>
             <h1>{sections.headline}</h1>
             <section className='main__container--lesswidth crew-page'>
                 <h2 className='crew-page__title'>{sections.subHeadline}</h2>

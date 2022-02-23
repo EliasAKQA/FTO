@@ -5,6 +5,11 @@ import Checkout from '../../components/checkout/Checkout';
 import { Link } from "react-router-dom";
 
 const Cart = () => {
+
+    useEffect(() => {
+        document.title = "Cart - Flight To Orbit";  
+      }, []);
+
     const [total, setTotal] = useState(0);
     const [stage, setStage] = useState(1);
     if (!localStorage.getItem('FTOCart')) {
@@ -33,7 +38,6 @@ const Cart = () => {
         
     return (
         <div className={'cart'}>
-            <title>Cart - Flight To Orbit</title>
             <h1 className='cartH1'>Cart</h1>
             {stage === 2 ? <button className='backButton' onClick={minus}><h3>&#60; Back</h3></button> : <></> }
             <div className='paymentStage'>

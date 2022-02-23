@@ -12,6 +12,7 @@ namespace ProxyService.Services
             // umbraco end-points
             {"shopContent", "/shop/GetShopContent"},
             {"shopContentById", "/shop/GetShopItemDetails"},
+            {"shopItemOverview", "/shop/getshopitemoverview"},
             {"homeContent", "/home/GetHomeContent"},
             {"crewContent", "/crew/GetCrewContent"},
             {"crewContentById", "/crew/GetCrewMemberDetails"},

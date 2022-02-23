@@ -389,6 +389,7 @@
     <Compile Include="Models\Shop\ShopDTO.cs" />
     <Compile Include="Models\Shop\ShopitemDetailsDTO.cs" />
     <Compile Include="Models\Shop\ShopItemDTO.cs" />
+    <Compile Include="Models\Shop\ShopItemOverviewDTO.cs" />
     <Compile Include="Models\Tracker\TrackerDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\UmbracoService.cs" />
