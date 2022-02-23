@@ -1,4 +1,6 @@
 import {CardElement, PaymentElement, useElements, useStripe} from '@stripe/react-stripe-js';
+import axios from "axios";
+import Url from 'config';
 
 const CheckoutForm = (props) => {
     const stripe = useStripe();
@@ -6,6 +8,8 @@ const CheckoutForm = (props) => {
 
 
     const handleSubmit = async (ev) => {
+
+
         ev.preventDefault();
         const cardElement = elements.getElement(CardElement);
         const billingDetails = {
@@ -22,7 +26,7 @@ const CheckoutForm = (props) => {
             card: cardElement,
             billing_details: billingDetails,
         });
-
+ 
         if (error) {
             console.log('[error]', error);
         } else {
@@ -33,6 +37,7 @@ const CheckoutForm = (props) => {
             // props.setstate(cartStage + 1 );
             // console.log(props.state);
             // ... POST: /api/charge/user
+            await axios.post(`${Url.SERVER_API}/inventory/post?price=${props.amount}`);
         }
     };
     const inputStyle = {

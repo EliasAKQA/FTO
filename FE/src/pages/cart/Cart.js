@@ -5,13 +5,14 @@ import Checkout from '../../components/checkout/Checkout';
 import {Link} from "react-router-dom";
 
 const Cart = () => {
+    const [total, setTotal] = useState(0);
+    const [stage, setStage] = useState(1);
 
     useEffect(() => {
         document.title = "Cart - Flight To Orbit";
     }, []);
 
-    const [total, setTotal] = useState(0);
-    const [stage, setStage] = useState(1);
+
     if (!localStorage.getItem('FTOCart')) {
         localStorage.setItem('FTOCart', '[]');
     }
@@ -33,6 +34,7 @@ const Cart = () => {
 
     let shipping = 10;
     let cart = JSON.parse(localStorage.getItem('FTOCart'));
+
     useEffect(() => {
         let price = 0;
         cart.map(item => price += item.price);
