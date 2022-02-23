@@ -7,13 +7,15 @@
         public string Title { get; set; }
         public double Price { get; set; }
         public ButtonDTO Button { get; set; }
+        public CrewMemberDTO Discoverer { get; set; }
 
-        public ShopItemDTO(int id, string imageUrl, string title, double price, ButtonDTO button)
+        public ShopItemDTO(int id, string imageUrl, string title, double price, CrewMemberDTO discoverer, ButtonDTO button)
         {
             Id = id;
             ImageUrl = imageUrl;
             Title = title;
             Price = price;
+            Discoverer = discoverer;
             Button = button;
         }
     }

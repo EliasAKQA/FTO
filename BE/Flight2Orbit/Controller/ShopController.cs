@@ -45,7 +45,7 @@ namespace Flight2Orbit.Controller
 
             var button = new ButtonDTO(shopItem.ButtonText, shopItem.ButtonLink);
 
-            var shopItemDTO = new ShopItemDTO(shopItem.Id, shopItem.Image.Url(), shopItem.Title, shopItem.Price, button);
+
 
             var crewPC = shopItem.CrewMember.FirstOrDefault();
             var crew = Converters.ConvertPublishedContent<CrewMember>(crewPC);
@@ -53,7 +53,9 @@ namespace Flight2Orbit.Controller
 
             var dimensionsDTO = new Dimensions(shopItem.Height, shopItem.Width, shopItem.Depth, shopItem.Weight);
 
-            var shopitemDetailsDTO = new ShopitemDetailsDTO(shopItemDTO, shopItem.Description, crewMemberDTO, dimensionsDTO);
+            var shopItemDTO = new ShopItemDTO(shopItem.Id, shopItem.Image.Url(), shopItem.Title, shopItem.Price, crewMemberDTO, button);
+
+            var shopitemDetailsDTO = new ShopitemDetailsDTO(shopItemDTO, shopItem.Description, dimensionsDTO);
 
             return Json(shopitemDetailsDTO, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
         }
