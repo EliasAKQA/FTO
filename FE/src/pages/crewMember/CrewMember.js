@@ -11,25 +11,33 @@ const CrewMember = () => {
         document.title = "Crew Member - Flight To Orbit";
     }, []);
 
-    let { id } = useParams();
+    let { ids } = useParams();
     const [member, setMember] = useState(null);
     const [shopItems, setShopItems] = useState(null);
+    const [memberItems, setMemberItems] = useState();
 
     // get shop items
     useEffect(() => {
         axios.get(Url.SERVER_API + "/shop/content").then((res) => {
-            console.log(res);
-            setShopItems(res.data);
+            console.log(res.data.shopItems);
+            setShopItems(res.data.shopItems);
         })
     }, []);
 
     // get single member from api
     useEffect(() => {
-        axios.get(Url.SERVER_API + "/crew/content?id=" + id).then((res) => {
+        axios.get(Url.SERVER_API + "/crew/content?id=" + ids).then((res) => {
             console.log(res);
             setMember(res.data);
         })
     }, []);
+
+    if (member && shopItems) {
+        console.log('yes');
+        console.log(member);
+        const filtered = shopItems.filter(e => e.discoverer.id === member.id);
+        console.log(filtered);
+    };
 
     // check if item loaded
     if (!member) return <h1>Loading ...</h1>
@@ -47,7 +55,7 @@ const CrewMember = () => {
                             return <InfoSection key={index} title={content.title} content={content.content} />
                         })}
                     </div>
-                    <Link className='btn btn--primary' to={'/shop/filter/' + id}>{member.name} collection</Link>
+                    {/*                     <Link className='btn btn--primary' to={'/shop/filter/' + id}>{member.name} collection</Link> */}
                     <h1>test</h1>
                     <div></div>
                 </div>
