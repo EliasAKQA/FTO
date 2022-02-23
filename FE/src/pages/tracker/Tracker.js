@@ -6,17 +6,18 @@ import {Link} from 'react-router-dom';
 
 
 const Tracker = () => {
+    const [position, setPosition] = useState({lat: 'loading', lng: 'loading', timestamp: 'loading'});
 
     useEffect(() => {
-        document.title = "Tracker - Flight To Orbit";  
-      }, []);
+        document.title = "Tracker - Flight To Orbit";
+    }, []);
 
-    const [position, setPosition] = useState({lat:'loading', lng:'loading', timestamp:'loading'});
-    
     const data_pull = (data) => {
-        setPosition({lat: data.lat,
-                    lng: data.lng,
-                    timestamp: Date(data.timestamp)})
+        setPosition({
+            lat: data.lat,
+            lng: data.lng,
+            timestamp: Date(data.timestamp)
+        })
     }
 
     return (
@@ -24,9 +25,6 @@ const Tracker = () => {
             <section className={"tracker__header"}>
                 <h1>Tracker</h1>
             </section>
-            {/* <section>
-                <Map/>
-            </section> */}
             <section>
                 <Leaflet func={data_pull}/>
             </section>
