@@ -12,7 +12,7 @@ const CrewMember = () => {
 
     // get shop items
     useEffect(() => {
-        axios.get(Url.UMBRACO_API + "/shop/getshopitemdetails/?id=" + id).then((res) => {
+        axios.get(Url.SERVER_API + "/shop/getshopitemdetails/?id=" + id).then((res) => {
             console.log(res);
             setShopItems(res.data);
         })
@@ -20,7 +20,7 @@ const CrewMember = () => {
 
     // get single member from api
     useEffect(() => {
-        axios.get(Url.UMBRACO_API + "/crew/content?id=" + id).then((res) => {
+        axios.get(Url.SERVER_API + "/crew/content?id=" + id).then((res) => {
             console.log(res);
             setMember(res.data);
         })
@@ -33,7 +33,7 @@ const CrewMember = () => {
             <title>Crew Member - Flight To Orbit</title>
             <section className='crew-member'>
                 <figure className='crew-member__image'>
-                    <img src={Url.SERVER_URL + member.profileImageUrl} alt={member.name} />
+                    <img src={Url.UMBRACO_SERVER + member.profileImageUrl} alt={member.name} />
                 </figure>
                 <div className='crew-member__text main__container--lesswidth'>
                     <h1 className='crew-member__text--title'>{member.name}</h1>
