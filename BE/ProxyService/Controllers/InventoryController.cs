@@ -23,7 +23,7 @@ namespace ProxyService.Controllers
         }
 
         [HttpGet]
-        public async Task<JsonResult<ResourcesDTO>> Content()
+        public async Task<JsonResult<InventoryDTO>> Content()
         {
             // retrieve resources from resourceService
             var resourceFromResourceService = await HttpHelper.GetRequest<ResourcesDTO>($"{Service_Url.Resource}{_pathHelper.Paths.Get("resourceContent")}", _httpClient);
@@ -38,7 +38,9 @@ namespace ProxyService.Controllers
                 resource.Merge(resourceFromResourceService.Resources.Select((item) => item).FirstOrDefault(item => item.Type.Equals(resource.Title)));
             }
 
-            return Json(new ResourcesDTO(resourceFromUmbracoService.Resource.Resources, resourceFromResourceService.MillisecondsToDeath), new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+            resourceFromUmbracoService.Resource.MillisecondsToDeath = resourceFromResourceService.MillisecondsToDeath;
+
+            return Json(resourceFromUmbracoService, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
         }
 
 
