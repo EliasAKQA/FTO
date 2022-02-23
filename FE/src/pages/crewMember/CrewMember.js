@@ -8,8 +8,8 @@ import Url from 'config';
 const CrewMember = () => {
 
     useEffect(() => {
-        document.title = "Crew Member - Flight To Orbit";  
-      }, []);
+        document.title = "Crew Member - Flight To Orbit";
+    }, []);
 
     let { id } = useParams();
     const [member, setMember] = useState(null);
@@ -17,7 +17,7 @@ const CrewMember = () => {
 
     // get shop items
     useEffect(() => {
-        axios.get(Url.SERVER_API + "/shop/getshopitemdetails/?id=" + id).then((res) => {
+        axios.get(Url.SERVER_API + "/shop/content").then((res) => {
             console.log(res);
             setShopItems(res.data);
         })
@@ -48,6 +48,8 @@ const CrewMember = () => {
                         })}
                     </div>
                     <Link className='btn btn--primary' to={'/shop/filter/' + id}>{member.name} collection</Link>
+                    <h1>test</h1>
+                    <div></div>
                 </div>
             </section>
         </div>
