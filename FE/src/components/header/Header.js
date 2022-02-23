@@ -14,9 +14,7 @@ const Header = () => {
                     <h3>FTO</h3>
                 </div>
             </Link>
-
             <Navbar/>
-
         </header>
     );
 };

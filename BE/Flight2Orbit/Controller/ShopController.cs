@@ -66,24 +66,24 @@ namespace Flight2Orbit.Controller
             return Json(new ShopItemOverviewDTO(shopItem.Id, shopItem.Image.Url(), shopItem.Title, shopItem.Price));
         }
 
-        [System.Web.Http.HttpPost]
-        public async Task<IHttpActionResult> Post([FromBody] double price)
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                var apiUrl = $"http://localhost:49390/api/resource/post?price={price}";
-                client.BaseAddress = new Uri(apiUrl);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = await client.PostAsync(apiUrl, new HttpMessageContent(new HttpRequestMessage(HttpMethod.Post, apiUrl)));
-                if (!response.IsSuccessStatusCode)
-                    throw new InternalServerErrorException("Error connecting to resource service.");
+        //[System.Web.Http.HttpPost]
+        //public async Task<IHttpActionResult> Post([FromBody] double price)
+        //{
+        //    using (HttpClient client = new HttpClient())
+        //    {
+        //        var apiUrl = $"http://localhost:49390/api/resource/post?price={price}";
+        //        client.BaseAddress = new Uri(apiUrl);
+        //        client.DefaultRequestHeaders.Accept.Clear();
+        //        client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+        //        HttpResponseMessage response = await client.PostAsync(apiUrl, new HttpMessageContent(new HttpRequestMessage(HttpMethod.Post, apiUrl)));
+        //        if (!response.IsSuccessStatusCode)
+        //            throw new InternalServerErrorException("Error connecting to resource service.");
 
-                var data = await response.Content.ReadAsStringAsync();
+        //        var data = await response.Content.ReadAsStringAsync();
 
 
-                return Ok("Succesfully posted.");
-            }
-        }
+        //        return Ok("Succesfully posted.");
+        //    }
+        //}
     }
 }

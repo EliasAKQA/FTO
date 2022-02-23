@@ -24,6 +24,7 @@ namespace ProxyService.Services
             {"inventoryContent", "/Inventory/GetResources"},  
             // resource end-points 
             {"resourceContent", "/Resource/GetResources"},
+            {"postResourceContent", "/Resource/Post"},  
             // Cart end-points 
             {"cartContent", "/Cart/GetCartItems"},
             {"postCartContent", "/Cart/PostCartItems"},

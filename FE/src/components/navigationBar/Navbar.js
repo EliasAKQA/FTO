@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {Link} from "react-router-dom";
 import Cart from '../../assets/cart.svg';
 import "./navbar.scss";
 // import { BsCart4 } from "react-icons/bs"
@@ -21,26 +21,25 @@ import Url from 'config';
 const Navbar = () => {
     const [navs, setNavs] = useState(null);
     const [cart, setCart] = useState([]);
+    const [open, setOpen] = useState(false);
+    const [mobile, setMobile] = useState(true);
+
     if (!localStorage.getItem('FTOCart')) {
         localStorage.setItem('FTOCart', '[]');
     }
 
 
     useEffect(() => {
-        setInterval(() => {
+        let id = setInterval(() => {
             setCart(JSON.parse(localStorage.getItem('FTOCart')));
-        }, 5000)
-    }, [])
-
-    useEffect(() => {
+        }, 5000);
         axios.get(Url.SERVER_API + "/shared/header").then((res) => {
             console.log(res.data.menu);
             setNavs(res.data.menu.content);
         })
-    }, []);
-    const [open, setOpen] = useState(false);
-    const [mobile, setMobile] = useState(true);
-
+        return clearInterval(id);
+    }, [])
+ 
     useEffect(() => {
         if (open) {
             // let nav = document.querySelector(".navbar--open");
@@ -108,7 +107,12 @@ const Navbar = () => {
     function createDeskNavItems(item) {
         if (!item.submenu) {
             if (item.text == "Cart") {
-                return <li key={item.text}><Link to={item.link} title="Shopping-Cart"><div className='icon--container'>{cart.length > 0 ? (<p className='cart--amount'>{cart.length}</p>) : (<></>)}<img src={Cart} className={'cartIcon'}></img></div></Link></li>
+                return <li key={item.text}><Link to={item.link} title="Shopping-Cart">
+                    <div className='icon--container'>{cart.length > 0 ? (
+                        <p className='cart--amount'>{cart.length}</p>) : (<></>)}<img src={Cart}
+                                                                                      className={'cartIcon'}></img>
+                    </div>
+                </Link></li>
             }
             return <li key={item.text}><Link to={item.link}>{item.text}</Link></li>
         }
@@ -145,10 +149,10 @@ const Navbar = () => {
                 </ul>
             </nav>
             <button tabIndex="0" onClick={handleNavigationIcon}
-                style={{ backgroundColor: 'transparent', border: 'none' }}>
+                    style={{backgroundColor: 'transparent', border: 'none'}}>
                 <img
                     src={open === false ? "/assets/images/navigation/burgerbar.svg" : "/assets/images/navigation/close-burgerbar.svg"}
-                    alt={"burgerbar"} /></button>
+                    alt={"burgerbar"}/></button>
             {open &&
                 <nav className={"navbar--open"}>
                     <ul>
