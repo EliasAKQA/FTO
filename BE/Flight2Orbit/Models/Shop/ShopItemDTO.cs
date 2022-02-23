@@ -18,5 +18,13 @@
             Discoverer = discoverer;
             Button = button;
         }
+
+        public ShopItemDTO(int id, string imageUrl, string title, double price)
+        {
+            Id = id;
+            ImageUrl = imageUrl;
+            Title = title;
+            Price = price;
+        }
     }
 }
