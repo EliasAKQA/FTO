@@ -6,7 +6,7 @@ import issIcon from "assets/satellite.png";
 
 
 const Leaflet = (props) => {
- 
+
     const [lat, setLat] = useState(0);
     const [lng, setLng] = useState(0);
 
