@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import './Quizes.scss';
 import QuizCard from "../../components/quizes/QuizCard";
 import { Route, Routes } from "react-router-dom";
@@ -11,7 +11,7 @@ const Quizes = () => {
     const [themes, setThemes] = useState(null);
 
     useEffect(() => {
-        axios.get(Url.UMBRACO_API + "/quiz/getquizcontent").then((res) => {
+        axios.get(Url.SERVER_API + "/quiz/content").then((res) => {
             console.log(res.data);
             setThemes(res.data);
         })
@@ -26,7 +26,7 @@ const Quizes = () => {
                     <h1>{themes.headline}</h1>
                     <p>{themes.text}</p>
                     <div className={'quizes'}>
-                        {themes.themes.map(theme =>{
+                        {themes.themes.map(theme => {
                             return <QuizCard data={theme} key={theme.id} />
                         })}
                         {/* <QuizCard name="Planets" />

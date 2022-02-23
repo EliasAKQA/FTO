@@ -1,8 +1,8 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {Link} from "react-router-dom";
+import React, { useEffect, useRef, useState } from 'react';
+import { Link } from "react-router-dom";
 import Url from 'config';
 import './Landing.scss';
-import {ReactSVG} from 'react-svg';
+import { ReactSVG } from 'react-svg';
 
 function Section(props) {
     return (
@@ -12,9 +12,9 @@ function Section(props) {
                 <p>{props.description}</p>
                 <div className={`part${props.index}--img`}>
                     {props.index == 3 ? (
-                        <ReactSVG src={Url.SERVER_URL + props.imageUrl}/>
+                        <ReactSVG src={Url.UMBRACO_SERVER + props.imageUrl} />
                     ) : (
-                        <img src={Url.SERVER_URL + props.imageUrl}/>
+                        <img src={Url.UMBRACO_SERVER + props.imageUrl} />
                     )}
                 </div>
                 <Link className={"btn btn--primary"} to={props.button.url}>{props.button.content}</Link>

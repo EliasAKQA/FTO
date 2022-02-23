@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Clock from "../../components/clock/Clock";
 import './inventory.scss';
 import Resource from "../../components/resource/Resource";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import Url from 'config';
 
@@ -11,7 +11,7 @@ const Inventory = () => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        axios.get(Url.UMBRACO_API + "/inventory/getinventorycontent").then((res) => {
+        axios.get(Url.SERVER_API + "/inventory/content").then((res) => {
             setData(res.data);
             let ms = res.data.resource.millisecondsToDeath;
             let seconds = Math.floor((ms / 1000) % 60);
@@ -39,13 +39,13 @@ const Inventory = () => {
                 <h2>{data.clock.headline}</h2>
                 {time &&
                     <Clock initHour={time.hour} initMinute={time.minute} initSecond={time.second}
-                           clockData={data.clock}/>
+                        clockData={data.clock} />
                 }
             </section>
             <section className={"resource__container"}>
                 {data.resource.resources.map(resource => {
                     return <Resource height={`${resource.amount}%`} type={resource.title}
-                                     colour={resource.colourCode}/>
+                        colour={resource.colourCode} />
                 })}
             </section>
             <section className={'section-container'}>
