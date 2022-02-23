@@ -10,7 +10,7 @@ const CrewCard = (props) => {
             <Link to={'/crew/' + props.id}>
                 <div className="crew-card">
                     <figure className="crew-card__image">
-                        <img src={Url.SERVER_URL + props.profileImageUrl} alt="Crew member name" />
+                        <img src={Url.UMBRACO_SERVER + props.profileImageUrl} alt="Crew member name" />
                     </figure>
                     <div className="crew-card__text">
                         <h2>{props.name}</h2>
@@ -18,7 +18,7 @@ const CrewCard = (props) => {
                         {/* <p>{props.desc}</p> */}
                         <div className="test">
                             <img className="testlogo" src={Logo} alt="" />
-                            <img alt="autograph" src={Url.SERVER_URL + props.autographImageUrl} className="autograph"></img>
+                            <img alt="autograph" src={Url.UMBRACO_SERVER + props.autographImageUrl} className="autograph"></img>
                         </div>
                     </div>
                 </div>

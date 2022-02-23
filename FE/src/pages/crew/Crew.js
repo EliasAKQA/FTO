@@ -21,7 +21,7 @@ const Crew = () => {
     }, []);
 
     useEffect(() => {
-        axios.get(Url.UMBRACO_API + "/crew/getcrewcontent").then((res) => {
+        axios.get(Url.SERVER_API + "/crew/content/").then((res) => {
             setSections(res.data);
             console.log(res.data.crewMembers);
         })

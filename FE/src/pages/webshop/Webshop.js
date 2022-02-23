@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import ShopItemComponent from "../../components/shopItems/shopItems";
 import "./Webshop.scss"
 import ShopItem from "../shopItem/ShopItem";
-import { useParams } from "react-router-dom";
 import axios from 'axios';
 import Url from 'config';
 
@@ -17,7 +16,7 @@ const Webshop = () => {
 
     // get shop items
     useEffect(() => {
-        axios.get(Url.UMBRACO_API + "/shop/getshopcontent").then((res) => {
+        axios.get(Url.SERVER_API + "/shop/content").then((res) => {
             console.log(res);
             setSections(res.data);
         })

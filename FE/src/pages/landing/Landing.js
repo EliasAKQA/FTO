@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 // import landingRock from '../../assets/landingRock.svg';
 // import astronaut from '../../assets/astronaut.png';
 // import clock from '../../assets/clocks/clock.png';
@@ -19,7 +19,7 @@ const Landing = () => {
     const [sections, setSections] = useState(null);
 
     useEffect(() => {
-        axios.get(Url.UMBRACO_API + "/home/gethomecontent").then((res) => {
+        axios.get(Url.SERVER_API + "/home/content").then((res) => {
             console.log(res);
             setSections(res.data.sections);
         })
@@ -30,8 +30,8 @@ const Landing = () => {
         <div className='landingpage main__container--fullwidth'>
             {sections.map((content, index) => {
                 return <Section key={index} index={(index + 1) % 4} header={content.header}
-                                description={content.description}
-                                imageUrl={content.imageUrl} button={content.button}/>
+                    description={content.description}
+                    imageUrl={content.imageUrl} button={content.button} />
             })}
         </div>
         // <div className={'landingpage main__container--fullwidth'}>

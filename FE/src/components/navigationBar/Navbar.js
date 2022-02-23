@@ -25,15 +25,15 @@ const Navbar = () => {
         localStorage.setItem('FTOCart', '[]');
     }
 
-    
-    useEffect(()=>{
-        setInterval(()=>{
+
+    useEffect(() => {
+        setInterval(() => {
             setCart(JSON.parse(localStorage.getItem('FTOCart')));
         }, 5000)
     }, [])
 
     useEffect(() => {
-        axios.get(Url.UMBRACO_API + "/shared/getheadercontent").then((res) => {
+        axios.get(Url.SERVER_API + "/shared/header").then((res) => {
             console.log(res.data.menu);
             setNavs(res.data.menu.content);
         })
@@ -108,7 +108,7 @@ const Navbar = () => {
     function createDeskNavItems(item) {
         if (!item.submenu) {
             if (item.text == "Cart") {
-                return <li key={item.text}><Link to={item.link} title="Shopping-Cart"><div className='icon--container'>{cart.length>0 ? (<p className='cart--amount'>{cart.length}</p>): (<></>)}<img src={Cart} className={'cartIcon'}></img></div></Link></li>
+                return <li key={item.text}><Link to={item.link} title="Shopping-Cart"><div className='icon--container'>{cart.length > 0 ? (<p className='cart--amount'>{cart.length}</p>) : (<></>)}<img src={Cart} className={'cartIcon'}></img></div></Link></li>
             }
             return <li key={item.text}><Link to={item.link}>{item.text}</Link></li>
         }
