@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import ShopItemComponent from "../../components/shopItems/shopItems";
 import "./Webshop.scss"
 import ShopItem from "../shopItem/ShopItem";
@@ -29,7 +29,7 @@ const Webshop = () => {
                 <div className='shopItemsHolder'>
                     {sections.shopItems.map((content) => {
                         return < ShopItemComponent id={content.id} name={content.title} price={content.price}
-                                                   image={content.imageUrl} button={content.button.content}/>
+                            image={content.imageUrl} button={content.button.content} />
                     })}
                 </div>
             </section>
