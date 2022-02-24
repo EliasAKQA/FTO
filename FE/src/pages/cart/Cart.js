@@ -17,6 +17,10 @@ const Cart = () => {
         localStorage.setItem('FTOCart', '[]');
     }
 
+    const setPrice = (removed) =>{
+        const recalc = total - removed;
+        setTotal(recalc);
+    }
     const setParentStage = (newStage) => {
         setStage(newStage);
         if (newStage === 3) {
@@ -73,7 +77,7 @@ const Cart = () => {
                         <section className={'Items'}>
                             {cart.map((item) => {
                                 // priceTotal =+priceTotal+item.price;
-                                return <CartItems key={item.id} data={item}/>
+                                return <CartItems key={item.id} data={item} func={setPrice}/>
                             })}
                         </section>
                     ) : (
