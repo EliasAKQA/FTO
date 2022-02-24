@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Results;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using ProxyService.Models.Cart;
 using ProxyService.Services;
 
@@ -25,7 +26,7 @@ namespace ProxyService.Controllers
         }
 
         [HttpGet]
-        public async Task<List<ProductDTO>> Content()
+        public async Task<JsonResult<List<ProductDTO>>> Content()
         {
             var cookie = Request.Headers.GetCookies("session-id").FirstOrDefault();
 
@@ -42,6 +43,7 @@ namespace ProxyService.Controllers
                     var data = await res.Content.ReadAsStringAsync();
                     var cart = Newtonsoft.Json.JsonConvert.DeserializeObject<CartDTO>(data);
                     var productDtos = new List<ProductDTO>();
+                    if (cart == null || cart.CartLines == null) return Json(productDtos, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
                     foreach (var cartLine in cart.CartLines)
                     {
                         var tempRes = await HttpHelper.GetRequest<ProductDTO>(
@@ -49,7 +51,7 @@ namespace ProxyService.Controllers
                         productDtos.Add(tempRes);
                     }
 
-                    return productDtos;
+                    return Json(productDtos, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
                 }
             }
         }
