@@ -37,7 +37,7 @@ const Navbar = () => {
             console.log(res.data.menu);
             setNavs(res.data.menu.content);
         })
-        return clearInterval(id);
+        return () => clearInterval(id);
     }, [])
  
     useEffect(() => {

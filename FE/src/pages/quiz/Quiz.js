@@ -60,7 +60,7 @@ const Quiz = () => {
                         <p className={'question'}>{questions[currentQuestion].question}</p>
                         <h2 className={' question questionmark'}>?</h2>
                         {/* <div className={'question__img'} style={{backgroundImage: `url("${Img}")`}}></div> */}
-                        <img className={'question__img'} src={Img} alt="question-image"></img>
+                        <img className={'question__img'} src={Url.UMBRACO_SERVER + questions[currentQuestion].imageUrl} alt="question-image"></img>
                     </section>
                     <section className={'answerOptions'}>
                         {questions[currentQuestion].answers.map(answer => {

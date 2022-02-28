@@ -40,6 +40,7 @@ const CartItem = (props) => {
         console.log('Removing from cart');
         let cart = JSON.parse(localStorage.getItem('FTOCart'));
         localStorage.setItem('FTOCart', JSON.stringify(cart.filter(item => item.id !== props.data.id)));
+        props.func(props.data.price)
         setDeleted(true);
     }
 

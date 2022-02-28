@@ -19,7 +19,6 @@ const Tracker = () => {
             timestamp: Date(data.timestamp)
         })
     }
-
     return (
         <div className={"main__container--lesswidth"}>
             <section className={"tracker__header"}>
@@ -40,7 +39,7 @@ const Tracker = () => {
                     </div>
                     <div>
                         <h3>Timestamp</h3>
-                        <p>{position.timestamp}</p>
+                        <p>{position.timestamp.split(' GMT')[0]}</p>
                     </div>
                 </div>
             </section>
