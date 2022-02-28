@@ -140,41 +140,6 @@ namespace Flight2Orbit.Helpers
             return list;
         }
 
-        //public InventoryDTO Map(Inventory inventory, ResourcesDTO res)
-        //{
-        //    // Map clock content to its representational class.
-        //    var clockDTO = new ClockDTO(inventory.ClockHeadline, inventory.Colour.ToString(), inventory.Hour, inventory.Minutes,
-        //        inventory.Seconds);
-
-        //    // If there's not resources, throw an error. Inventory without resources is not valid.
-        //    if (inventory.Resources == null) throw new NotFoundException("Inventory must contain resources.");
-
-        //    // Initialise and map a list of resources.
-        //    var resources = new List<ResourceDTO>();
-        //    var inventoryResouresAsList = inventory.Resources.ToList();
-        //    for (int i = 0; i < inventory.Resources.ToList().Count; i++)
-        //    {
-        //        var resource = Converters.ConvertPublishedContent<Resource>(inventoryResouresAsList.ElementAt(i));
-        //        var resourceDTO = new ResourceDTO(resource.Title, resource.Colour.ToString());
-        //        //var incoming = res.Resources.ElementAt(i); 
-        //        //var incoming = res.Resources.Select().Where((item) => item.Type.Equals(resource.Title))).FirstOrDefault();
-        //        var incoming = res.Resources.Select((item) => item).FirstOrDefault(item => item.Type.Equals(resource.Title));
-        //        resourceDTO.Merge(incoming);
-        //        resources.Add(resourceDTO);
-        //    }
-
-        //    if (inventory.CallToAction == null)
-        //        return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
-        //            clockDTO, new ResourcesDTO(resources, res.MillisecondsToDeath));
-
-        //    // Map call to action to its representational class.
-        //    var cto = Converters.ConvertPublishedContent<CallToAction>(inventory.CallToAction);
-        //    var ctoDTO = Map(cto);
-
-        //    return new InventoryDTO(inventory.Headline, inventory.SubHeadlineOptional, inventory.Description,
-        //        clockDTO, new ResourcesDTO(resources, res.MillisecondsToDeath), ctoDTO);
-        //}
-
         public InventoryDTO Map(Inventory inventory)
         {
             // Map clock content to its representational class.
@@ -222,10 +187,6 @@ namespace Flight2Orbit.Helpers
             foreach (var item in rootMenu.Children)
             {
                 menu.Add(MapMenu(item));
-                //var conv = item.TryConvertTo<MenuItem>();
-                //if (!conv.Success) throw new InternalServerErrorException("Conversion failed. Converting to menuItem.");
-                //var res = conv.Result;
-                //menu.Add(new MenuItemDTO(res.Text, res.Link)); 
             }
 
             return new HeaderDTO(header.LogoImage.Url(), header.LogoText, header.MenuIconOpen.Url(),
@@ -234,16 +195,21 @@ namespace Flight2Orbit.Helpers
 
         public MenuContainer MapMenu(IPublishedContent menu)
         {
+            // if it's a menuitem, we can terminate recursion.
             if (menu.TryConvertTo<MenuItem>().Success)
             {
                 var convertedItem = Converters.ConvertPublishedContent<MenuItem>(menu);
                 return new MenuItemDTO(convertedItem.Id, convertedItem.Text, convertedItem.Link);
             }
 
+            // if it isn't a menuitem, it must be a menu.
             var convertedMenu = Converters.ConvertPublishedContent<Menu>(menu);
+
+            // list that can contain supertype of menu and menuitem.
             var list = new List<MenuContainer>();
             foreach (var convertedMenuItem in convertedMenu.MenuItems)
             {
+                // recursively add menus.
                 list.Add(MapMenu(convertedMenuItem));
             }
             return new MenuDTO(list);
@@ -255,6 +221,22 @@ namespace Flight2Orbit.Helpers
             var cto = Converters.ConvertPublishedContent<CallToAction>(tracker.CallToAction);
             var ctoDTO = Map(cto);
             return new TrackerDTO(tracker.Headline, tracker.Location, tracker.Speed, tracker.Timestamp, ctoDTO);
+        }
+
+        public ShopitemDetailsDTO Map(ShopItem shopItem)
+        {
+            var button = new ButtonDTO(shopItem.ButtonText, shopItem.ButtonLink);
+
+            var crewPC = shopItem.CrewMember.FirstOrDefault();
+            var crew = Converters.ConvertPublishedContent<CrewMember>(crewPC);
+            var crewMemberDTO = new CrewMemberDTO(crew.Id, crew.Name, crew.Role, crew.Description, crew.Image.Url(), crew.Autograph.Url());
+
+            var dimensionsDTO = new Dimensions(shopItem.Height, shopItem.Width, shopItem.Depth, shopItem.Weight);
+
+            var shopItemDTO = new ShopItemDTO(shopItem.Id, shopItem.Image.Url(), shopItem.Title, shopItem.Price, crewMemberDTO, button);
+
+            return new ShopitemDetailsDTO(shopItemDTO, shopItem.Description, dimensionsDTO);
+
         }
     }
 }

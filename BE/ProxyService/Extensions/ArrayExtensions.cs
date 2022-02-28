@@ -5,6 +5,11 @@ namespace ProxyService.Extensions
 {
     public static class ArrayExtensions
     {
+        /// <summary>
+        /// Not in use anymore. (Was used to edit segments of URI).
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
         public static string ConvertToRelativePath(this string[] arr)
         {
             var segmentsList = new List<string>(arr);

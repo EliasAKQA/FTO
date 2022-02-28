@@ -15,6 +15,9 @@ namespace ProxyService.Controllers
             _pathHelper = new PathHelper();
         }
 
+        /// <summary>
+        /// Returns the content of the tracker page.
+        /// </summary>
         [HttpGet]
         public Task<HttpResponseMessage> Content()
         {

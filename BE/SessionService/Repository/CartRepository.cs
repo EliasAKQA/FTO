@@ -33,7 +33,11 @@ namespace SessionService.Repository
         public Cart PostCart(string id, Cart incomingCart)
         {
             var cart = GetCart(id);
+
+            // Cart should never be null - as GetCart creates new cart if none exist. 
             if (cart == null) return CreateCart(id, incomingCart);
+
+            // Update cart with the incoming values.
             cart.CartLines = incomingCart.CartLines;
             Context.SaveChanges();
             return cart;
@@ -41,6 +45,7 @@ namespace SessionService.Repository
 
         public Cart CreateCart(string id)
         {
+            // Create empty cart with given ID.
             var newCart = new Cart() { Id = id };
             Context.Cart.Add(newCart);
             Context.SaveChanges();
@@ -49,6 +54,7 @@ namespace SessionService.Repository
 
         private Cart CreateCart(string id, Cart incomingCart)
         {
+            // Add incoming cart to the DB, with given ID.
             incomingCart.Id = id;
             Context.Cart.Add(incomingCart);
             Context.SaveChanges();

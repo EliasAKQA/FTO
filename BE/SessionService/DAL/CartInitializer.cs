@@ -11,7 +11,7 @@ namespace SessionService.DAL
     {
         protected override void Seed(CartContext context)
         {
-            // dummy data  
+            // dummy data for test purpose.
             var sampleCookie = "0cdf8e29-dd51-456f-be19-91797424ddba";
             var product1 = new Product() { ReferenceId = "1073" };
             var product2 = new Product() { ReferenceId = "1183" };

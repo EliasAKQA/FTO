@@ -22,7 +22,6 @@ namespace ResourceService.Controllers
         [HttpGet]
         public IHttpActionResult GetResources()
         {
-            //context.Resources.Load();   
             var res = Context.Resources;
             var resources = new List<ResourceDTO>();
             var milliseconds = 0;
@@ -41,7 +40,7 @@ namespace ResourceService.Controllers
             var resources = Context.Resources.Local;
             foreach (var resource in resources)
             {
-                // Quick fix - should go back and change resource to expect a decimal.  
+                // Update all resources, but to illustrate difference in resource cap, add the resource amount to the new value.
                 resource.Amount += (price / resources.Count) + (resource.Amount / 5);
             }
 

@@ -16,17 +16,29 @@ namespace ProxyService.Controllers
             _pathHelper = new PathHelper();
         }
 
+        /// <summary>
+        /// Returns every single shop item. (And everything else on the shop page).
+        /// </summary>
         [HttpGet]
         public Task<HttpResponseMessage> Content()
         {
             return _httpClient.GetAsync($"{Service_Url.Umbraco}{_pathHelper.Paths.Get("shopContent")}");
         }
 
+        /// <summary>
+        /// Returns a everything about a specific shop item. (That includes the crew member who found this item)
+        /// </summary>
+        /// <param name="id">Shop item id.</param>
         [HttpGet]
         public Task<HttpResponseMessage> Content(int id)
         {
             return _httpClient.GetAsync($"{Service_Url.Umbraco}{_pathHelper.Paths.Get("shopContentById")}?id={id}");
         }
+
+        /// <summary>
+        /// Returns a short overview of a specific shop item.
+        /// </summary>
+        /// <param name="id">Shop item id</param>
         [HttpGet]
         public Task<HttpResponseMessage> ContentOverview(int id)
         {

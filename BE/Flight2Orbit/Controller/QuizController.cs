@@ -30,7 +30,6 @@ namespace Flight2Orbit.Controller
             var theme = Service.FetchNodeById(id);
             var convertedTheme = Converters.ConvertPublishedContent<QuizTheme>(theme);
             var questions = Mapper.Map(convertedTheme);
-            //var obj = new { }; 
             return Json(new { questions }, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
         }
     }

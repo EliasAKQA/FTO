@@ -2,6 +2,9 @@
 
 namespace ProxyService.Services
 {
+    /// <summary>
+    /// Capsulate all end-points of internal services. 
+    /// </summary>
     public class PathHelper
     {
         private NameValueCollection _paths

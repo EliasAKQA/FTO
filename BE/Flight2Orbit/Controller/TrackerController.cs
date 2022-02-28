@@ -17,7 +17,6 @@ namespace Flight2Orbit.Controller
         {
             Service = new UmbracoService(UmbracoContext);
             Mapper = new Mapper();
-            Mapper = new Mapper();
         }
 
         public IHttpActionResult GetTrackerContent()
